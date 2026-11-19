@@ -160,7 +160,7 @@ var PLEDGES = [
  {n:22,zh:"提升醫療服務的可及性與品質",ms:"Meningkatkan Akses dan Kualiti Perkhidmatan Kesihatan",st:"mixed",fed:true,
   ev:[{x:"殘舊診所的比例從 2024 年的 76.4% 降到 2025 年的 65.9%。",s:["p_clinic25"]},
       {x:"砂拉越癌症中心預定 2027 年初動工，工期五年；州政府出資 15 億令吉購置設備。",s:["p_cancer","p_cancer_state"]}],
-  con:[{x:"2026 年 9 月，271 間診所中仍有 160 間（66%）屬於殘舊。",s:["p_clinic"]}]},
+  con:[{x:"2026 年 9 月，副總理沈桂賢說 271 間診所中仍有 160 間屬於殘舊。報導寫的比例是 66%，但 160 除以 271 約是 59%。",s:["p_clinic"]}]},
  {n:23,zh:"提升教育品質與技職訓練",ms:"Meningkatkan Kualiti Pendidikan dan Latihan Teknikal",st:"prog",issue:"edu",
   ev:[{x:"2026 年起實施免費高等教育計劃（FTES）：64 個學士課程，撥款 2.5 億令吉。到第一季有 4,694 名學生受惠，全年目標是 1 萬人。",s:["p_ftes"]}]},
  {n:24,zh:"確保州與人民的安全",ms:"Menjamin Keselamatan Negeri dan Rakyat",st:"prog",fed:true,

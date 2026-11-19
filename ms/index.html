@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panduan Pengundi Pilihan Raya Negeri Sarawak</title>
+<meta name="description" content="Panduan mengundi untuk rakyat Sarawak: panduan pengundi kali pertama, carian kawasan, kenyataan setiap parti dan kritikan terhadapnya, perbandingan isu, semakan janji dan undi luar negara. Disusun secara peribadi, tidak rasmi, setiap butiran disertakan sumber.">
+<meta property="og:title" content="Panduan Pengundi Pilihan Raya Negeri Sarawak">
+<meta property="og:description" content="Panduan mengundi untuk rakyat Sarawak: panduan pengundi kali pertama, carian kawasan, kenyataan setiap parti dan kritikan terhadapnya, perbandingan isu, semakan janji dan undi luar negara. Disusun secara peribadi, tidak rasmi, setiap butiran disertakan sumber.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bernard-02.github.io/sarawak-election/ms/">
+<meta property="og:locale" content="ms_MY">
+<link rel="canonical" href="https://bernard-02.github.io/sarawak-election/ms/">
+<link rel="alternate" hreflang="zh-Hant" href="https://bernard-02.github.io/sarawak-election/">
+<link rel="alternate" hreflang="zh-Hans" href="https://bernard-02.github.io/sarawak-election/zh-hans/">
+<link rel="alternate" hreflang="en" href="https://bernard-02.github.io/sarawak-election/en/">
+<link rel="alternate" hreflang="ms" href="https://bernard-02.github.io/sarawak-election/ms/">
+<link rel="alternate" hreflang="x-default" href="https://bernard-02.github.io/sarawak-election/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a tabbed dashboard in the Sarawak flag's black, yellow and red. Black carries the type
+   and the one loud element (the polling-day card with the flag's diagonal bands); yellow marks what
+   the reader has chosen; red is kept for deadlines. Parties are never given a colour. */
+:root{
+  --paper:#F4F3EF; --surface:#FFFFFF; --ink:#111113; --muted:#66645F; --line:#E3E1DA; --chip:#ECEAE3;
+  --accent:#FFD21F; --accent-soft:#FFF3BF; --on-accent:#111113;
+  --red:#C8102E; --red-soft:#FCE9EB; --on-red:#FFFFFF;
+  --hero-bg:#111113; --hero-ink:#FFFFFF; --hero-muted:#B9B7B0; --hero-tile:rgba(255,255,255,.09);
+  --flag-red:#C8102E; --flag-yellow:#FFD21F;
+  --shadow:0 1px 2px rgba(17,17,19,.04),0 10px 28px rgba(17,17,19,.06);
+  --display:"Inter","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --body:"Inter","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --mono:"Inter","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --r:18px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E0E0F; --surface:#19191B; --ink:#F5F4EF; --muted:#A5A39C; --line:#2D2D30; --chip:#262628;
+    --accent:#FFD21F; --accent-soft:#3B3310; --on-accent:#111113;
+    --red:#FF6170; --red-soft:#3A161B; --on-red:#111113;
+    --hero-bg:#202023; --hero-ink:#FFFFFF; --hero-muted:#B9B7B0; --hero-tile:rgba(255,255,255,.08);
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E0E0F; --surface:#19191B; --ink:#F5F4EF; --muted:#A5A39C; --line:#2D2D30; --chip:#262628;
+  --accent:#FFD21F; --accent-soft:#3B3310; --on-accent:#111113;
+  --red:#FF6170; --red-soft:#3A161B; --on-red:#111113;
+  --hero-bg:#202023; --hero-ink:#FFFFFF; --hero-muted:#B9B7B0; --hero-tile:rgba(255,255,255,.08);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{color:var(--red)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.25;letter-spacing:-.01em}
+p{margin:0}
+.num,.count,.dates .d,.seatlist .n,.seatcard .code,.hero .big,.hero-stats .v{font-variant-numeric:tabular-nums}
+.num{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.small{font-size:13.5px;line-height:1.6}
+
+/* header */
+.top{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+@supports (backdrop-filter:blur(8px)) or (-webkit-backdrop-filter:blur(8px)){
+  .top{background:color-mix(in srgb,var(--paper) 82%,transparent);-webkit-backdrop-filter:saturate(1.5) blur(14px);backdrop-filter:saturate(1.5) blur(14px)}
+}
+.top .row1{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding-top:12px}
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-.01em;text-decoration:none;color:var(--ink);margin-right:auto}
+.brand:hover{color:var(--ink)}
+.brand .mark{width:30px;height:30px;border-radius:9px;background:var(--hero-bg);display:grid;place-items:center;flex:none}
+.brand .mark svg{width:20px;height:20px;fill:var(--flag-yellow)}
+.status{display:flex;flex-wrap:wrap;gap:6px}
+.tabs{display:flex;gap:4px;overflow-x:auto;padding:10px 0 12px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:none;font-size:14.5px;font-weight:600;text-decoration:none;color:var(--muted);padding:7px 14px;border-radius:999px;transition:background .15s,color .15s}
+.tabs a:hover{color:var(--ink);background:var(--chip)}
+.tabs a[aria-current="page"]{color:var(--paper);background:var(--ink)}
+
+/* pills */
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:3px 11px;border-radius:999px;white-space:nowrap;text-decoration:none}
+.pill.crit{background:var(--red);color:var(--on-red)}
+.pill.warn{background:var(--accent);color:var(--on-accent)}
+.pill.ok,.pill.plain{background:var(--chip);color:var(--ink)}
+.pill.line{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+a.pill.line:hover{color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+
+/* views */
+.view{display:none;padding:28px 0 56px}
+.view.on{display:block;animation:rise .28s ease-out}
+@keyframes rise{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+.view > .wrap > h1{font-size:clamp(30px,7.5vw,44px);font-weight:900;letter-spacing:-.03em}
+.view > .wrap > h1 .hl{background:var(--accent);color:var(--on-accent);border-radius:10px;padding:0 .18em;margin:0 .06em}
+.view > .wrap > .sub{margin-top:10px;color:var(--muted);max-width:40em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:20px;align-items:start}
+.two{display:grid;gap:18px;margin-top:20px;align-items:start}
+@media (min-width:820px){.two{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}.two.narrow-left{grid-template-columns:minmax(0,4fr) minmax(0,7fr)}.sticky{position:sticky;top:118px}}
+.stack{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.card h3{font-size:18px;font-weight:800}
+.k{font-size:12.5px;font-weight:600;letter-spacing:.06em;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:15px;text-decoration:none;padding:10px 18px;border-radius:999px;background:var(--ink);color:var(--paper);border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{color:var(--paper);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{color:var(--ink);background:var(--chip)}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+
+/* polling-day card: the one loud element */
+.hero{position:relative;overflow:hidden;border-radius:24px;padding:22px;color:var(--hero-ink);min-height:320px;display:flex;flex-direction:column;justify-content:space-between;gap:22px;
+  background:linear-gradient(45deg,transparent 0 80%,var(--flag-red) 80% 88%,var(--flag-yellow) 88% 100%),var(--hero-bg)}
+.hero .k{color:var(--hero-muted)}
+.hero .big{font-size:clamp(68px,20vw,104px);font-weight:900;letter-spacing:-.05em;line-height:.95;color:var(--flag-yellow);margin-top:6px}
+.hero-sub{color:var(--hero-muted);font-size:15px;margin-top:8px}
+.hero .count{display:inline-block;margin-top:14px;background:var(--flag-yellow);color:#111113;font-weight:800;font-size:15px;padding:4px 14px;border-radius:999px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hero-stats > div{background:var(--hero-tile);border-radius:14px;padding:12px 14px}
+.hero-stats .v{font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.2}
+.hero-stats .s{font-size:12.5px;color:var(--hero-muted);line-height:1.5}
+
+/* step links */
+.go-list{display:flex;flex-direction:column;gap:10px}
+.go{display:grid;grid-template-columns:44px 1fr 24px;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+.go:hover{color:var(--ink);transform:translateY(-2px);border-color:var(--ink)}
+.go .n{width:44px;height:44px;border-radius:14px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:900;font-size:19px}
+.go .t{font-weight:800;font-size:18px;line-height:1.3}
+.go .t small{display:block;font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:.04em}
+.go .arr{font-size:20px;font-weight:600}
+
+/* deadline notice */
+.notice{background:var(--red-soft);border-radius:var(--r);padding:18px}
+.notice.done{background:var(--chip)}
+.notice h3{font-size:18px;font-weight:800;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+ol.steps{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:12px}
+ol.steps li::before{content:counter(s);font-weight:800;width:30px;height:30px;border-radius:999px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px}
+
+/* dates */
+.dates{margin:10px 0 0;padding:0;list-style:none}
+.dates li{display:grid;grid-template-columns:60px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line);align-items:baseline}
+.dates li:first-child{border-top:0}
+.dates .d{font-weight:800;font-size:15px}
+.dates li.past{color:var(--muted)}
+.dates li.past .d{text-decoration:line-through;font-weight:600}
+
+/* seat composition bar */
+.bar{display:flex;gap:3px;height:16px;margin-top:14px}
+.bar span{display:block;min-width:10px;border-radius:999px}
+.sw-a{background:var(--ink)}
+.sw-b{background:repeating-linear-gradient(45deg,var(--ink) 0 2px,transparent 2px 5px);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.sw-c{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:14px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
+
+/* constituency finder */
+.field{display:block}
+.field span{display:block;font-size:14px;font-weight:700;margin-bottom:8px}
+input[type="search"]{width:100%;font:inherit;padding:12px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);transition:border-color .15s}
+input[type="search"]:focus{outline:0;border-color:var(--ink);box-shadow:0 0 0 3px var(--accent)}
+.seatlist{margin-top:10px;max-height:300px;overflow-y:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:6px}
+@media (min-width:820px){.seatlist{max-height:520px}}
+.seatlist button{display:grid;grid-template-columns:50px 1fr;gap:8px;width:100%;text-align:left;font:inherit;color:var(--ink);background:transparent;border:0;border-radius:12px;padding:9px 12px;cursor:pointer;align-items:baseline}
+.seatlist button:hover{background:var(--chip)}
+.seatlist button[aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
+.seatlist button[aria-selected="true"] .muted{color:inherit;opacity:.75}
+.seatlist .n{font-weight:800;font-size:14px}
+.seatlist .empty{padding:14px;color:var(--muted)}
+.seatcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.seatcard header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:20px 18px 14px}
+.seatcard header .code{flex:none;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:15px;border-radius:999px;padding:4px 14px}
+.seatcard h3{font-size:30px;font-weight:900;letter-spacing:-.03em;margin-top:2px}
+.seatcard .zh{color:var(--muted);font-size:15px}
+.seatcard dl{margin:0;padding:0 18px 8px}
+.seatcard dl > div{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.seatcard dt{font-size:13.5px;color:var(--muted);font-weight:600}
+.seatcard dd{margin:0}
+.seatcard ul{margin:0;padding-left:1.1em}
+.seatcard .foot{padding:14px 18px;background:var(--chip)}
+
+/* parties */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);box-shadow:var(--shadow);margin-top:20px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px}
+th,td{text-align:left;padding:12px 16px;border-top:1px solid var(--line);vertical-align:top}
+thead th{border-top:0;font-size:12.5px;letter-spacing:.06em;color:var(--muted);font-weight:600;white-space:nowrap}
+tbody th{font-weight:800;white-space:nowrap}
+tbody th small{display:block;font-weight:600;font-size:12px;color:var(--muted)}
+tbody tr{cursor:pointer;transition:background .15s}
+tbody tr:hover{background:var(--chip)}
+tbody tr[aria-selected="true"]{background:var(--accent-soft);box-shadow:inset 5px 0 0 var(--accent)}
+.party{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.party > header{padding:20px 18px;border-bottom:1px solid var(--line)}
+.party > header h3{font-size:24px;font-weight:900;letter-spacing:-.02em}
+.party > header .abbr{display:inline-block;font-size:13px;font-weight:700;letter-spacing:0;background:var(--chip);border-radius:999px;padding:2px 10px;margin-left:8px;vertical-align:3px}
+.party .cols{display:grid;gap:0}
+.party .blk{padding:18px}
+.party .blk + .blk{border-top:1px solid var(--line)}
+@media (min-width:820px){.party .cols{grid-template-columns:repeat(3,1fr)}.party .blk + .blk{border-top:0;border-left:1px solid var(--line)}}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.blk h4{margin:0 0 10px;font-family:var(--body);font-size:12.5px;font-weight:600;letter-spacing:.06em;color:var(--muted)}
+.blk ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.blk li{padding-left:16px;position:relative}
+.blk li::before{content:"";position:absolute;left:0;top:.68em;width:7px;height:7px;background:var(--ink);border-radius:999px}
+.blk.crit li::before{background:transparent;box-shadow:inset 0 0 0 1.5px var(--muted)}
+.src{display:inline-block;font-size:12px;line-height:1.5;color:var(--muted);text-decoration:underline;text-decoration-color:var(--line);text-decoration-thickness:1px;margin-left:4px;white-space:nowrap}
+.src:hover{color:var(--red)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:15px;font-weight:600;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:6px 14px 6px 7px;cursor:pointer;transition:background .15s,border-color .15s}
+.chip:hover{border-color:var(--ink)}
+.chip .box{position:relative;width:22px;height:22px;border:1.5px solid var(--ink);border-radius:7px;flex:none}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+.chip[aria-pressed="true"] .box{border-color:var(--on-accent)}
+.chip[aria-pressed="true"] .box::before,.chip[aria-pressed="true"] .box::after{content:"";position:absolute;left:50%;top:50%;width:15px;height:3px;margin:-1.5px 0 0 -7.5px;background:var(--on-accent);border-radius:2px;transform:rotate(45deg)}
+.chip[aria-pressed="true"] .box::after{transform:rotate(-45deg)}
+.chip.role{padding:6px 14px}
+.chip.role[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.label{font-size:14px;font-weight:700}
+
+/* issues */
+.issue{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.issue > header{padding:16px 18px;border-bottom:1px solid var(--line)}
+.issue > header h3{font-size:20px;font-weight:900;letter-spacing:-.02em}
+.issue .row{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:14px 18px;border-top:1px solid var(--line)}
+.issue .row:first-of-type{border-top:0}
+.issue .row .who{font-weight:800;font-size:14.5px;line-height:1.4}
+.issue .row .who small{display:block;font-weight:600;font-size:12px;color:var(--muted)}
+.issue .row ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.issue .row .none{color:var(--muted);font-size:14px}
+.issue .ctx{padding:14px 18px;background:var(--chip);font-size:14px}
+.nosel{padding:22px;border:1.5px dashed var(--line);border-radius:var(--r);color:var(--muted);text-align:center}
+
+/* misc */
+.todo{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.todo li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+.todo li::before{content:"";width:20px;height:20px;border:1.5px solid var(--ink);border-radius:7px;margin-top:4px}
+.plain-list{margin:12px 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+footer{padding:18px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+@media (max-width:420px){
+  .seatcard dl > div{grid-template-columns:1fr;gap:2px}
+  .issue .row{grid-template-columns:1fr;gap:4px}
+}
+
+/* party badge: abbreviation until an official mark is supplied */
+.badge{width:44px;height:44px;border-radius:12px;background:var(--chip);color:var(--ink);display:grid;place-items:center;font-weight:800;font-size:12px;letter-spacing:.01em;flex:none;overflow:hidden;line-height:1}
+.badge.sm{width:34px;height:34px;border-radius:10px;font-size:10.5px}
+.badge.lg{width:56px;height:56px;border-radius:16px;font-size:14px}
+.badge img{width:100%;height:100%;object-fit:contain;background:#FFFFFF;padding:3px}
+.pname{display:flex;align-items:center;gap:10px}
+.phead{display:flex;align-items:center;gap:14px}
+.phead strong{display:block;font-weight:800;font-size:17px;line-height:1.3}
+.phead small{display:block;font-weight:600;font-size:12px;color:var(--muted)}
+
+/* single-pick chips + role chips */
+.chip.pick{padding:6px 14px}
+.chip.pick[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip .dot{width:9px;height:9px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 1.5px var(--ink);flex:none}
+.chip.role[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.controls{display:grid;gap:18px;margin-top:20px}
+@media (min-width:820px){.controls{grid-template-columns:1fr 1fr 1fr}}
+
+/* side-by-side comparison, one column per party */
+.cmp-title{font-size:26px;font-weight:900;letter-spacing:-.02em;margin-top:28px}
+.swipe-hint{margin-top:6px}
+.cmp{display:grid;grid-auto-flow:column;grid-auto-columns:82%;gap:0 12px;overflow-x:auto;padding:6px 2px 16px;margin:10px -2px 0;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+@media (min-width:560px){.cmp{grid-auto-columns:minmax(236px,1fr)}}
+.col{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);scroll-snap-align:start;overflow:hidden}
+@supports (grid-template-rows:subgrid){
+  .cmp{grid-template-rows:auto auto auto auto}
+  .col{grid-row:1 / span 4;display:grid;grid-template-rows:subgrid}
+}
+.col > header{padding:16px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.col .sec{padding:14px 16px;border-bottom:1px solid var(--line)}
+.col .sec h4{margin:0 0 8px;font-size:12.5px;font-weight:600;letter-spacing:.06em;color:var(--muted)}
+.col .sec ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.col .sec .none{color:var(--muted);font-size:14px}
+.col > footer{padding:12px 16px;font-size:14px;font-weight:700}
+.ctxcard{margin-top:4px;background:var(--chip);border-radius:var(--r);padding:16px 18px;font-size:14.5px}
+
+/* pledge check */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(138px,1fr));gap:10px;margin-top:20px}
+.tile{font:inherit;text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--r);padding:14px;cursor:pointer;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:border-color .15s}
+.tile:hover{border-color:var(--ink)}
+.tile[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.tile b{font-size:36px;font-weight:900;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.tile span{font-size:13.5px;font-weight:600;line-height:1.35;display:flex;gap:8px;align-items:flex-start}
+.tile i{display:block;width:14px;height:14px;border-radius:4px;flex:none;margin-top:2px}
+.bar5{display:flex;gap:3px;height:16px;margin-top:14px}
+.bar5 span{display:block;min-width:10px;border-radius:999px}
+.sw-done{background:var(--ink)}
+.sw-prog{background:var(--accent)}
+.sw-mixed{background:repeating-linear-gradient(45deg,var(--accent) 0 4px,var(--accent-soft) 4px 8px)}
+.sw-not{background:var(--red)}
+.sw-na{background:var(--chip);box-shadow:inset 0 0 0 1.5px var(--line)}
+.sw-all{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.pill.st{white-space:normal;line-height:1.4;border-radius:12px;padding:3px 11px}
+.pill.s-done{background:var(--ink);color:var(--paper)}
+.pill.s-prog{background:var(--accent);color:var(--on-accent)}
+.pill.s-mixed{background:var(--accent-soft);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.pill.s-not{background:var(--red);color:var(--on-red)}
+.pill.s-na{background:var(--chip);color:var(--muted)}
+.pl{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;scroll-margin-top:132px}
+.pl > header{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 18px;align-items:start}
+.pl-n{width:44px;height:44px;border-radius:14px;background:var(--chip);display:grid;place-items:center;font-weight:900;font-size:17px;font-variant-numeric:tabular-nums}
+.pl h3{font-size:18px;font-weight:800;line-height:1.35}
+.pl .ms{font-size:12.5px;color:var(--muted);line-height:1.5;margin-top:2px}
+.pl .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pl .cols{display:grid;border-top:1px solid var(--line)}
+.pl .blk{padding:16px 18px}
+.pl .blk + .blk{border-top:1px solid var(--line)}
+@media (min-width:820px){.pl .cols.split{grid-template-columns:1fr 1fr}.pl .cols.split .blk + .blk{border-top:0;border-left:1px solid var(--line)}}
+.col .sec li .pill{margin-left:2px;vertical-align:1px}
+
+/* first-time voter guide */
+.guide h2{font-size:22px;font-weight:900;letter-spacing:-.02em;margin-top:34px}
+.guide h2 + .grid, .guide h2 + .card, .guide h2 + .two{margin-top:14px}
+.qa h3{font-size:17px;font-weight:800}
+.qa p{margin-top:6px}
+ol.flow{margin:0;padding:0;list-style:none;counter-reset:f;display:flex;flex-direction:column}
+ol.flow li{counter-increment:f;display:grid;grid-template-columns:36px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line);align-items:start}
+ol.flow li:first-child{border-top:0;padding-top:4px}
+ol.flow li::before{content:counter(f);width:36px;height:36px;border-radius:12px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:900;font-size:16px}
+ol.flow b{display:block;font-weight:800}
+dl.gloss{margin:0;display:grid;gap:0}
+dl.gloss > div{display:grid;grid-template-columns:120px 1fr;gap:14px;padding:12px 0;border-top:1px solid var(--line)}
+dl.gloss > div:first-child{border-top:0;padding-top:4px}
+dl.gloss dt{font-weight:800}
+dl.gloss dd{margin:0}
+@media (max-width:420px){dl.gloss > div{grid-template-columns:1fr;gap:2px}}
+
+/* language menu */
+.lang{position:relative}
+.lang-btn{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:13px;font-weight:700;line-height:1.3;color:var(--ink);background:var(--chip);border:0;border-radius:999px;padding:6px 12px 6px 9px;cursor:pointer}
+.lang-btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.lang-menu{display:none;position:absolute;right:0;top:calc(100% + 6px);z-index:6;min-width:172px;padding:6px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.lang.open .lang-menu{display:block}
+.lang-menu a{display:flex;justify-content:space-between;gap:12px;padding:9px 12px;border-radius:9px;font-size:14.5px;font-weight:600;color:var(--ink);text-decoration:none}
+.lang-menu a:hover{background:var(--chip)}
+.lang-menu a[aria-current="true"]{font-weight:800}
+.lang-menu a[aria-current="true"]::after{content:"\2713"}
+@media (min-width:820px){.lang{order:3}}
+/* English and Malay words are longer than Chinese ones */
+body{overflow-wrap:break-word}
+/* long labels wrap instead of pushing the page wider than the screen */
+.src{max-width:100%;white-space:normal}
+.pill{white-space:normal}
+.status .pill{white-space:nowrap}
+.two > *,.grid > *,.stack > *{min-width:0}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="row1">
+      <a class="brand" href="#overview"><span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.50 13.68,7.40 18.75,3.96 16.24,9.55 22.34,10.18 16.83,12.85 21.09,17.25 15.15,15.75 15.59,21.87 12.00,16.90 8.41,21.87 8.85,15.75 2.91,17.25 7.17,12.85 1.66,10.18 7.76,9.55 5.25,3.96 10.32,7.40"/></svg></span>Panduan Pengundi Sarawak</a>
+      <div class="lang"><button type="button" class="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="Language: Bahasa Melayu"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span>BM</span></button><nav class="lang-menu" aria-label="Language"><a href="../" data-href="../" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a><a href="../zh-hans/" data-href="../zh-hans/" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="../en/" data-href="../en/" lang="en" hreflang="en">English</a><a href="../ms/" data-href="../ms/" lang="ms" hreflang="ms" aria-current="true">Bahasa Melayu</a></nav></div>
+      <div class="status">
+        <span class="pill plain" id="hd-count"></span>
+        <a class="pill line" id="hd-seat" href="#seat"></a>
+      </div>
+    </div>
+    <nav class="tabs" aria-label="Bahagian utama">
+      <a href="#overview" data-view="overview">Ringkasan</a>
+      <a href="#guide" data-view="guide">Pengundi kali pertama</a>
+      <a href="#seat" data-view="seat">Kawasan saya</a>
+      <a href="#parties" data-view="parties">Parti</a>
+      <a href="#issues" data-view="issues">Banding isu</a>
+      <a href="#pledges" data-view="pledges">Semakan janji</a>
+      <a href="#overseas" data-view="overseas">Undi luar negara</a>
+      <a href="#about" data-view="about">Tentang</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ 總覽 ============ -->
+<section class="view" id="v-overview">
+  <div class="wrap">
+    <h1>Sebelum pangkah <span class="hl">X</span> di kertas undi, teliti dahulu.</h1>
+    <p class="sub">Panduan pengundi tidak rasmi untuk Pilihan Raya Negeri Sarawak ke-13. Sahkan kawasan anda, lihat siapa yang bertanding, kemudian bandingkan apa yang setiap parti pernah kata dan lakukan tentang perkara yang anda ambil berat. Panduan ini tidak mencadangkan anda mengundi sesiapa.</p>
+
+    <nav class="go-list" style="margin-top:20px" aria-label="Pintu masuk pengundi baharu">
+      <a class="go" href="#guide"><span class="n">?</span><span class="t"><small>Mengundi buat kali pertama, atau kurang biasa dengan pilihan raya Sarawak</small>Baca panduan pengundi kali pertama dahulu</span><span class="arr" aria-hidden="true">→</span></a>
+    </nav>
+
+    <div class="grid">
+      <div class="hero" aria-label="Ringkasan tarikh pilihan raya">
+        <div>
+          <div class="k">Hari mengundi</div>
+          <div class="big">12.12</div>
+          <div class="hero-sub">2026 · Sabtu</div>
+          <div class="count" id="count-poll"></div>
+        </div>
+        <div class="hero-stats">
+          <div><div class="k">Hari penamaan calon</div><div class="v">11.28</div><div class="s">Sabtu · senarai calon disahkan</div></div>
+          <div><div class="k">Kerusi DUN</div><div class="v">82</div><div class="s">42 kerusi untuk majoriti</div></div>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="notice" id="ov-postal">
+          <h3>Permohonan undi pos luar negara <span class="pill crit" data-postal-pill>Tutup 20 Nov</span></h3>
+          <p style="margin-top:6px">Pengundi yang tinggal di luar negara perlu memohon melalui MySPR SPR selewat-lewatnya pada  <b>20 November (Jumaat)</b>.</p>
+          <div class="btnrow"><a class="btn" href="#overseas">Lihat cara memohon</a></div>
+        </div>
+        <div class="card" id="ov-seat"></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <nav class="go-list" aria-label="Mula di sini">
+        <a class="go" href="#seat"><span class="n">1</span><span class="t"><small>Langkah 1</small>Sahkan kawasan saya</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="go" href="#parties"><span class="n">2</span><span class="t"><small>Langkah 2</small>Kenali parti yang bertanding</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="go" href="#issues"><span class="n">3</span><span class="t"><small>Langkah 3</small>Bandingkan mengikut isu yang saya ambil berat</span><span class="arr" aria-hidden="true">→</span></a>
+      </nav>
+
+      <div class="stack">
+        <div class="card">
+          <div class="k">DUN sebelum pembubaran</div>
+          <div class="bar" role="img" aria-label="Kerusi sebelum pembubaran: GPS 79, DAP 2, Bebas 1">
+            <span class="sw-a" style="flex:79"></span><span class="sw-b" style="flex:2"></span><span class="sw-c" style="flex:1"></span>
+          </div>
+          <div class="legend">
+            <span><i class="sw-a"></i>GPS <b class="num">79</b></span>
+            <span><i class="sw-b"></i>DAP <b class="num">2</b></span>
+            <span><i class="sw-c"></i>Bebas <b class="num">1</b></span>
+          </div>
+          <p class="small muted" style="margin-top:10px">Dalam pilihan raya negeri 2021, GPS memenangi 76 kerusi, PSB 4 kerusi dan DAP 2 kerusi.<a class="src" data-s="nst_dom"></a> PSB kemudiannya dibubarkan dan ahlinya menyertai PDP, parti komponen GPS.<a class="src" data-s="tv8_psb"></a> Beberapa penganalisis menjangka GPS akan terus memerintah, dan berpendapat tumpuannya ialah sebesar mana kemenangannya.<a class="src" data-s="star"></a></p>
+        </div>
+        <div class="card">
+          <div class="k">Tarikh penting</div>
+          <ul class="dates" id="date-list"></ul>
+          <p class="small muted" style="margin-top:8px">Tarikh adalah seperti yang diumumkan oleh Suruhanjaya Pilihan Raya (SPR). DUN meluluskan penambahan 17 kerusi pada 2025, tetapi Pengerusi SPR menyatakan ia tidak sempat dilaksanakan untuk pilihan raya ini, maka kali ini masih 82 kerusi.<a class="src" data-s="mk_99"></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 新手指南 ============ -->
+<section class="view guide" id="v-guide">
+  <div class="wrap">
+    <h1>Mengundi buat kali pertama</h1>
+    <p class="sub">Untuk pengundi kali pertama dan mereka yang kurang biasa dengan pilihan raya Sarawak. Fahami dahulu apa yang ditentukan dalam pilihan raya ini, kemudian lihat apa yang perlu anda lakukan.</p>
+
+    <h2>Apa yang ditentukan dalam pilihan raya ini</h2>
+    <div class="grid qa">
+      <div class="card">
+        <h3>Ini pilihan raya negeri, bukan pilihan raya umum</h3>
+        <p>Kali ini anda memilih 82 Ahli Dewan Undangan Negeri (DUN) Sarawak, dan keputusannya menentukan siapa yang membentuk kerajaan negeri. Pilihan raya umum, yang memilih Ahli Parlimen dan menentukan Perdana Menteri, ialah pilihan raya yang berasingan dan bukan sebahagian daripada kali ini.</p>
+      </div>
+      <div class="card">
+        <h3>Anda hanya mengundi di kawasan anda sendiri</h3>
+        <p>Sarawak dibahagikan kepada 82 kawasan DUN, dan setiap kawasan memilih seorang ADUN. Anda menerima satu kertas undi dan memilih seorang calon; calon yang mendapat undi terbanyak di kawasan itu menang.</p>
+      </div>
+      <div class="card">
+        <h3>Siapa yang memerintah</h3>
+        <p>Parti atau gabungan yang memenangi majoriti kerusi (sekurang-kurangnya 42) membentuk kerajaan negeri, dan pemimpinnya menjadi Premier.<a class="src" data-s="wiki26"></a></p>
+      </div>
+      <div class="card">
+        <h3>Apa yang berbeza kali ini</h3>
+        <p>Undi 18 dan pendaftaran pemilih automatik berkuat kuasa pada 15 Disember 2021<a class="src" data-s="g_undi18"></a>, tetapi tidak sempat digunakan untuk pilihan raya negeri lalu yang diadakan tiga hari kemudian<a class="src" data-s="g_2021"></a>. Maka inilah kali pertama mereka yang berumur 18 hingga 20 tahun boleh mengundi dalam pilihan raya negeri Sarawak. Bilangan pemilih meningkat daripada kira-kira 1.25 juta pada pilihan raya lalu kepada 2.059 juta.<a class="src" data-s="g_2021"></a><a class="src" data-s="g_voters"></a></p>
+      </div>
+    </div>
+
+    <h2>Perlukah saya mendaftar dahulu?</h2>
+    <div class="card qa">
+      <p style="margin-top:0">Anda tidak perlu memohon. Warganegara yang berumur 18 tahun ke atas didaftarkan sebagai pemilih secara automatik.<a class="src" data-s="g_undi18"></a> Tetapi anda perlu mengesahkan dua perkara: sama ada nama anda ada dalam daftar pemilih bagi pilihan raya ini, dan di kawasan mana anda didaftarkan. Kedua-duanya tertakluk kepada hasil semakan MySPR Semak SPR.</p>
+      <div class="btnrow">
+        <a class="btn" href="https://mysprsemak.spr.gov.my/semakan/daftarPemilih" target="_blank" rel="noopener">Semak di MySPR Semak</a>
+        <a class="btn ghost" href="#seat">Lihat kawasan saya di sini</a>
+      </div>
+    </div>
+
+    <h2>Sebelum hari mengundi</h2>
+    <div class="card">
+      <ol class="flow">
+        <li><div><b>Semak kawasan dan pusat mengundi</b>Kawasan anda ialah kawasan dalam daftar pemilih, dan tidak semestinya tempat anda tinggal sekarang. MySPR Semak juga memaparkan pusat mengundi anda dan masa mengundi yang disyorkan.<a class="src" data-s="g_ic"></a></div></li>
+        <li><div><b>Lihat siapa yang bertanding di kawasan anda</b>Calon hanya disahkan pada hari penamaan calon, 28 November.<a class="src" data-s="spr"></a> Selepas itu, anda boleh melihatnya di bahagian “Kawasan saya”.</div></li>
+        <li><div><b>Jika anda tiada di Sarawak, tentukan dahulu cara anda mengundi</b>Undi pos perlu dimohon lebih awal dan ada tarikh tutupnya; jika tidak memohon, anda perlu pulang ke pusat mengundi tempat anda didaftarkan pada hari mengundi. Butirannya ada di bahagian “Undi luar negara”.</div></li>
+        <li><div><b>Fikirkan apa yang penting bagi anda</b>Gunakan “Banding isu” untuk melihat pendirian setiap parti secara bersebelahan, atau lihat di “Semakan janji” sejauh mana GPS yang memerintah menunaikan janjinya pada penggal lalu.</div></li>
+      </ol>
+      <div class="btnrow">
+        <a class="btn ghost" href="#overseas">Undi luar negara</a>
+        <a class="btn ghost" href="#issues">Banding isu</a>
+        <a class="btn ghost" href="#pledges">Semakan janji</a>
+      </div>
+    </div>
+
+    <h2>Proses pada hari mengundi</h2>
+    <div class="two">
+      <div class="card">
+        <ol class="flow">
+          <li><div><b>Bawa kad pengenalan ke pusat mengundi</b>Pergi ke pusat mengundi tempat anda didaftarkan dan cari saluran mengundi anda.<a class="src" data-s="g_ic"></a></div></li>
+          <li><div><b>Pengesahan identiti</b>Serahkan kad pengenalan kepada kerani pertama dan tunjukkan kedua-dua belah tangan untuk diperiksa. Kerani akan membacakan nama dan nombor kad pengenalan anda; dengar dan pastikan ia tepat.<a class="src" data-s="g_steps"></a></div></li>
+          <li><div><b>Dakwat kekal</b>Kerani akan meminta anda mencelup jari ke dalam dakwat kekal pilihan raya, sebagai tanda anda telah menerima kertas undi.<a class="src" data-s="g_steps"></a></div></li>
+          <li><div><b>Terima kertas undi</b>Kerani akan menyerahkan satu kertas undi kepada anda.<a class="src" data-s="g_steps"></a></div></li>
+          <li><div><b>Tandakan X</b>Di petak undi, gunakan pen untuk menandakan “X” pada ruang kosong di sebelah nama dan simbol calon pilihan anda. Pilih seorang sahaja.<a class="src" data-s="g_steps"></a></div></li>
+          <li><div><b>Masukkan ke dalam peti undi</b>Lipat kertas undi dan masukkan ke dalam peti undi. Selesai.</div></li>
+        </ol>
+      </div>
+      <div class="stack">
+        <div class="card qa">
+          <h3>Waktu pusat mengundi dibuka</h3>
+          <p>Waktu buka tidak semestinya sama bagi setiap pusat mengundi, maka waktunya tidak disenaraikan di sini. Sebelum keluar, gunakan  <a href="https://mysprsemak.spr.gov.my/semakan/daftarPemilih" target="_blank" rel="noopener">MySPR Semak</a>  SPR untuk menyemak waktu pusat mengundi anda.</p>
+        </div>
+        <div class="card qa">
+          <h3>Peringatan pada hari mengundi</h3>
+          <ul class="plain-list">
+            <li>Kad pengenalan wajib dibawa.<a class="src" data-s="g_ic"></a></li>
+            <li>Telefon bimbit tidak boleh digunakan di saluran mengundi; jika dibawa, letakkannya di tempat yang disediakan.<a class="src" data-s="g_phone"></a></li>
+            <li>Jangan memakai atau membawa pakaian, topi atau pelitup muka yang memaparkan nama atau lambang parti atau calon; anda mungkin tidak dibenarkan masuk ke pusat mengundi.<a class="src" data-s="g_dress"></a></li>
+          </ul>
+          <p class="small muted" style="margin-top:10px">Dua perkara terakhir ialah peringatan yang dikeluarkan SPR untuk pilihan raya lain baru-baru ini. Bagi pilihan raya ini, peraturannya tertakluk kepada pengumuman SPR nanti.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Istilah lazim</h2>
+    <div class="card">
+      <dl class="gloss">
+        <div><dt>DUN</dt><dd>Dewan Undangan Negeri. 82 ahlinya, yang juga dipanggil ADUN, itulah yang anda pilih kali ini.</dd></div>
+        <div><dt>N.09, P.195</dt><dd>Nombor yang bermula dengan N ialah kawasan DUN; yang bermula dengan P ialah kawasan Parlimen. Kali ini hanya nombor N yang berkaitan.</dd></div>
+        <div><dt>GPS, PH</dt><dd>Gabungan parti, masing-masing dianggotai beberapa parti. Gabungan Parti Sarawak (GPS) kini memerintah negeri; Pakatan Harapan (PH) ialah pembangkang di Sarawak.</dd></div>
+        <div><dt>Premier</dt><dd>Ketua kerajaan negeri Sarawak. Bukan Perdana Menteri Malaysia.</dd></div>
+        <div><dt>Hari penamaan calon</dt><dd>Hari calon mengemukakan pencalonan secara rasmi. Hanya pada hari itu dapat dipastikan siapa yang bertanding di setiap kawasan.</dd></div>
+        <div><dt>Majoriti</dt><dd>Beza undi antara pemenang dengan calon di tempat kedua. Semakin kecil angkanya, semakin sengit persaingan pada pilihan raya lalu.</dd></div>
+        <div><dt>MA63</dt><dd>Perjanjian Malaysia 1963. Sarawak sering merujuk kepadanya apabila menuntut autonomi dan hak ke atas sumbernya.</dd></div>
+        <div><dt>NCR</dt><dd>Tanah hak adat bumiputera, iaitu tanah yang dimiliki masyarakat bumiputera mengikut adat mereka.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 我的選區 ============ -->
+<section class="view" id="v-seat">
+  <div class="wrap">
+    <h1>Kawasan saya</h1>
+    <p class="sub">Kawasan anda ialah kawasan dalam daftar pemilih, dan tidak semestinya tempat anda tinggal sekarang. Sahkan dahulu melalui semakan rasmi SPR, kemudian kembali ke sini untuk memilihnya.</p>
+    <div class="two">
+      <div class="stack">
+        <div class="card">
+          <h3>Langkah 1: Semak di sistem rasmi</h3>
+          <p style="margin-top:6px">MySPR Semak ialah sistem semakan SPR. Masukkan nombor kad pengenalan untuk melihat kawasan DUN dan pusat mengundi tempat anda didaftarkan.</p>
+          <div class="btnrow"><a class="btn" href="https://mysprsemak.spr.gov.my/semakan/daftarPemilih" target="_blank" rel="noopener">Buka MySPR Semak</a></div>
+          <p class="small muted" style="margin-top:10px">Masukkan nombor kad pengenalan di laman rasmi SPR sahaja. Halaman ini tidak meminta dan tidak menyimpan sebarang data peribadi.</p>
+        </div>
+        <div>
+          <label class="field" for="seat-q"><span>Langkah 2: Cari kawasan anda antara 82 kawasan DUN</span>
+            <input id="seat-q" type="search" inputmode="search" autocomplete="off" placeholder="Nombor atau nama, cth. 54 atau Pelawan">
+          </label>
+          <div class="seatlist" id="seat-list" role="listbox" aria-label="Senarai kawasan DUN"></div>
+        </div>
+      </div>
+      <div class="sticky">
+        <article class="seatcard" id="seat-card" aria-live="polite"></article>
+        <p class="small muted" style="margin-top:10px">Rujuk nombor dan nama rasmi kawasan. Nama ADUN dan jumlah undi 2021 disusun daripada Wikipedia<a class="src" data-s="wiki26"></a><a class="src" data-s="wiki21"></a>; jika ada perbezaan, rekod SPR diguna pakai.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 政黨 ============ -->
+<section class="view" id="v-parties">
+  <div class="wrap">
+    <h1>Parti</h1>
+    <p class="sub">Disusun mengikut bilangan kerusi sebelum pembubaran; parti tanpa kerusi disusun mengikut abjad singkatannya. Pilih satu baris untuk butiran. Setiap parti menggunakan tiga ruangan yang sama: perkembangan terkini, pendirian mereka, serta rekod dan kritikan pihak luar.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th scope="col">Parti atau gabungan</th><th scope="col">Kedudukan</th><th scope="col">Kerusi sebelum pembubaran</th><th scope="col">Bertanding kali ini (setakat 19 Nov)</th></tr></thead>
+        <tbody id="party-rows"></tbody>
+      </table>
+    </div>
+    <div style="margin-top:14px" id="party-panel" aria-live="polite"></div>
+    <div class="card" style="margin-top:14px">
+      <h3>Lain-lain</h3>
+      <p style="margin-top:6px">Barisan Nasional (BN) telah mengesahkan tidak bertanding.<a class="src" data-s="mk_bn"></a> Parti kecil seperti Aspirasi juga telah menyatakan rancangan untuk bertanding.<a class="src" data-s="od_82"></a> Sama ada dan di mana setiap parti akhirnya bertanding hanya dapat dipastikan pada hari penamaan calon, 28 November.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 議題對照 ============ -->
+<section class="view" id="v-issues">
+  <div class="wrap">
+    <h1>Banding isu</h1>
+    <p class="sub">Pilih satu isu dan bandingkan pendirian setiap parti secara bersebelahan, seperti membandingkan pelan. Halaman ini tidak akan mengira “siapa yang patut anda undi”.</p>
+
+    <div class="card controls">
+      <div>
+        <p class="label" id="role-label">Saya…</p>
+        <div class="chips" id="role-chips" role="group" aria-labelledby="role-label"></div>
+        <p class="small muted" style="margin-top:8px">Pilih satu, dan titik kuning akan menandakan isu yang mungkin anda ambil berat.</p>
+      </div>
+      <div>
+        <p class="label" id="issue-label">Isu untuk dibandingkan</p>
+        <div class="chips" id="issue-chips" role="group" aria-labelledby="issue-label"></div>
+      </div>
+      <div>
+        <p class="label" id="pc-label">Parti untuk dibandingkan</p>
+        <div class="chips" id="party-chips" role="group" aria-labelledby="pc-label"></div>
+      </div>
+    </div>
+
+    <div id="cmp-head" aria-live="polite"></div>
+    <p class="small muted swipe-hint">Leret ke kiri dan kanan untuk melihat semua parti. Untuk membandingkan dua atau tiga parti dengan teliti, buang tanda X pada yang lain.</p>
+    <div class="cmp" id="cmp"></div>
+    <div id="cmp-ctx"></div>
+    <p class="small muted" style="margin-top:14px;max-width:46em">Gabungan yang memerintah mempunyai rekod pentadbiran yang boleh disemak, manakala parti pembangkang tidak, maka ruangannya tidak akan sama penuh. Ini tidak menggambarkan sebarang kecenderungan. Kebanyakan parti belum menerbitkan manifesto 2026; ruangan kosong akan diisi selepas manifesto diterbitkan.</p>
+  </div>
+</section>
+
+<!-- ============ 承諾查核 ============ -->
+<section class="view" id="v-pledges">
+  <div class="wrap">
+    <h1>Semakan janji</h1>
+    <p class="sub">Manifesto GPS bagi pilihan raya negeri 2021 mengandungi 34 janji<a class="src" data-s="p_list"></a>; Premier ketika itu berkata ia akan dilaksanakan dalam tempoh lima tahun<a class="src" data-s="p_5yrs"></a>. Halaman ini menyemak setiap janji dengan rekod awam untuk melihat sejauh mana ia telah dilaksanakan.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="k">Baca hadnya dahulu</div>
+        <ul class="plain-list">
+          <li>Kesemua 34 janji ialah tajuk yang umum. Susunan ini hanya memperoleh tajuknya, bukan butiran dalam buku manifesto, maka setiap janji disemak dengan data dan laporan awam yang dapat ditemui.</li>
+          <li>Setiap penilaian ialah pertimbangan penyusun, bukan markah rasmi. Sumber disertakan di sebelah setiap butiran; sila semak sendiri.</li>
+          <li>Hanya GPS yang memerintah disemak, kerana hanya parti pemerintah mempunyai kuasa untuk melaksanakan manifestonya. Manifesto pembangkang tidak berpeluang dilaksanakan dan tidak boleh diukur dengan kayu ukur yang sama.</li>
+          <li>Kesihatan, pertahanan dan kewarganegaraan kebanyakannya di bawah bidang kuasa Persekutuan, maka apa yang boleh dilakukan kerajaan negeri adalah terhad. Butiran berkenaan ditandakan.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="k">Dapatan tinjauan masyarakat sivil</div>
+        <p style="margin-top:10px">Tinjauan awam yang diterbitkan pada Disember 2024 oleh pertubuhan masyarakat sivil Rise of Social Efforts (ROSE) mendapati 9 daripada 34 janji dinilai tidak memuaskan, dan 3 daripadanya sangat tidak memuaskan: no. 4 (tanah adat), no. 14 (telekomunikasi) dan no. 15 (ekonomi luar bandar). ROSE menegaskan bahawa dapatan itu tidak wajar dianggap sebagai keputusan muktamad.<a class="src" data-s="p_rose"></a></p>
+        <p class="small muted" style="margin-top:8px">Laporan asal tidak dapat dibaca sepenuhnya, maka hanya 4 butiran yang disahkan dalam ringkasan laporan ditandakan di bawah.</p>
+      </div>
+    </div>
+
+    <p class="label" style="margin-top:26px">Pilih satu petak untuk menapis</p>
+    <div class="tiles" id="pl-tiles" role="group" aria-label="Tapis mengikut status"></div>
+    <div class="bar5" id="pl-bar" role="img"></div>
+    <p class="small muted" style="margin-top:10px;max-width:46em">Hasilnya sengaja tidak dijadikan satu peratusan. Berat 34 janji itu sangat berbeza, dan “ada kemajuan” tidak bermaksud “selesai”.</p>
+
+    <p class="small muted" id="pl-rubric" style="margin-top:18px;max-width:46em"></p>
+    <div class="stack" id="pl-list" style="margin-top:14px" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ 海外投票 ============ -->
+<section class="view" id="v-overseas">
+  <div class="wrap">
+    <h1>Undi luar negara</h1>
+    <p class="sub">Jika anda berada di luar negara, ada dua cara: memohon undi pos, atau pulang ke pusat mengundi anda dan mengundi sendiri pada hari mengundi.</p>
+    <div class="two">
+      <div class="notice" id="postal-box">
+        <h3>Undi pos luar negara (Kategori 1B)<span class="pill crit" data-postal-pill>Tutup 20 Nov</span></h3>
+        <p style="margin-top:8px">Tempoh permohonan ialah dari 26 Oktober hingga  <b>20 November (Jumaat)</b>. Halaman SPR tidak menyatakan pukul berapa permohonan ditutup pada hari itu, maka jangan tunggu hingga saat akhir.</p>
+        <ol class="steps">
+          <li><div>Daftar akaun di portal MySPR SPR.</div></li>
+          <li><div>Log masuk dan mohon undi pos, pilih Kategori 1B (luar negara).</div></li>
+          <li><div>Halaman permohonan SPR tidak menerangkan cara kertas undi dihantar kepada anda atau cara mengembalikannya. Ikuti makluman SPR, atau tanya terus unit undi pos: upup@spr.gov.my / +603 8892 7080.</div></li>
+        </ol>
+        <div class="btnrow">
+          <a class="btn" href="https://myspr.spr.gov.my/login" target="_blank" rel="noopener">Mohon di MySPR</a>
+          <a class="btn ghost" href="https://spr.gov.my/permohonan-undi-pos-bagi-prudun-sarawak-ke13/" target="_blank" rel="noopener">Makluman rasmi SPR</a>
+        </div>
+        <p class="small muted" style="margin-top:12px">Kelayakan dan butiran tertakluk kepada pengumuman SPR.</p>
+      </div>
+      <div class="stack">
+        <div class="card">
+          <h3>Jika tidak memohon undi pos</h3>
+          <p style="margin-top:6px">Anda perlu mengundi sendiri di pusat mengundi anda pada 12 Disember. Lokasinya boleh disemak di MySPR Semak SPR.</p>
+          <div class="btnrow"><a class="btn ghost" href="https://mysprsemak.spr.gov.my/semakan/daftarPemilih" target="_blank" rel="noopener">Semak pusat mengundi saya</a></div>
+        </div>
+        <div class="card">
+          <h3>Sebelum pulang mengundi</h3>
+          <p style="margin-top:6px">Sahkan kawasan anda dahulu, kemudian lihat siapa yang bertanding di situ.</p>
+          <div class="btnrow"><a class="btn ghost" href="#seat">Sahkan kawasan saya</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 關於 ============ -->
+<section class="view" id="v-about">
+  <div class="wrap">
+    <h1>Tentang panduan ini</h1>
+    <div class="grid">
+      <div class="card">
+        <div class="k">Prinsip</div>
+        <ul class="plain-list">
+          <li>Bahan tidak rasmi yang disusun oleh individu. Tidak bernaung di bawah mana-mana parti dan tidak mencadangkan anda mengundi sesiapa.</li>
+          <li>Setiap kenyataan disertakan pautan sumber. Bagi kritikan, dinyatakan siapa yang membuatnya.</li>
+          <li>Maklumat dikumpul dan disusun dengan bantuan Claude (AI) dan mungkin ada kekurangan. Bagi tarikh, kawasan, calon dan cara mengundi, pengumuman SPR sentiasa diguna pakai.</li>
+          <li>Jika menemui kesilapan, beritahu orang yang berkongsi halaman ini dengan anda, atau  <a href="https://github.com/Bernard-02/sarawak-election/issues" target="_blank" rel="noopener">laporkan di GitHub</a>.</li>
+          <li>Fail sumber dan rekod setiap perubahan terbuka kepada umum di  <a href="https://github.com/Bernard-02/sarawak-election" target="_blank" rel="noopener">GitHub</a>.</li>
+          <li>Edisi bahasa Melayu ini diterjemah daripada edisi asal bahasa Cina tradisional dengan bantuan AI. Jika terdapat perbezaan, edisi asal bahasa Cina menjadi rujukan. Banyak sumber yang dipautkan ialah laporan berita berbahasa Cina.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="k">Akan ditambah</div>
+        <ul class="todo">
+          <li><div><b>Senarai calon GPS</b><br><span class="muted">GPS dijangka mengumumkan calon bagi kesemua 82 kerusi pada 25 November.</span><a class="src" data-s="tv8"></a></div></li>
+          <li><div><b>Calon rasmi setiap kawasan</b><br><span class="muted">Dikemas kini mengikut kawasan selepas hari penamaan calon pada 28 November.</span></div></li>
+          <li><div><b>Manifesto 2026 setiap parti</b><br><span class="muted">Selepas diterbitkan, ia akan disusun dalam format yang sama dan dimasukkan ke dalam perbandingan isu.</span></div></li>
+        </ul>
+      </div>
+    </div>
+    <details class="card" style="margin-top:14px">
+      <summary style="cursor:pointer;font-weight:700">Semua sumber</summary>
+      <ul id="src-list" class="small plain-list"></ul>
+    </details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><p>Panduan Pengundi Pilihan Raya Negeri Sarawak · Tidak rasmi · Kemas kini terakhir <span class="num">2026-11-19</span><br>Edisi bahasa Melayu ini diterjemah daripada edisi asal bahasa Cina tradisional dengan bantuan AI. Jika terdapat perbezaan, edisi asal bahasa Cina menjadi rujukan. Banyak sumber yang dipautkan ialah laporan berita berbahasa Cina.</p></div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- sources ---------- */
+var SRC = {
+  spr_post:{t:"SPR | Permohonan undi pos",u:"https://spr.gov.my/permohonan-undi-pos-bagi-prudun-sarawak-ke13/"},
+  spr:{t:"Laman web SPR",u:"https://www.spr.gov.my/"},
+  semak:{t:"MySPR Semak SPR",u:"https://mysprsemak.spr.gov.my/semakan/daftarPemilih"},
+  ukas_diss:{t:"Kerajaan Sarawak (UKAS) | Pembubaran DUN",u:"https://ukas.sarawak.gov.my/web/subpage/news_view/51579"},
+  mk_99:{t:"Malaysiakini 2026-09-24",u:"https://www.malaysiakini.com/news/885654-%E7%A0%82%E9%80%89%E5%8C%BA%E9%87%8D%E5%88%92%E6%96%992%E6%9C%88%E5%90%8E%E6%96%B9%E5%AE%8C%E6%88%90%E6%96%B0%E5%B8%AD%E6%9C%AA%E8%83%BD%E5%9C%A8%E5%8D%B3%E4%B8%B4%E5%B7%9E%E9%80%89%E8%90%BD%E5%AE%9E"},
+  mk_bn:{t:"Malaysiakini 2026-11",u:"https://www.malaysiakini.com/news/889172-%E5%9B%BD%E9%98%B5%E4%B8%8D%E5%8F%82%E4%B8%8E%E7%A0%82%E9%80%89%E4%B8%BE%E5%9B%BD%E7%9B%9F%E4%B8%8D%E6%8E%92%E9%99%A4%E4%B9%9F%E5%BC%83%E6%88%98"},
+  nst_dom:{t:"NST 2026-10-26",u:"https://www.nst.com.my/amp/news/nation/2026/10/1563901/sarawak-election-can-gps-maintain-its-overwhelming-dominance"},
+  star:{t:"The Star 2026-11-02",u:"https://www.thestar.com.my/news/nation/2026/11/02/sarawak-election-less-about-power-shift-more-a-popularity-test-for-abang-johari-says-analysts"},
+  scmp:{t:"South China Morning Post 2026-11-06",u:"https://www.scmp.com/week-asia/politics/article/3373494/malaysias-sarawak-locks-election-date-amid-autonomy-resource-control-push"},
+  od_gps82:{t:"Oriental Daily 2026-10-28",u:"https://www.orientaldaily.com.my/news/east-malaysia/2026/10/28/858665"},
+  od_manifesto:{t:"Oriental Daily 2026-11-04",u:"https://www.orientaldaily.com.my/news/stories/2026/11/04/860418"},
+  od_gps_unity:{t:"Oriental Daily 2026-11-15",u:"https://www.orientaldaily.com.my/news/east-malaysia/2026/11/15/863233"},
+  od_sim:{t:"Oriental Daily 2026-11-18",u:"https://www.orientaldaily.com.my/news/east-malaysia/2026/11/18/864071"},
+  tv8:{t:"Berita 8TV 2026-11-18",u:"https://www.8tvnews.my/localnews/shameng25rigongbu82houxuanren-liaoxinjiumiankongdapeiyingzhanzhouxuan/"},
+  premier:{t:"Jabatan Premier Sarawak",u:"https://premierdept.sarawak.gov.my/web/subpage/news_view/11417"},
+  mm_fte:{t:"Malay Mail 2024-09-15",u:"https://www.malaymail.com/news/malaysia/2024/09/15/sarawaks-bid-to-become-malaysias-bavaria-abang-joharis-vision-for-economic-growth/150481"},
+  mm_2021:{t:"Malay Mail 2021-12-08",u:"https://www.malaymail.com/news/malaysia/2021/12/08/gps-launches-34-point-manifesto-to-benefit-sarawakians/2027033"},
+  land:{t:"Jabatan Tanah dan Survei Sarawak 2026-02-10",u:"https://landsurvey.sarawak.gov.my/web/subpage/news_view/1857"},
+  bernama_awang:{t:"Bernama 2026-10-25",u:"https://www.bernama.com/en/region/news.php?id=2625462"},
+  sun_willie:{t:"The Sun (melalui Newswav) 2026-11-11",u:"https://newswav.com/article/sarawak-incumbent-reps-told-to-show-report-cards-A2611_Prm1b2"},
+  st_novel:{t:"Sarawak Tribune 2026-11",u:"https://www.sarawaktribune.com/gps-must-prove-mandate-has-improved-lives-says-analyst/"},
+  fulcrum:{t:"Fulcrum 2026-04",u:"https://fulcrum.sg/sarawaks-delineation-a-test-for-the-election-commissions-credibility/"},
+  od_dap7:{t:"Oriental Daily 2026-11-01",u:"https://www.orientaldaily.com.my/news/nation/2026/11/01/859593"},
+  od_dap6:{t:"Oriental Daily 2026-11-17",u:"https://www.orientaldaily.com.my/news/east-malaysia/2026/11/17/863756"},
+  od_dap_zero:{t:"Oriental Daily 2026-04-18",u:"https://www.orientaldaily.com.my/news/east-malaysia/2026/04/18/812322"},
+  od_multi:{t:"Oriental Daily 2026-11-10",u:"https://www.orientaldaily.com.my/news/east-malaysia/2026/11/10/861863"},
+  tmi_dap:{t:"The Malaysian Insight 2024-12",u:"https://www.themalaysianinsight.com/chinese/s/488884"},
+  sun_term:{t:"The Sun",u:"https://thesun.my/news/malaysia-news/politics/sarawak-opposition-urges-two-term-limit-for-premier-post/"},
+  fmt_dap:{t:"FMT 2026-01-17",u:"https://fmtv5.freemalaysiatoday.com/category/nation/2026/01/17/strong-opposition-narrative-not-enough-to-woo-sarawakians-dap-told"},
+  bp_pkr:{t:"Borneo Post 2026-11-06",u:"https://www.theborneopost.com/2026/11/06/pkr-confirms-will-contest-sarawak-polls-still-deliberating-on-seats/"},
+  st_pbds:{t:"Sarawak Tribune 2026-11-15",u:"https://www.sarawaktribune.com/pbds-manifesto-irrelevant-to-state-coalition/"},
+  bp_pbds37:{t:"Borneo Post 2026-09-19",u:"https://www.theborneopost.com/2026/09/19/pbds-eyes-up-to-37-seats-in-next-state-election/"},
+  bp_pbds_tu:{t:"Borneo Post 2026-11-17",u:"https://www.theborneopost.com/2026/11/17/pbds-candidate-set-to-become-first-woman-to-contest-telang-usan/"},
+  dd_pbk:{t:"DayakDaily 2026-11-04",u:"https://dayakdaily.com/pbk-yet-to-decide-on-contesting-sarawak-election-2026/"},
+  bp_pbk:{t:"Borneo Post 2026-11-03",u:"https://www.theborneopost.com/2026/11/03/pbk-expected-to-contest-sarawak-election-but-seat-allocation-and-voons-candidacy-remain-undecided/"},
+  bp_pbk_tag:{t:"Borneo Post 2026-11-13",u:"https://www.theborneopost.com/tag/parti-bumi-kenyalang/"},
+  od_pas:{t:"Oriental Daily 2026-10-24",u:"https://www.orientaldaily.com.my/news/east-malaysia/2026/10/24/857678"},
+  od_pn:{t:"Oriental Daily 2026-11-16",u:"https://www.orientaldaily.com.my/news/nation/2026/11/16/863402"},
+  sun_pas:{t:"The Sun",u:"https://thesun.my/news/malaysia-news/politics/pbb-dismisses-pas-sarawak-election-expansion-claims/"},
+  od_82:{t:"Oriental Daily 2026-11-07",u:"https://www.orientaldaily.com.my/news/east-malaysia/2026/11/07/861190"},
+  tv8_psb:{t:"Berita 8TV 2026-11-06",u:"https://www.8tvnews.my/localnews/shalayuexuanjuriqichulu-1128timing1212toupiao/"},
+  atv:{t:"ATV News 2026-10-28",u:"https://atvnewsonline.com/world/%E3%80%90%E7%A0%82%E6%8B%89%E8%B6%8A%E9%80%89%E4%B8%BE%E3%80%91%E9%98%BF%E9%82%A6%E4%BD%90%E5%93%88%E9%87%8C%EF%BC%9A%E7%A0%82%E6%94%BF%E7%9B%9F%E7%AB%9E%E9%80%90%E5%85%A8%E9%83%A882%E5%B8%AD/"},
+  premier_jepak:{t:"Pejabat Premier Sarawak 2023-11-05",u:"https://premier.sarawak.gov.my/web/subpage/news_view/5652"},
+  wiki26:{t:"Wikipedia (bahasa Inggeris): Pilihan raya negeri Sarawak 2026",u:"https://en.wikipedia.org/wiki/2026_Sarawak_state_election"},
+  wiki21:{t:"Wikipedia (bahasa Cina): Pilihan raya negeri Sarawak 2021",u:"https://zh.wikipedia.org/wiki/2021%E5%B9%B4%E7%A0%82%E6%8B%89%E8%B6%8A%E5%B7%9E%E9%80%89%E4%B8%BE"}
+};
+
+/* ---------- constituencies: [no, name, zh, parliament, incumbent, party, 2021 majority] ---------- */
+var SEATS = [
+[1,"Opar","","P192 Mas Gading","Billy Sujang","SUPP",1689],
+[2,"Tasik Biru","","P192 Mas Gading","Henry Harry Jinep","PDP",4212],
+[3,"Tanjong Datu","","P193 Santubong","Azizul Annuar Adenan","PBB",4502],
+[4,"Pantai Damai","","P193 Santubong","Abdul Rahman Junaidi","PBB",8381],
+[5,"Demak Laut","","P193 Santubong","Hazland Abang Hipni","PBB",6399],
+[6,"Tupong","","P194 Petra Jaya","Fazzrudin Abdul Rahman","PBB",11209],
+[7,"Samariang","","P194 Petra Jaya","Sharifah Hasidah Sayeed Aman Ghazali","PBB",10283],
+[8,"Satok","","P194 Petra Jaya","Ibrahim Baki","PBB",6033],
+[9,"Padungan","","P195 Bandar Kuching","Chong Chieng Jen","DAP",1198],
+[10,"Pending","","P195 Bandar Kuching","Violet Yong Wui Wui","DAP",540],
+[11,"Batu Lintang","","P195 Bandar Kuching","See Chee How","IND",93],
+[12,"Kota Sentosa","","P196 Stampin","Wilfred Yap Yau Sin","SUPP",1683],
+[13,"Batu Kitang","","P196 Stampin","Lo Khere Chiang","SUPP",4163],
+[14,"Batu Kawah","","P196 Stampin","Sim Kui Hian","SUPP",5393],
+[15,"Asajaya","","P197 Kota Samarahan","Abdul Karim Rahman Hamzah","PBB",4531],
+[16,"Muara Tuang","","P197 Kota Samarahan","Idris Buang","PBB",6237],
+[17,"Stakan","","P197 Kota Samarahan","Hamzah Brahim","PBB",5807],
+[18,"Serembu","","P198 Puncak Borneo","Miro Simuh","PBB",1650],
+[19,"Mambong","","P198 Puncak Borneo","Jerip Susil","PBB",3071],
+[20,"Tarat","","P198 Puncak Borneo","Roland Sagah Wee Inn","PBB",5008],
+[21,"Tebedu","","P199 Serian","Simon Sinang Bada","PBB",3273],
+[22,"Kedup","","P199 Serian","Martin Ben","PBB",3566],
+[23,"Bukit Semuja","","P199 Serian","John Ilus","PBB",4705],
+[24,"Sadong Jaya","","P200 Batang Sadong","Aidel Lariwoo","PBB",3877],
+[25,"Simunjan","","P200 Batang Sadong","Awla Dris","PBB",3351],
+[26,"Gedong","","P200 Batang Sadong","Abang Johari Tun Openg","PBB",3607],
+[27,"Sebuyau","","P201 Batang Lupar","Julaihi Narawi","PBB",4134],
+[28,"Lingga","","P201 Batang Lupar","Dayang Noorazah Awang Sohor","PBB",2273],
+[29,"Beting Maro","","P201 Batang Lupar","Razaili Gapor","PBB",1711],
+[30,"Balai Ringin","","P202 Sri Aman","Snowdan Lawan","PRS",1285],
+[31,"Bukit Begunan","","P202 Sri Aman","Mong Dagang","PRS",1402],
+[32,"Simanggang","","P202 Sri Aman","Francis Harden Hollis","SUPP",175],
+[33,"Engkilili","","P203 Lubok Antu","Johnical Rayong Ngipa","PDP",1191],
+[34,"Batang Ai","","P203 Lubok Antu","Malcom Mussen Lamoh","PRS",738],
+[35,"Saribas","","P204 Betong","Ricky @ Mohamad Razi Sitam","PBB",3236],
+[36,"Layar","","P204 Betong","Gerald Rentap Jabu","PBB",2039],
+[37,"Bukit Saban","","P204 Betong","Douglas Uggah Embas","PBB",3988],
+[38,"Kalaka","","P205 Saratok","Mohamad Duri","PBB",2868],
+[39,"Krian","","P205 Saratok","Friday Belik","PDP",932],
+[40,"Kabong","","P205 Saratok","Mohd Chee Kadir","PBB",2763],
+[41,"Kuala Rajang","","P206 Tanjong Manis","Len Talif Salleh","PBB",3325],
+[42,"Semop","","P206 Tanjong Manis","Abdullah Saidol","PBB",3158],
+[43,"Daro","","P207 Igan","Safiee Ahmad","PBB",5112],
+[44,"Jemoreng","","P207 Igan","Juanda Jaya","PBB",5012],
+[45,"Repok","","P208 Sarikei","Huang Tiong Sii","SUPP",7308],
+[46,"Meradong","","P208 Sarikei","Ding Kuong Hiing","SUPP",3362],
+[47,"Pakan","","P209 Julau","William Mawan Ikom","PBB",714],
+[48,"Meluan","","P209 Julau","Rolland Duat Jubin","PDP",822],
+[49,"Ngemah","","P210 Kanowit","Anyi Jana","PRS",261],
+[50,"Machan","","P210 Kanowit","Allan Siden Gramong","PBB",2089],
+[51,"Bukit Assek","","P211 Lanang","Chieng Jin Ek","SUPP",874],
+[52,"Dudong","","P211 Lanang","Tiong King Sing","PDP",5806],
+[53,"Bawang Assan","","P212 Sibu","Wong Soon Koh","PDP",913],
+[54,"Pelawan","","P212 Sibu","Michael Tiang Ming Tee","SUPP",100],
+[55,"Nangka","","P212 Sibu","Annuar Rapaee","PBB",10804],
+[56,"Dalat","","P213 Mukah","Fatimah Abdullah","PBB",6625],
+[57,"Tellian","","P213 Mukah","Royston Valentine","PBB",2917],
+[58,"Balingian","","P213 Mukah","Abdul Yakub Arbi","PBB",2904],
+[59,"Tamin","","P214 Selangau","Christopher Gira Sambang","PRS",3588],
+[60,"Kakus","","P214 Selangau","John Sikie Tayai","PRS",1897],
+[61,"Pelagus","","P215 Kapit","Wilson Nyabong Ijang","PRS",1049],
+[62,"Katibas","","P215 Kapit","Lidam Assan","PBB",2997],
+[63,"Bukit Goram","","P215 Kapit","Jefferson Jamit Unyat","PBB",3538],
+[64,"Baleh","","P216 Hulu Rajang","Nicholas Kudi Jantai Masing","PRS",1909],
+[65,"Belaga","","P216 Hulu Rajang","Liwan Lagang","PRS",2245],
+[66,"Murum","","P216 Hulu Rajang","Kennedy Chukpai Ugon","PRS",2919],
+[67,"Jepak","","P217 Bintulu","Iskandar Turkee","PBB",4243],
+[68,"Tanjong Batu","","P217 Bintulu","Johnny Pang Leong Ming","SUPP",23],
+[69,"Kemena","","P217 Bintulu","Stephen Rundi Utom","PBB",3611],
+[70,"Samalaju","","P217 Bintulu","Majang Renggi","PRS",6043],
+[71,"Bekenu","","P218 Sibuti","Rosey Yunus","PBB",5397],
+[72,"Lambir","","P218 Sibuti","Ripin Lamat","PBB",5562],
+[73,"Piasau","","P219 Miri","Sebastian Ting Chiew Yew","SUPP",4988],
+[74,"Pujut","","P219 Miri","Adam Yii Siew Sang","SUPP",1566],
+[75,"Senadin","","P219 Miri","Lee Kim Shin","SUPP",7591],
+[76,"Marudi","","P220 Baram","Penguang Manggil","PDP",5976],
+[77,"Telang Usan","","P220 Baram","Dennis Ngau","PBB",2422],
+[78,"Mulu","","P220 Baram","Gerawat Gala","PBB",2875],
+[79,"Bukit Kota","","P221 Limbang","Abdul Rahman Ismail","PBB",4986],
+[80,"Batu Danau","","P221 Limbang","Paulus Palu Gumbang","PBB",706],
+[81,"Ba'kelalan","","P222 Lawas","Baru Bian","PDP",680],
+[82,"Bukit Sari","","P222 Lawas","Awang Tengah Ali Hasan","PBB",5636]
+];
+var PARTY_LABEL = {
+  PBB:"PBB (GPS)", SUPP:"SUPP (GPS)", PRS:"PRS (GPS)", PDP:"PDP (GPS)",
+  DAP:"DAP (PH)", IND:"Bebas"
+};
+var SEAT_NOTE = {
+  11:{x:"Menang pada 2021 atas tiket Parti Sarawak Bersatu (PSB), kemudian keluar parti dan menjadi ADUN Bebas, dan memohon menyertai SUPP pada Oktober.",s:["tv8_psb","atv"]},
+  33:{x:"Menang pada 2021 atas tiket Parti Sarawak Bersatu (PSB). Parti itu kemudiannya dibubarkan dan ahlinya menyertai PDP.",s:["tv8_psb"]},
+  53:{x:"Menang pada 2021 atas tiket Parti Sarawak Bersatu (PSB). Parti itu kemudiannya dibubarkan dan ahlinya menyertai PDP.",s:["tv8_psb"]},
+  81:{x:"Menang pada 2021 atas tiket Parti Sarawak Bersatu (PSB). Parti itu kemudiannya dibubarkan dan ahlinya menyertai PDP.",s:["tv8_psb"]},
+  67:{x:"Majoriti ialah angka 2021. ADUN semasa menang dalam pilihan raya kecil 2023.",s:["premier_jepak"]}
+};
+var DAP_SEATS = [1,2,9,10,12,13,14];
+var DECLARED = {};
+function declare(n, x, s){ (DECLARED[n] = DECLARED[n] || []).push({x:x,s:s}); }
+DAP_SEATS.forEach(function(n){ declare(n,"DAP (PH): mengumumkan pada 1 November akan bertanding di kerusi ini.",["od_dap7"]); });
+declare(11,"DAP (PH): mengesahkan pada 17 November akan bertanding di kerusi ini.",["od_dap6"]);
+[7,27,29].forEach(function(n){ declare(n,"PAS: telah menyasarkan kerusi ini, tetapi masih menunggu kelulusan pimpinan pusat parti; PN juga belum memutuskan sama ada bertanding.",["od_pas","od_pn"]); });
+declare(77,"PBDS: presiden parti mengesahkan akan meletakkan seorang calon wanita.",["bp_pbds_tu"]);
+declare(78,"PBK: laporan menyatakan Wilfred Entika Rebai akan bertanding.",["bp_pbk_tag"]);
+
+/* ---------- parties ---------- */
+var PARTIES = [
+ {id:"GPS",name:"Gabungan Parti Sarawak",abbr:"GPS",aka:"GPS",role:"Gabungan pemerintah negeri",
+  meta:["Anggota: PBB · SUPP · PRS · PDP","79 kerusi sebelum pembubaran (PBB 47, SUPP 13, PRS 11, PDP 8)"],
+  now:[
+   {x:"Mengumumkan akan bertanding di kesemua 82 kerusi, dengan pembahagian antara parti komponen berdasarkan keputusan pilihan raya lalu.",s:["od_gps82"]},
+   {x:"Senarai calon dijangka diumumkan pada 25 November.",s:["tv8"]},
+   {x:"Manifesto masih dirangka (menurut kenyataan pada 4 November).",s:["od_manifesto"]}
+  ],
+  say:[
+   {x:"Memohon mandat baharu untuk terus menuntut autonomi dan penguasaan ke atas sumber asli daripada Persekutuan.",s:["scmp"]},
+   {x:"Pencapaian yang disenaraikan kerajaan negeri termasuk Cukai Jualan Negeri ke atas produk petroleum, syarikat minyak dan gas negeri Petros, Bank Pembangunan Sarawak dan dana kekayaan berdaulat.",s:["premier"]},
+   {x:"Mulai 2026, universiti milik kerajaan negeri tidak mengenakan yuran pengajian kepada anak Sarawak; kerajaan negeri menyatakan ia terhad kepada kursus tertentu.",s:["mm_fte"]}
+  ],
+  crit:[
+   {x:"Aktivis hak Orang Asal, Willie Kajan, berkata banyak jalan, jambatan dan bekalan air kampung di luar bandar masih daif, dan kebanyakan isu hak tanah Orang Asal belum selesai.",s:["sun_willie"]},
+   {x:"Ahli akademik Novel Lyndon berpendapat GPS perlu meyakinkan pengundi bahawa kemenangan besarnya pada 2021 benar-benar membawa penambahbaikan dalam kehidupan mereka.",s:["st_novel"]},
+   {x:"ADUN DAP mempersoalkan sama ada 17 kerusi baharu yang dicadangkan memihak kepada kubu kuat GPS.",s:["fulcrum"]},
+   {x:"DAP berpendirian pembangkang yang lebih kuat diperlukan untuk mengawal perbelanjaan kerajaan negeri; PBDS mahu jawatan menteri yang disandang serentak oleh Premier dihadkan.",s:["tmi_dap","st_pbds"]}
+  ]},
+ {id:"PH",name:"Pakatan Harapan",abbr:"PH",aka:"PH",role:"Memerintah di peringkat Persekutuan · pembangkang di Sarawak",
+  meta:["Anggota: DAP · PKR · Amanah","2 kerusi sebelum pembubaran (DAP: Padungan, Pending)"],
+  now:[
+   {x:"DAP mengumumkan pada 1 November akan bertanding di 7 kerusi di selatan Sarawak, dan mengesahkan pada 17 November akan turut bertanding di Batu Lintang. Perancangan bagi Sibu, Sarikei, Bintulu dan Miri akan diumumkan secara berperingkat.",s:["od_dap7","od_dap6"]},
+   {x:"PKR mengesahkan akan bertanding, tetapi kerusinya belum diputuskan.",s:["bp_pkr"]},
+   {x:"DAP berharap dapat berunding dengan parti pembangkang lain untuk mengelakkan pertandingan berbilang penjuru.",s:["od_multi"]}
+  ],
+  say:[
+   {x:"Tuntutan teras DAP ialah pemantauan serta semak dan imbang yang lebih kuat di DUN; parti itu menolak DUN “tanpa pembangkang”.",s:["od_dap7","od_dap_zero"]},
+   {x:"Pemimpin DAP dan PKR menggesa perlembagaan negeri dipinda untuk mengehadkan jawatan Premier kepada dua penggal.",s:["sun_term"]}
+  ],
+  crit:[
+   {x:"Kerusi DAP berkurang daripada 7 kepada 2 dalam pilihan raya negeri 2021.",s:["tmi_dap"]},
+   {x:"DAP berada dalam blok pemerintah yang sama dengan GPS di peringkat Persekutuan, tetapi menjadi lawannya di peringkat negeri.",s:["tmi_dap","scmp"]},
+   {x:"Sesetengah penganalisis berpendapat kempen “pembangkang yang kuat” semata-mata mungkin tidak cukup untuk menarik pengundi.",s:["fmt_dap"]}
+  ]},
+ {id:"PBDS",name:"Parti Bansa Dayak Sarawak",abbr:"PBDS",aka:"",role:"Parti pembangkang tempatan",
+  meta:["Berasaskan masyarakat Dayak","Tiada kerusi di DUN"],
+  now:[
+   {x:"Pada September menyatakan akan bertanding paling banyak di 37 kerusi, dan hanya di kawasan yang mempunyai jentera akar umbi.",s:["bp_pbds37"]},
+   {x:"Mengesahkan akan bertanding di Telang Usan, dan menyatakan tidak akan bertanding di Marudi dan Mulu.",s:["bp_pbds_tu"]},
+   {x:"Sedang berunding dengan DAP untuk mengelakkan pertembungan di kawasan yang sama.",s:["od_multi"]}
+  ],
+  say:[
+   {x:"Mahu jawatan Premier dihadkan kepada dua penggal, dan bilangan jawatan menteri yang disandang serentak oleh Premier dihadkan.",s:["st_pbds"]},
+   {x:"Resolusi perhimpunan parti merangkumi tanah hak adat bumiputera (NCR), identiti Dayak, perpaduan politik dan pendidikan.",s:["bp_pbds37"]}
+  ],
+  crit:[
+   {x:"Mengulas cadangan had penggal itu, Premier Abang Johari Openg berkata ia urusan PBDS sendiri dan tiada kaitan dengan GPS.",s:["st_pbds"]}
+  ]},
+ {id:"PBK",name:"Parti Bumi Kenyalang",abbr:"PBK",aka:"",role:"Parti pembangkang tempatan",
+  meta:["Tiada kerusi di DUN"],
+  now:[
+   {x:"Dijangka bertanding, tetapi bilangan kerusi belum ditentukan; sama ada presiden parti Voon Lee Shan akan bertanding juga belum diputuskan.",s:["bp_pbk"]},
+   {x:"Presiden parti pernah berkata jika bertanding, parti itu hanya akan bertanding di kerusi bandar.",s:["dd_pbk"]}
+  ],
+  say:[
+   {x:"Kemerdekaan Sarawak ialah agenda tunggalnya.",s:["dd_pbk"]},
+   {x:"Berharap pengundi memberikan sekurang-kurangnya satu hingga tiga kerusi supaya parti itu dapat bersuara di DUN.",s:["bp_pbk"]}
+  ],
+  crit:[
+   {x:"Presiden parti sendiri mengakui jentera kempen GPS sangat kuat.",s:["dd_pbk"]}
+  ]},
+ {id:"PN",name:"Perikatan Nasional",abbr:"PN",aka:"PN",role:"Gabungan pembangkang Persekutuan",
+  meta:["Anggota termasuk PAS · Bersatu","Tiada kerusi di DUN"],
+  now:[
+   {x:"PN masih menimbang sama ada bertanding; tidak bertanding juga salah satu pilihan (16 November).",s:["od_pn"]},
+   {x:"PAS telah menyasarkan tiga kerusi, iaitu Samariang, Sebuyau dan Beting Maro, dan menimbang kerusi keempat di utara Sarawak, tetapi masih menunggu kelulusan pimpinan pusat parti.",s:["od_pas"]}
+  ],
+  say:[
+   {x:"PAS belum menyatakan sama ada akan bekerjasama dengan GPS atau duduk di blok pembangkang jika memenangi kerusi.",s:["od_pas"]}
+  ],
+  crit:[
+   {x:"PAS setakat ini belum pernah memenangi kerusi DUN atau Parlimen di Sarawak.",s:["sun_pas"]},
+   {x:"Pemimpin PBB berkata politik yang berpaksikan kaum dan agama tidak sesuai di Sarawak.",s:["sun_pas"]}
+  ]}
+];
+
+/* ---------- issues ---------- */
+var ISSUES = [
+ {id:"auto",name:"Autonomi dan sumber",desc:"Perjanjian Malaysia 1963 (MA63), hasil minyak dan gas, serta bidang kuasa negeri dan Persekutuan"},
+ {id:"econ",name:"Ekonomi dan perbelanjaan",desc:"Industri, pekerjaan, hasil negeri, dan cara kerajaan negeri berbelanja"},
+ {id:"rural",name:"Infrastruktur luar bandar",desc:"Jalan, jambatan, air, elektrik dan internet"},
+ {id:"ncr",name:"Tanah hak adat bumiputera",desc:"Pengiktirafan, pengukuran dan pertikaian tanah NCR"},
+ {id:"edu",name:"Pendidikan",desc:"Yuran pengajian, biasiswa dan bantuan, serta pembangunan bakat"},
+ {id:"gov",name:"Semak dan imbang serta tadbir urus",desc:"Semak dan imbang di DUN, had penggal ketua kerajaan, dan integriti"}
+];
+var STANCE = {
+ auto:{
+  GPS:[{x:"Memohon mandat baharu pada penggal ini untuk meneruskan tuntutan autonomi dan penguasaan ke atas sumber.",s:["scmp"]}],
+  PBK:[{x:"Kemerdekaan Sarawak ialah agenda tunggalnya.",s:["dd_pbk"]}]
+ },
+ econ:{
+  GPS:[{x:"Presiden SUPP, Dr Sim Kui Hian, berkata tumpuan lima tahun akan datang ialah pendigitalan, teknologi dan industri bernilai tinggi.",s:["od_sim"]}],
+  PH:[{x:"DAP berpendirian pembangkang yang lebih kuat diperlukan untuk mengawal perbelanjaan kerajaan negeri.",s:["tmi_dap"]}]
+ },
+ rural:{
+  GPS:[{x:"Timbalan Premier Awang Tengah Ali Hasan berkata hala tuju pembangunan kerajaan sekarang merangkumi bandar dan luar bandar.",s:["bernama_awang"]}],
+  _ctx:{x:"Aktivis hak Orang Asal, Willie Kajan, berkata banyak jalan, jambatan dan bekalan air di luar bandar masih daif, manakala bekalan elektrik dan telekomunikasi tidak stabil di banyak tempat.",s:["sun_willie"]}
+ },
+ ncr:{
+  GPS:[],
+  PBDS:[{x:"Resolusi perhimpunan parti menyenaraikan NCR sebagai salah satu tumpuan.",s:["bp_pbds37"]}],
+  _ctx:{x:"Aktivis hak Orang Asal, Willie Kajan, berkata kebanyakan isu hak tanah belum selesai, dan masyarakat Orang Asal kebanyakannya terpaksa mempertahankan tanah mereka sendiri apabila berdepan pembalakan, perladangan dan projek pembangunan.",s:["sun_willie"]}
+ },
+ edu:{
+  GPS:[],
+  PBDS:[{x:"Resolusi perhimpunan parti merangkumi pendidikan.",s:["bp_pbds37"]}]
+ },
+ gov:{
+  GPS:[{x:"Premier berkata jabatan-jabatan kerajaan sedang memperkukuh mekanisme pemantauan dalaman untuk mencegah salah guna kuasa.",s:["od_gps_unity"]},{x:"Mengenai cadangan mengehadkan penggal Premier, Premier menjawab bahawa ia tiada kaitan dengan GPS.",s:["st_pbds"]}],
+  PH:[{x:"Tuntutan teras DAP ialah pemantauan serta semak dan imbang yang lebih kuat di DUN.",s:["od_dap7"]},{x:"Pemimpin DAP dan PKR menggesa jawatan Premier dihadkan kepada dua penggal.",s:["sun_term"]}],
+  PBDS:[{x:"Mahu jawatan Premier dihadkan kepada dua penggal, dan bilangan jawatan menteri yang disandang serentak oleh Premier dihadkan.",s:["st_pbds"]}],
+  PBK:[{x:"Berharap memenangi sekurang-kurangnya satu hingga tiga kerusi untuk bersuara di DUN.",s:["bp_pbk"]}]
+ }
+};
+var ROLES = [
+ {id:"abroad",name:"Anak Sarawak di perantauan",issues:["econ","gov","auto"]},
+ {id:"rural",name:"Penduduk luar bandar",issues:["rural","ncr","edu"]},
+ {id:"city",name:"Pekerja di bandar",issues:["econ","gov"]},
+ {id:"student",name:"Pelajar · graduan baharu",issues:["edu","econ"]},
+ {id:"biz",name:"Peniaga kecil",issues:["econ","auto"]},
+ {id:"land",name:"Pemilik tanah adat",issues:["ncr","rural"]}
+];
+
+/* party marks: id -> relative image path. Empty until official files are supplied. */
+var LOGOS = {};
+
+/* ---------- sources for the 2021 pledge check ---------- */
+var SRC_P = {
+  p_list:{t:"Sinar Harian 2021-12-08",u:"https://pru.sinarharian.com.my/info-berita/3542/prn-sarawak-gps-lancar-manifesto-dengan-34-fokus-utama"},
+  p_5yrs:{t:"Borneo Post 2021-12-24",u:"https://www.theborneopost.com/2021/12/24/in-christmas-message-abang-johari-pledges-to-fulfill-gps-34-point-manifesto-in-five-years/"},
+  p_rose:{t:"Borneo Post 2024-12-08",u:"https://www.theborneopost.com/2024/12/08/survey-on-34-point-manifesto-for-2021-state-polls-reveals-nine-promises-being-rated-unsatisfactory/"},
+  p_ma63_st:{t:"Sarawak Tribune 2026-11",u:"https://www.sarawaktribune.com/progress-and-unfinished-business/"},
+  p_ma63_bt:{t:"BusinessToday 2026-09-16",u:"https://www.businesstoday.com.my/2026/09/16/ma63-at-63-what-has-been-delivered-and-whats-still-pending/"},
+  p_ma63_pm:{t:"Jabatan Perdana Menteri | Ucapan Belanjawan 2027",u:"https://www.pmo.gov.my/en/speeches-en/speech-the-fifth-madani-budget-2027-by-yab-pm/"},
+  p_health_auto:{t:"Borneo Post 2026-08-04",u:"https://www.theborneopost.com/2026/08/04/dr-sim-sarawak-to-continue-pressing-for-greater-health-autonomy-under-ma63/"},
+  p_ncr_dd:{t:"DayakDaily 2026-11-11",u:"https://dayakdaily.com/sarawak-allocates-rm40-million-to-speed-up-ncr-land-surveys/"},
+  p_ncr_st:{t:"Sarawak Tribune 2026-11",u:"https://www.sarawaktribune.com/more-officers-to-speed-up-ncr-land-surveys/"},
+  p_ncr_court:{t:"Borneo Post 2026-05-12",u:"https://www.theborneopost.com/2026/05/12/4755-ncr-land-dispute-cases-registered-with-native-court-as-at-may-1-this-year/"},
+  p_wb:{t:"DayakDaily 2026-07-07",u:"https://dayakdaily.com/world-bank-sarawak-retains-high-income-state-status-with-gni-per-capita-of-rm70500-in-2025/"},
+  p_wb23:{t:"Pejabat Premier Sarawak 2023-07-07",u:"https://premier.sarawak.gov.my/web/subpage/news_view/5512"},
+  p_rakan_pov:{t:"RAKAN CommUnity",u:"https://www.rakancommunity.com/web/sarawaks-inclusive-growth-lifts-every-community-toward-dignity/"},
+  p_pov_fmt:{t:"FMT 2024-05-30",u:"https://www.freemalaysiatoday.com/category/nation/2024/05/30/sarawak-seeking-to-halve-hardcore-poverty-rate-by-2026"},
+  p_pov_ukas:{t:"Kerajaan Sarawak (UKAS)",u:"https://ukas.sarawak.gov.my/web/subpage/news_view/29386"},
+  p_pov_st:{t:"Sarawak Tribune 2025-02",u:"https://www.sarawaktribune.com/?p=454373"},
+  p_jobs:{t:"Borneo Post 2026-05-15",u:"https://www.theborneopost.com/?p=1321001"},
+  p_grad:{t:"The Star 2026-10-15",u:"https://www.thestar.com.my/news/nation/2026/10/15/sarawak-reduced-unemployment-by-27-since-pre-covid-high-says-dr-annuar"},
+  p_house:{t:"Sarawak Tribune 2026-05",u:"https://www.sarawaktribune.com/679-affordable-housing-units-completed-under-hdc-projects/"},
+  p_digital:{t:"DayakDaily 2023-05-24",u:"https://dayakdaily.com/digital-initiatives-expected-to-contribute-20-pct-to-sarawaks-gdp-up-to-rm56-4-bln-in-2030"},
+  p_digital_cs:{t:"Laman web Majlis Adat Istiadat Sarawak",u:"https://nativecustoms.sarawak.gov.my/web/subpage/news_view/730"},
+  p_tpa_st:{t:"Sarawak Tribune",u:"https://www.sarawaktribune.com/?p=464393"},
+  p_tpa_2025:{t:"Sarawak Tribune",u:"https://www.sarawaktribune.com/?p=434006"},
+  p_tpa_dd:{t:"DayakDaily 2026-03-31",u:"https://dayakdaily.com/swak-tops-1mil-target-for-totally-protected-areas-with-2-1mil-ha-2025-timber-exports-reach-rm2-5bil"},
+  p_borneo:{t:"The Borneo Project",u:"https://borneoproject.org/?p=16530"},
+  p_rev_ukas:{t:"Kerajaan Sarawak (UKAS) 2026-05",u:"https://ukas.sarawak.gov.my/web/subpage/news_view/41081"},
+  p_rev_135:{t:"Kerajaan Sarawak (UKAS) 2026-01",u:"https://ukas.sarawak.gov.my/web/subpage/news_view/32148"},
+  p_rev_premier:{t:"Pejabat Premier Sarawak 2025-11-24",u:"https://premier.sarawak.gov.my/web/subpage/news_view/5776"},
+  p_road_dd:{t:"DayakDaily 2026-10-21",u:"https://dayakdaily.com/sarawak-coastal-road-second-trunk-road-networks-reach-97-pct-59-pct-progress/"},
+  p_road_star:{t:"The Star 2026-10-05",u:"https://www.thestar.com.my/news/nation/2026/10/05/sarawak-targets-late-2027-completion-for-remaining-coastal-trunk-road-bridges"},
+  p_pbh:{t:"DayakDaily 2025-12-03",u:"https://dayakdaily.com/pan-borneo-highway-99-98-pct-completed-phase-2-construction-to-begin-in-miri-by-early-2026-works-minister/"},
+  p_sejingkat:{t:"DayakDaily 2025-06-11",u:"https://dayakdaily.com/sejingkat-bridge-project-delayed-7-3-pct-after-form-collapsed-completion-pushed-to-june-2026/"},
+  p_water_dd:{t:"DayakDaily 2026-10-19",u:"https://dayakdaily.com/swaks-water-coverage-rises-to-86-1-pct-electricity-generation-capacity-exceeds-demand-at-5928mw/"},
+  p_water_2022:{t:"Borneo Post 2022-04-22",u:"https://www.theborneopost.com/2022/04/22/julaihi-sarawaks-water-supply-coverage-now-stands-at-83-6-pct/"},
+  p_util_2021:{t:"Kementerian Utiliti Sarawak 2021-06-15",u:"https://mut.sarawak.gov.my/web/subpage/news_view/518"},
+  p_elec:{t:"Sarawak Tribune 2025-11",u:"https://www.sarawaktribune.com/rm46-mln-for-rural-electrification/"},
+  p_water_2030:{t:"Malay Mail 2025-08-26",u:"https://www.malaymail.com/news/malaysia/2025/08/26/abang-johari-rm10b-set-aside-for-sarawak-water-grid-treatment-plants-statewide-with-aim-of-full-coverage-by-2030/188994"},
+  p_smart:{t:"Sarawak Tribune 2026-05",u:"https://www.sarawaktribune.com/rural-internet-coverage-hits-94-5-pct/"},
+  p_rda:{t:"Sarawak Tribune 2026-05-20",u:"https://www.sarawaktribune.com/?p=574522"},
+  p_rtp:{t:"Sarawak Tribune",u:"https://www.sarawaktribune.com/?p=531320"},
+  p_art:{t:"Sarawak Tribune 2026-05-18",u:"https://www.sarawaktribune.com/?p=574059"},
+  p_art_plan:{t:"Borneo Post 2023-08-05",u:"https://www.theborneopost.com/2023/08/05/art-prototype-unit-arrives-in-kuching/"},
+  p_rice:{t:"Bernama 2026-10-23",u:"https://bernama.com/en/region/news.php?id=2624353"},
+  p_food:{t:"Kerajaan Sarawak (UKAS)",u:"https://ukas.sarawak.gov.my/web/subpage/news_view/38778"},
+  p_invest:{t:"MIDA 2025-02-13",u:"https://www.mida.gov.my/mida-news/awg-tengah-sarawak-records-rm116-bln-in-approved-investments-since-2020-solidifying-its-economic-hub-status/"},
+  p_invest_q1:{t:"Sarawak Tribune 2025",u:"https://www.sarawaktribune.com/?p=481428"},
+  p_sme:{t:"Borneo Post 2026-05-15",u:"https://www.theborneopost.com/2026/05/15/sarawak-to-roll-out-37-entrepreneurship-capacity-building-programmes-this-year/"},
+  p_tour:{t:"DayakDaily 2026-01-15",u:"https://dayakdaily.com/sarawak-tourism-nears-5-mln-visitors-rakes-in-record-rm12-67-bln-receipts-in-2025"},
+  p_omb:{t:"Sarawak Tribune 2026-05-15",u:"https://www.sarawaktribune.com/sarawak-ombudsman-fully-operational-strengthens-governance-and-accountability/"},
+  p_omb_dap:{t:"FMT 2025-07-16",u:"https://www.freemalaysiatoday.com/category/nation/2025/07/16/sarawak-govt-dragging-its-feet-on-ombudsman-unit-says-dap"},
+  p_clinic:{t:"Malay Mail 2026-09-12",u:"https://www.malaymail.com/news/malaysia/2026/09/12/empty-posts-crumbling-clinics-sarawak-wants-the-power-to-fix-its-own-healthcare/234937"},
+  p_clinic25:{t:"Malay Mail 2025-12-03",u:"https://malaymail.com/news/malaysia/2025/12/03/as-sarawak-upgrades-aging-clinics-share-of-dilapidated-facilities-drops-to-66pc/200579"},
+  p_cancer:{t:"The Star 2026-07-07",u:"https://www.thestar.com.my/news/nation/2026/07/07/construction-of-sarawak-cancer-centre-set-to-begin-early-2027-to-be-completed-in-five-years"},
+  p_cancer_state:{t:"Malay Mail 2025-12-17",u:"https://malaymail.com/news/malaysia/2025/12/17/sarawak-steps-in-with-extra-rm500m-for-state-cancer-centre-equipment/202303"},
+  p_ftes:{t:"The Star 2026-05-13",u:"https://www.thestar.com.my/news/nation/2026/05/13/over-4600-students-benefit-from-ftes"},
+  p_border:{t:"Bernama 2026-10-26",u:"https://bernama.com/en/region/news.php?id=2625928"},
+  p_border_plan:{t:"The Vibes 2023-09-24",u:"https://www.thevibes.com/index.php/articles/news/98957/19-new-security-posts-to-be-built-along-east-malaysia-border"},
+  p_flood_fed:{t:"Jabatan Pengairan dan Saliran Sarawak 2026-03-13",u:"https://did.sarawak.gov.my/web/subpage/news_view/931"},
+  p_flood_committee:{t:"Jabatan Pengairan dan Saliran Sarawak 2026-01-14",u:"https://did.sarawak.gov.my/web/subpage/news_view/917"},
+  p_flood_dap:{t:"DayakDaily 2026-03-12",u:"https://dayakdaily.com/only-one-of-three-completed-sarawak-flood-projects-fully-effective-says-padungan-rep"},
+  p_unifor:{t:"Borneo Post 2026-05-20",u:"https://www.theborneopost.com/2026/05/20/sarawak-allocates-rm120-mln-for-non-islamic-places-of-worship-mission-schools-this-year/"},
+  p_unifor650:{t:"Kerajaan Sarawak (UKAS)",u:"https://ukas.sarawak.gov.my/web/subpage/news_view/41801"},
+  p_nc_2025:{t:"DayakDaily 2025-05-22",u:"https://dayakdaily.com/sarawak-to-table-new-native-courts-bill-in-next-dus-sitting-as-part-of-major-overhaul-of-bumiputera-justice-system/"},
+  p_nc_2026:{t:"Borneo Post 2026-10-08",u:"https://www.theborneopost.com/2026/10/08/sarawak-drafting-new-bumiputera-courts-bill-to-redefine-customary-court-roles/"},
+  p_cit:{t:"Malay Mail 2026-11-02",u:"https://www.malaymail.com/news/malaysia/2026/11/02/deputy-minister-home-ministry-resolves-on-306-sarawak-article-15a-citizenship-cases-416-still-pending/241656"},
+  p_cit_doc:{t:"Borneo Post 2026-05-19",u:"https://www.theborneopost.com/2026/05/19/dsitks-258-applications-approved-for-swakian-children-as-of-april-2026/"},
+  p_skas:{t:"Borneo Post 2026-03-18",u:"https://www.theborneopost.com/2026/03/18/deputy-premier-skas-2026-reflects-sarawak-govts-commitment-to-easing-cost-of-living/"},
+  p_kgc:{t:"Borneo Post 2025-08-24",u:"https://www.theborneopost.com/2025/08/24/sarawak-leads-with-comprehensive-welfare-system-for-all-ages/"},
+  p_women:{t:"The Star 2026-01-28",u:"https://www.thestar.com.my/news/nation/2026/01/28/more-senior-civil-service-posts-in-sarawak-to-be-opened-to-women-says-abang-jo"},
+  p_youth:{t:"Kerajaan Sarawak (UKAS)",u:"https://ukas.sarawak.gov.my/web/subpage/news_view/40573"},
+  p_sukma:{t:"NST 2024-08",u:"https://nst.com.my/amp/sports/others/2024/08/1096294/sarawaks-30-year-wait-win-sukma-over"},
+  p_swf:{t:"Pejabat Premier Sarawak 2023-08-14",u:"https://premier.sarawak.gov.my/web/subpage/news_view/5575"},
+  p_swf_deploy:{t:"DayakDaily 2025-05-28",u:"https://dayakdaily.com/sarawak-sovereign-wealth-future-fund-gains-greenlight-to-begin-global-investments"},
+  p_swf_psb:{t:"Malay Mail 2023-03-20",u:"https://www.malaymail.com/news/malaysia/2023/03/20/psb-president-questions-veracity-of-sarawak-sovereign-funds-projection-of-rm1t-by-2044/60618"}
+};
+Object.keys(SRC_P).forEach(function(k){ SRC[k] = SRC_P[k]; });
+
+/* ---------- GPS 2021 manifesto: 34 pledges, checked against public records ---------- */
+var PSTATUS = {
+  done:{label:"Ditunaikan",desc:"Janjinya ialah satu perkara yang khusus, dan rekod awam menunjukkan ia telah dilaksanakan."},
+  prog:{label:"Ada kemajuan",desc:"Tindakan atau hasil yang konkrit dapat ditemui, dan tiada pertikaian khusus mengenainya ditemui. Janji itu tiada titik akhir, atau tahun sasarannya belum tiba."},
+  mixed:{label:"Ada kemajuan, tetapi dipertikai atau ketinggalan",desc:"Tindakan atau hasil dapat ditemui, tetapi turut ditemui rekod sasaran sendiri yang tidak dicapai, kelewatan, atau kritikan terbuka."},
+  not:{label:"Belum selesai",desc:"Perkara khusus yang dijanjikan tidak selesai sebelum DUN dibubarkan."},
+  na:{label:"Tidak dapat disemak",desc:"Janjinya terlalu umum, atau tiada data awam yang boleh diukur ditemui."}
+};
+var PORDER = ["done","prog","mixed","not","na"];
+var PLEDGES = [
+ {n:1,zh:"Menjamin Kestabilan dan Autonomi Politik Sarawak",ms:"Menjamin Kestabilan dan Autonomi Politik Sarawak",st:"na",issue:"auto",
+  ev:[{x:"Ini janji yang bersifat hala tuju dan tiada petunjuk yang boleh diukur. Fakta berkaitan: pindaan Perlembagaan Persekutuan yang berkuat kuasa pada Februari 2022 memperkukuh pengiktirafan perlembagaan terhadap kedudukan Sabah dan Sarawak serta memasukkan MA63 ke dalam Perlembagaan.",s:["p_ma63_st"]}]},
+ {n:2,zh:"Mempertahan dan Membela Hak-Hak Sarawak Mengikut Perlembagaan Persekutuan, MA63, Perlembagaan Negeri dan Undang-Undang Negeri",ms:"Mempertahan dan Membela Hak-Hak Sarawak Mengikut Perlembagaan Persekutuan, MA63, Perlembagaan Negeri dan Undang-Undang Negeri",st:"mixed",issue:"auto",
+  ev:[{x:"Jawapan kerajaan Persekutuan di Parlimen pada Oktober 2026: daripada 26 perkara MA63 yang berkaitan dengan Sarawak, 13 disenaraikan sebagai selesai.",s:["p_ma63_st"]},
+      {x:"Yang selesai termasuk penyerahan semula Pelabuhan Bintulu kepada Sarawak, penurunan kuasa kawal selia gas dan elektrik, serta pengambilalihan MASwings (kini AirBorneo).",s:["p_ma63_bt","p_ma63_pm"]}],
+  con:[{x:"Bagi tuntutan menambah kerusi Parlimen kepada kira-kira satu pertiga, kerajaan Persekutuan pada September hanya bersetuju pada dasarnya untuk menambah kerusi; bilangannya belum ditetapkan.",s:["p_ma63_st"]},
+       {x:"Timbalan Premier Dr Sim Kui Hian berkata pada Ogos 2026 bahawa autonomi kesihatan “masih jauh perjalanannya”.",s:["p_health_auto"]}]},
+ {n:3,zh:"Menjamin Hak Kesaksamaan Yang Inklusif Untuk Semua Rakyat Sarawak",ms:"Menjamin Hak Kesaksamaan Yang Inklusif Untuk Semua Rakyat Sarawak",st:"na",rose:"d",
+  ev:[{x:"Ini janji yang bersifat hala tuju; tiada petunjuk awam yang boleh diukur ditemui.",s:[]}]},
+ {n:4,zh:"Mengiktiraf dan Menjamin Hak Rakyat Ke Atas Tanah NCR dan NTD",ms:"Mengiktiraf dan Menjamin Hak Rakyat Ke Atas Tanah NCR dan NTD",st:"mixed",issue:"ncr",rose:"vd",
+  ev:[{x:"Sehingga akhir Oktober 2026, inisiatif pengukuran baharu telah menyiapkan ukur perimeter bagi kira-kira 1.249 juta hektar secara kumulatif, dan 979,000 hektar daripadanya telah diwartakan sebagai Rizab Komunal Bumiputera. Ini angka kumulatif sejak 2010, bukan untuk penggal ini sahaja.",s:["p_ncr_dd"]},
+      {x:"112,717 lot individu (135,330 hektar) telah diukur dan diberi surat hak milik; kerajaan negeri memperuntukkan RM40 juta lagi untuk mempercepat pengukuran.",s:["p_ncr_st","p_ncr_dd"]}],
+  con:[{x:"Aktivis hak Orang Asal, Willie Kajan, berkata kebanyakan isu hak tanah belum selesai.",s:["sun_willie"]},
+       {x:"Setakat 1 Mei 2026, Mahkamah Bumiputera mempunyai 4,755 kes pertikaian tanah adat yang didaftarkan.",s:["p_ncr_court"]}]},
+ {n:5,zh:"Menjadikan Sarawak Maju dan Berpendapatan Tinggi Menjelang 2030",ms:"Menjadikan Sarawak Maju dan Berpendapatan Tinggi Menjelang 2030",st:"prog",issue:"econ",
+  ev:[{x:"Pengiraan ahli ekonomi Bank Dunia menunjukkan pendapatan negara kasar per kapita Sarawak melepasi ambang berpendapatan tinggi sejak 2022; pada 2025 angkanya RM70,500 berbanding ambang RM61,600.",s:["p_wb","p_wb23"]}],
+  con:[{x:"Sebuah artikel RAKAN CommUnity menyatakan status berpendapatan tinggi menutup masalah kemiskinan (kadar kemiskinan 12.9% pada 2020). Kadar kemiskinan yang diterbitkan Jabatan Perangkaan pada Julai 2023 ialah 10.8%, ketiga tertinggi di negara ini.",s:["p_rakan_pov","p_pov_fmt"]}]},
+ {n:6,zh:"Merapatkan Jurang Pendapatan Rakyat Melalui Pewujudan Lebih Banyak Peluang Pekerjaan",ms:"Merapatkan Jurang Pendapatan Rakyat Melalui Pewujudan Lebih Banyak Peluang Pekerjaan",st:"prog",issue:"econ",
+  ev:[{x:"Timbalan menteri negeri memetik data Jabatan Perangkaan di DUN: kadar pengangguran 3.1% pada suku ketiga 2025.",s:["p_jobs"]},
+      {x:"Timbalan menteri pendidikan negeri berkata kadar pengangguran graduan turun daripada 4.4% sebelum pandemik kepada 3.2% pada 2024.",s:["p_grad"]},
+      {x:"Bagi jurang pendapatan, tiada data awam untuk penggal ini ditemui.",s:[]}]},
+ {n:7,zh:"Membasmi Kemiskinan Bandar dan Luar Bandar",ms:"Membasmi Kemiskinan Bandar dan Luar Bandar",st:"mixed",issue:"econ",
+  ev:[{x:"Kerajaan negeri menyatakan 13,798 isi rumah keluar daripada kemiskinan tegar pada 2024. Menurut pangkalan data eKasih, Sarawak tiada lagi isi rumah miskin tegar pada Oktober 2025 (garis kemiskinan tegar ialah pendapatan bulanan RM1,298).",s:["p_pov_st","p_pov_ukas"]}],
+  con:[{x:"Daripada kumpulan isi rumah yang sama, 20,119 dikelaskan semula sebagai “miskin”; kemiskinan belum dihapuskan.",s:["p_pov_st"]},
+       {x:"Menteri negeri yang bertanggungjawab mengakui pada 2024 bahawa senarai eKasih mungkin tidak menggambarkan bilangan sebenar miskin tegar.",s:["p_pov_fmt"]}]},
+ {n:8,zh:"Menyediakan Lebih Banyak Rumah Mampu Milik, SPK, SPS, Bantuan Pembinaan dan Baik Pulih Rumah Panjang",ms:"Menyediakan Lebih Banyak Rumah Mampu Milik, SPK, SPS, Bantuan Pembinaan dan Baik Pulih Rumah Panjang",st:"prog",
+  ev:[{x:"Laporan kementerian perumahan negeri pada Mei 2026: Perbadanan Pembangunan Perumahan menyiapkan 679 unit rumah mampu milik dalam 12 projek, dan 12 projek lagi dengan 1,052 unit sedang dilaksanakan pada 2026.",s:["p_house"]}]},
+ {n:9,zh:"Memacu Pembangunan Ekonomi Sarawak Melalui Agenda Ekonomi Digital",ms:"Memacu Pembangunan Ekonomi Sarawak Melalui Agenda Ekonomi Digital",st:"prog",issue:"econ",
+  ev:[{x:"Melancarkan Blueprint Ekonomi Digital Sarawak 2030, dengan sasaran ekonomi digital menyumbang kira-kira 20% kepada KDNK negeri menjelang 2030.",s:["p_digital"]},
+      {x:"Perkhidmatan awam negeri mencapai 59.4% pendigitalan menjelang November 2025, melebihi sasaran 50% bagi tahun itu.",s:["p_digital_cs"]},
+      {x:"Tiada data awam ditemui tentang sumbangan semasa ekonomi digital.",s:[]}]},
+ {n:10,zh:"Memperkasakan Usaha Melindungi dan Memulihara Alam Semula Jadi",ms:"Memperkasakan Usaha Melindungi dan Memulihara Alam Semula Jadi",st:"mixed",
+  ev:[{x:"Kawasan terlindung sepenuhnya di daratan kira-kira 900,000 hektar, berbanding sasaran 1 juta hektar. Jika digabungkan dengan kawasan laut, jumlahnya kira-kira 2.1 juta hektar, dan kerajaan negeri menggunakan angka gabungan ini untuk menyatakan sasaran telah dilepasi.",s:["p_tpa_st","p_tpa_dd"]}],
+  con:[{x:"Kerajaan negeri pada asalnya menyatakan 1 juta hektar akan dicapai pada 2025.",s:["p_tpa_2025"]},
+       {x:"Kumpulan alam sekitar The Borneo Project menyatakan hutan simpan kekal yang dilabel “hutan terlindung” sebenarnya merangkumi kawasan konsesi pembalakan.",s:["p_borneo"]}]},
+ {n:11,zh:"Meningkatkan Pendapatan dan Sumber Hasil Sarawak",ms:"Meningkatkan Pendapatan dan Sumber Hasil Sarawak",st:"prog",issue:"econ",
+  ev:[{x:"Hasil negeri mencatat rekod RM14.2 bilion pada 2024 (RM5.9 bilion pada 2016).",s:["p_rev_premier"]},
+      {x:"Hasil berkurang pada 2025 kerana harga minyak jatuh. Kutipan sebenar yang dilaporkan Timbalan Premier di DUN ialah RM12.55 bilion, manakala Premier menyebut RM13.5 bilion pada Januari; kedua-dua angka ini tidak sepadan.",s:["p_rev_ukas","p_rev_135"]}]},
+ {n:12,zh:"Memperhebatkan Jaringan Jalan Perhubungan, Pengangkutan, Pelabuhan dan Lapangan Terbang",ms:"Memperhebatkan Jaringan Jalan Perhubungan, Pengangkutan, Pelabuhan dan Lapangan Terbang",st:"mixed",issue:"rural",
+  ev:[{x:"Fasa 1 Lebuhraya Pan Borneo siap 99.98% (Disember 2025).",s:["p_pbh"]},
+      {x:"Sehingga September 2026, Jalan Pesisir siap 97% dan Jalan Utama Kedua siap 59%; empat jambatan utama dibuka pada 2026.",s:["p_road_dd"]}],
+  con:[{x:"Sembilan jambatan utama yang selebihnya disasarkan siap menjelang akhir 2027. Jambatan Sejingkat, yang asalnya dijadualkan siap pada Januari 2025, hanya dibuka pada 2026.",s:["p_road_star","p_sejingkat"]}]},
+ {n:13,zh:"Memperluaskan Liputan Bekalan Air, Elektrik dan Gas",ms:"Memperluaskan Liputan Bekalan Air, Elektrik dan Gas",st:"mixed",issue:"rural",
+  ev:[{x:"Liputan bekalan elektrik luar bandar 98.6% (November 2025).",s:["p_elec"]},
+      {x:"Liputan bekalan air terawat: 86.1% seluruh negeri dan 72% di luar bandar (Oktober 2026). Pada April 2022, angkanya 83.6% seluruh negeri dan 66.9% di luar bandar.",s:["p_water_dd","p_water_2022"]}],
+  con:[{x:"Pada 2021 dan 2022, kerajaan negeri menyatakan sasarannya ialah liputan penuh air dan elektrik menjelang 2025. Sasaran bekalan air terawat kini diubah kepada 2030.",s:["p_util_2021","p_water_2022","p_water_2030"]}]},
+ {n:14,zh:"Memperluaskan Liputan Telekomunikasi dan Kemudahan Digital",ms:"Memperluaskan Liputan Telekomunikasi dan Kemudahan Digital",st:"mixed",issue:"rural",rose:"vd",
+  ev:[{x:"Kesemua 618 menara telekomunikasi luar bandar (SMART) kerajaan negeri siap dan beroperasi menjelang Mei 2026; liputan internet mengikut kiraan penempatan ialah 94.5%.",s:["p_smart"]}],
+  con:[{x:"Aktivis Willie Kajan berkata pada November 2026 bahawa telekomunikasi masih tidak stabil di banyak kawasan berpenduduk.",s:["sun_willie"]}]},
+ {n:15,zh:"Mentransformasikan Pembangunan Ekonomi Luar Bandar",ms:"Mentransformasikan Pembangunan Ekonomi Luar Bandar",st:"mixed",issue:"rural",rose:"vd",
+  ev:[{x:"Kerajaan negeri memperuntukkan sejumlah RM13.5 bilion kepada sembilan agensi pembangunan wilayah.",s:["p_rda"]},
+      {x:"Projek Transformasi Luar Bandar (RTP) meluluskan 6,984 projek dari 2015 hingga 2024, dan 91% daripadanya siap.",s:["p_rtp"]}],
+  con:[{x:"Daripada 1,186 projek di bawah lima agensi yang dibiayai bajet negeri, 228 projek (19%) siap menjelang April 2026.",s:["p_rda"]}]},
+ {n:16,zh:"Merancakkan Pembangunan Bandar Sejahtera dan Pintar",ms:"Merancakkan Pembangunan Bandar Sejahtera dan Pintar",st:"mixed",
+  ev:[{x:"Transit Aliran Automatik (ART) berkuasa hidrogen di Kuching dijadualkan memulakan operasi percubaan pada suku keempat 2026 dan operasi komersial penuh pada 2027.",s:["p_art"]}],
+  con:[{x:"Asalnya dijadualkan mula membawa penumpang secara berperingkat pada suku keempat 2025. Menteri pengangkutan mengaitkan kelewatan itu dengan prestasi kontraktor, pemindahan utiliti bawah tanah dan pelarasan laluan.",s:["p_art_plan","p_art"]}]},
+ {n:17,zh:"Mentransformasikan dan Memacu Sektor Pertanian, Penternakan dan Perikanan",ms:"Mentransformasikan dan Memacu Sektor Pertanian, Penternakan dan Perikanan",st:"mixed",
+  ev:[{x:"Sasarannya ialah menjadi pengeksport bersih makanan menjelang 2030 dan meningkatkan tahap sara diri beras kepada 60%.",s:["p_food","p_rice"]}],
+  con:[{x:"Tahap sara diri beras kini kira-kira 21%, dan defisit dagangan makanan RM5.67 bilion.",s:["p_rice","p_food"]}]},
+ {n:18,zh:"Membangun Sektor Perindustrian dan Pelaburan",ms:"Membangun Sektor Perindustrian dan Pelaburan",st:"prog",issue:"econ",
+  ev:[{x:"Pelaburan yang diluluskan dari 2020 hingga September 2024 berjumlah RM116 bilion.",s:["p_invest"]},
+      {x:"RM28.2 bilion pada suku pertama 2025, ketiga tertinggi di negara ini.",s:["p_invest_q1"]}]},
+ {n:19,zh:"Menyediakan Lebih Banyak Peluang Perniagaan dan Memperkasakan PKS",ms:"Menyediakan Lebih Banyak Peluang Perniagaan dan Memperkasakan PKS",st:"prog",issue:"econ",
+  ev:[{x:"Pada 2025, program keusahawanan Perbadanan Pembangunan Ekonomi Sarawak diperuntukkan RM6 juta dan memanfaatkan 579 usahawan. Daripada perniagaan yang ditubuhkan pada 2019, 77.3% masih beroperasi pada 2024.",s:["p_sme"]}]},
+ {n:20,zh:"Memperhebatkan Sektor Pelancongan dan Perkhidmatan",ms:"Memperhebatkan Sektor Pelancongan dan Perkhidmatan",st:"prog",issue:"econ",
+  ev:[{x:"4.97 juta ketibaan pelawat dan pendapatan pelancongan RM12.67 bilion pada 2025, sedikit di bawah sasaran 5 juta ketibaan.",s:["p_tour"]}]},
+ {n:21,zh:"Memperkasakan Perkhidmatan Kerajaan Yang Berteraskan Integriti dan Tadbir Urus Yang Baik",ms:"Memperkasakan Perkhidmatan Kerajaan Yang Berteraskan Integriti dan Tadbir Urus Yang Baik",st:"mixed",issue:"gov",
+  ev:[{x:"Ordinan Ombudsman diluluskan pada November 2023, menjadikan Sarawak negeri pertama di negara ini yang mempunyai undang-undang sedemikian; pejabat Ombudsman beroperasi sepenuhnya pada Mei 2026.",s:["p_omb_dap","p_omb"]}],
+  con:[{x:"Chong Chieng Jen daripada DAP mengkritik kerajaan negeri pada Julai 2025 kerana berlengah, dan berkata laporan unit ombudsman masih belum dibentangkan.",s:["p_omb_dap"]}]},
+ {n:22,zh:"Meningkatkan Akses dan Kualiti Perkhidmatan Kesihatan",ms:"Meningkatkan Akses dan Kualiti Perkhidmatan Kesihatan",st:"mixed",fed:true,
+  ev:[{x:"Peratusan klinik daif turun daripada 76.4% pada 2024 kepada 65.9% pada 2025.",s:["p_clinic25"]},
+      {x:"Pembinaan Pusat Kanser Sarawak dijadualkan bermula pada awal 2027 dan mengambil masa lima tahun; kerajaan negeri menyumbang RM1.5 bilion untuk peralatan.",s:["p_cancer","p_cancer_state"]}],
+  con:[{x:"Pada September 2026, Timbalan Premier Dr Sim Kui Hian berkata 160 daripada 271 klinik di negeri ini masih dikelaskan sebagai daif. Laporan itu menyebut peratusannya 66%, walaupun 160 daripada 271 ialah kira-kira 59%.",s:["p_clinic"]}]},
+ {n:23,zh:"Meningkatkan Kualiti Pendidikan dan Latihan Teknikal",ms:"Meningkatkan Kualiti Pendidikan dan Latihan Teknikal",st:"prog",issue:"edu",
+  ev:[{x:"Skim Pendidikan Tinggi Percuma (FTES) bermula pada 2026: 64 program ijazah sarjana muda dengan peruntukan RM250 juta. Sehingga suku pertama, 4,694 pelajar telah mendapat manfaat; sasaran setahun ialah 10,000 orang.",s:["p_ftes"]}]},
+ {n:24,zh:"Menjamin Keselamatan Negeri dan Rakyat",ms:"Menjamin Keselamatan Negeri dan Rakyat",st:"prog",fed:true,
+  ev:[{x:"Menteri pertahanan berkata tentera darat membina dan menempatkan anggota di lapan pos baharu di sempadan Sarawak–Indonesia antara 2024 dan 2026. Rancangan yang diumumkan pada 2023 ialah menambah 14 pos di Sarawak sebelum akhir 2025.",s:["p_border","p_border_plan"]}]},
+ {n:25,zh:"Meningkatkan Kecekapan Pengurusan Bencana",ms:"Meningkatkan Kecekapan Pengurusan Bencana",st:"mixed",
+  ev:[{x:"Daripada 15 projek tebatan banjir yang dilaksanakan kerajaan Persekutuan di Sarawak, 7 telah siap (Mac 2026).",s:["p_flood_fed"]},
+      {x:"Selepas banjir di Bintulu pada Januari 2026, Premier mengumumkan penubuhan jawatankuasa peringkat negeri untuk merangka pelan tebatan banjir jangka panjang.",s:["p_flood_committee"]}],
+  con:[{x:"Chong Chieng Jen daripada DAP, memetik Laporan Ketua Audit Negara, berkata hanya 3 daripada 21 projek tebatan banjir yang diluluskan dari 2021 hingga 2025 siap, dan hanya 1 mencapai objektifnya sepenuhnya.",s:["p_flood_dap"]}]},
+ {n:26,zh:"Mengukuhkan Keharmonian dan Kesejahteraan Sosial",ms:"Mengukuhkan Keharmonian dan Kesejahteraan Sosial",st:"na",
+  ev:[{x:"Ini janji yang bersifat hala tuju; tiada petunjuk awam yang boleh diukur ditemui. Bagi peruntukan berkaitan, lihat no. 27 dan no. 30.",s:[]}]},
+ {n:27,zh:"Menjamin dan Memelihara Budaya, Warisan dan Kepercayaan Pelbagai Kaum",ms:"Menjamin dan Memelihara Budaya, Warisan dan Kepercayaan Pelbagai Kaum",st:"prog",
+  ev:[{x:"Unit Hal Ehwal Agama-agama Lain (UNIFOR) menerima peruntukan berjumlah RM650 juta sejak 2017.",s:["p_unifor650"]},
+      {x:"Peruntukan RM110 juta bagi 2025 dibelanjakan sepenuhnya, membiayai 380 rumah ibadat bukan Islam dan 126 sekolah mubaligh; peruntukan 2026 ialah RM120 juta.",s:["p_unifor"]}]},
+ {n:28,zh:"Memperkukuhkan Mahkamah Adat Bumiputera",ms:"Memperkukuhkan Mahkamah Adat Bumiputera",st:"not",issue:"ncr",
+  ev:[{x:"Kajian menaik taraf Mahkamah Bumiputera siap pada Februari 2023, dan Kabinet negeri meluluskan pelan induk transformasinya pada dasarnya.",s:["p_ncr_court"]}],
+  con:[{x:"Menteri berkata pada Mei 2025 bahawa rang undang-undang baharu akan dibentangkan pada persidangan DUN berikutnya. Sehingga Oktober 2026, rang undang-undang itu masih digubal.",s:["p_nc_2025","p_nc_2026"]}]},
+ {n:29,zh:"Membantu dan Mempercepatkan Anak Sarawak Yang Layak Untuk Mendapatkan Kerakyatan",ms:"Membantu dan Mempercepatkan Anak Sarawak Yang Layak Untuk Mendapatkan Kerakyatan",st:"prog",fed:true,
+  ev:[{x:"Sebuah jawatankuasa khas mengenai status kewarganegaraan di Sarawak mengendalikan permohonan di bawah Perkara 15A Perlembagaan. Dari 2024 hingga September 2026, 722 permohonan diterima; 225 diluluskan dan 416 masih diproses.",s:["p_cit"]},
+      {x:"Kerajaan negeri juga mengeluarkan dokumen sementara kepada kanak-kanak tanpa kerakyatan untuk memudahkan persekolahan dan rawatan: 258 permohonan diluluskan sejak November 2022.",s:["p_cit_doc"]}]},
+ {n:30,zh:"Menjaga dan Memelihara Kebajikan Rakyat",ms:"Menjaga dan Memelihara Kebajikan Rakyat",st:"prog",issue:"econ",
+  ev:[{x:"Sumbangan Keperluan Asas Sarawak (SKAS) diperkenalkan pada 2025; pada tahun pertama lebih 888,000 orang menerimanya dengan peruntukan RM480 juta, dan ditambah kepada RM640 juta pada 2026.",s:["p_skas"]},
+      {x:"333,853 Kenyalang Gold Card untuk warga emas telah dikeluarkan (Ogos 2025).",s:["p_kgc"]}]},
+ {n:31,zh:"Memperkasakan Penglibatan Wanita Dalam Pembangunan Sarawak",ms:"Memperkasakan Penglibatan Wanita Dalam Pembangunan Sarawak",st:"na",
+  ev:[{x:"Premier berkata pada Januari 2026 bahawa lebih banyak jawatan kanan perkhidmatan awam akan dibuka kepada wanita. Tiada data seluruh negeri yang boleh dibandingkan ditemui.",s:["p_women"]}]},
+ {n:32,zh:"Mempertingkatkan Penyertaan Belia Dalam Pembangunan Sarawak",ms:"Mempertingkatkan Penyertaan Belia Dalam Pembangunan Sarawak",st:"na",
+  ev:[{x:"Kerajaan negeri menyenaraikan beberapa program keusahawanan dan pekerjaan belia, tetapi tiada data awam yang mengukur keberkesanan keseluruhannya ditemui.",s:["p_youth"]}]},
+ {n:33,zh:"Memperhebatkan Bidang Sukan",ms:"Memperhebatkan Bidang Sukan",st:"prog",
+  ev:[{x:"Menjadi tuan rumah Sukan Malaysia (SUKMA) pada 2024 dan muncul juara keseluruhan, buat kali pertama dalam 30 tahun.",s:["p_sukma"]}]},
+ {n:34,zh:"Penubuhan Dana Kekayaan Berdaulat",ms:"Penubuhan Dana Kekayaan Berdaulat",st:"done",issue:"econ",
+  ev:[{x:"DUN meluluskan ordinan itu pada November 2022; dana mula beroperasi pada 1 Januari 2024 dengan modal permulaan RM8 bilion, dan pada 2025 mendapat kelulusan untuk memulakan pelaburan global.",s:["p_swf","p_swf_deploy"]}],
+  con:[{x:"Presiden PSB pada 2023 mempersoalkan sama ada unjuran “RM1 trilion menjelang 2044” boleh dipercayai.",s:["p_swf_psb"]}]}
+];
+
+/* ---------- sources for the first-time voter guide ---------- */
+var SRC_G = {
+  g_steps:{t:"SPR | Panduan langkah mengundi",u:"http://sprinfo.spr.gov.my/spr/PENGUNDIPRUDUN/10langkah.pdf"},
+  g_ic:{t:"Kenyataan media SPR bil. 26/2026",u:"https://spr.gov.my/wp-content/uploads/2026/07/KM-SPR-BIL26_2026-MENJELANG-PROSES-PENGUNDIAN-PRK-DN-JOHOR-KE-16.pdf"},
+  g_phone:{t:"Bernama 2026-07-31",u:"https://bernama.com/bm/am/news.php?id=2588676"},
+  g_dress:{t:"Bernama 2024-09-27",u:"https://www.bernama.com/bm/news.php?id=2345262"},
+  g_undi18:{t:"Malay Mail 2021-12-01",u:"https://www.malaymail.com/news/malaysia/2021/12/01/federal-gazette-undi18-automatic-voter-registration-to-come-into-effect-dec/2025234"},
+  g_2021:{t:"FMT 2021-12-02",u:"https://www.freemalaysiatoday.com/category/nation/2021/12/02/no-undi18-automatic-voter-registration-for-sarawak-polls"},
+  g_voters:{t:"Sarawak Tribune 2026-11",u:"https://www.sarawaktribune.com/2-05-mln-voters-to-vote-in-sarawak-polls/"}
+};
+Object.keys(SRC_G).forEach(function(k){ SRC[k] = SRC_G[k]; });
+
+/* how many seats each has announced so far, for the overview table */
+var PLAN = {
+  GPS:{seats:"79",plan:"Bertanding di kesemua 82 kerusi; calon dijangka diumumkan 25 Nov"},
+  PH:{seats:"2",plan:"DAP telah mengumumkan 8 kerusi, selebihnya menyusul; PKR sah bertanding, kerusi belum ditentukan"},
+  PBDS:{seats:"0",plan:"1 kerusi disahkan; pada September menyatakan paling banyak 37 kerusi"},
+  PBK:{seats:"0",plan:"Dijangka bertanding; bilangan kerusi belum ditentukan"},
+  PN:{seats:"0",plan:"Belum pasti bertanding; PAS menyasarkan 3 kerusi, menunggu kelulusan"}
+};
+
+/* ---------- helpers ---------- */
+function $(id){ return document.getElementById(id); }
+function el(tag, attrs, kids){
+  var n = document.createElement(tag), k;
+  if(attrs){ for(k in attrs){ if(k==="text"){ n.textContent = attrs[k]; } else if(k==="class"){ n.className = attrs[k]; } else { n.setAttribute(k, attrs[k]); } } }
+  (kids||[]).forEach(function(c){ if(c){ n.appendChild(typeof c==="string" ? document.createTextNode(c) : c); } });
+  return n;
+}
+function srcLink(id){ var s = SRC[id]; return s ? el("a",{class:"src",href:s.u,target:"_blank",rel:"noopener",text:s.t}) : null; }
+function withSrc(node, ids){ (ids||[]).forEach(function(id){ var a = srcLink(id); if(a){ node.appendChild(a); } }); return node; }
+function claimLi(c){ return withSrc(el("li",null,[c.x]), c.s); }
+function pad(n){ return (n<10?"0":"")+n; }
+function fmt(s, o){ return s.replace(/\{(\w+)\}/g, function(m, k){ return o[k]; }); }
+/* build.py sets LANG for each edition. English and Malay readers know the parties by their abbreviations. */
+var LANG = "ms";
+var LATIN = LANG === "en" || LANG === "ms";
+function shortName(p){ return LATIN ? p.abbr : (p.aka || p.name); }
+function store(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+function load(k){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : null; }catch(e){ return null; } }
+function mytDay(){ var d = new Date(Date.now() + 8*3600*1000); return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()); }
+function daysTo(y,m,d){ return Math.round((Date.UTC(y,m-1,d) - mytDay())/86400000); }
+function seatBy(n){ return SEATS.filter(function(s){ return s[0]===n; })[0]; }
+
+Array.prototype.forEach.call(document.querySelectorAll("a.src[data-s]"), function(a){
+  var s = SRC[a.getAttribute("data-s")]; if(!s){ a.remove(); return; }
+  a.href = s.u; a.target = "_blank"; a.rel = "noopener"; a.textContent = s.t;
+});
+
+/* ---------- router: one view per plain #name ---------- */
+var VIEWS = ["overview","guide","seat","parties","issues","pledges","overseas","about"];
+var pendingPledge = null;
+var resetPledgeFilter = function(){};
+function route(scroll){
+  var h = (location.hash || "").replace("#","");
+  if(VIEWS.indexOf(h) === -1){ h = "overview"; }
+  VIEWS.forEach(function(v){ $("v-"+v).classList.toggle("on", v === h); });
+  Array.prototype.forEach.call(document.querySelectorAll(".tabs a"), function(a){
+    if(a.getAttribute("data-view") === h){ a.setAttribute("aria-current","page"); if(a.scrollIntoView){ a.scrollIntoView({block:"nearest",inline:"nearest"}); } }
+    else { a.removeAttribute("aria-current"); }
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".lang a"), function(a){ a.href = a.getAttribute("data-href") + (h === "overview" ? "" : "#" + h); });
+  if(scroll){
+    if(h === "pledges" && pendingPledge){
+      resetPledgeFilter();
+      var target = $("pl-" + pendingPledge); pendingPledge = null;
+      if(target){ target.scrollIntoView({block:"start"}); return; }
+    }
+    window.scrollTo(0,0);
+  }
+}
+window.addEventListener("hashchange", function(){ route(true); });
+
+/* ---------- language menu ---------- */
+(function(){
+  var box = document.querySelector(".lang"); if(!box){ return; }
+  var btn = box.querySelector(".lang-btn");
+  function set(open){ box.classList.toggle("open", open); btn.setAttribute("aria-expanded", String(open)); }
+  btn.addEventListener("click", function(e){ e.stopPropagation(); set(!box.classList.contains("open")); });
+  document.addEventListener("click", function(e){ if(!box.contains(e.target)){ set(false); } });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape"){ set(false); } });
+})();
+
+/* ---------- countdown + dates ---------- */
+(function(){
+  var dp = daysTo(2026,12,12);
+  var txt = dp > 1 ? fmt("{n} hari lagi",{n:dp}) : dp === 1 ? "Esok" : dp === 0 ? "Hari ini" : "Pengundian telah tamat";
+  $("count-poll").textContent = txt;
+  $("hd-count").textContent = fmt("Undi 12 Dis · {t}",{t:txt});
+
+  var dn = daysTo(2026,11,20);
+  var ptxt = dn > 1 ? fmt("Tutup 20 Nov · {n} hari lagi",{n:dn}) : dn === 1 ? "Tutup esok" : dn === 0 ? "Tutup hari ini" : "Ditutup pada 20 Nov";
+  Array.prototype.forEach.call(document.querySelectorAll("[data-postal-pill]"), function(p){
+    p.textContent = ptxt; if(dn < 0){ p.className = "pill plain"; }
+  });
+  if(dn < 0){ $("postal-box").className = "notice done"; $("ov-postal").className = "notice done"; }
+
+  var DATES = [
+    [2026,10,26,"10.26","DUN dibubarkan",["ukas_diss"]],
+    [2026,11,20,"11.20","Permohonan undi pos luar negara (Kategori 1B) ditutup",["spr_post"]],
+    [2026,11,25,"11.25","Permohonan undi pos dalam negara (Kategori 1A: petugas pilihan raya, tentera dan polis, petugas media) ditutup",["spr_post"]],
+    [2026,11,28,"11.28","Hari penamaan calon; senarai calon disahkan",["spr"]],
+    [2026,12,12,"12.12","Hari mengundi",["spr"]]
+  ];
+  var ul = $("date-list"), marked = false;
+  DATES.forEach(function(d){
+    var left = daysTo(d[0],d[1],d[2]);
+    var body = el("div",null,[d[4]]);
+    if(left >= 0 && !marked){ body.appendChild(document.createTextNode(" ")); body.appendChild(el("span",{class:"pill warn",text: left === 0 ? "Hari ini" : left === 1 ? "Esok" : "Seterusnya"})); marked = true; }
+    withSrc(body, d[5]);
+    ul.appendChild(el("li",{class: left < 0 ? "past" : ""},[el("span",{class:"d",text:d[3]}), body]));
+  });
+})();
+
+/* ---------- my constituency (shared by header, overview, seat tab) ---------- */
+var chosen = load("swk-seat");
+if(!seatBy(chosen)){ chosen = null; }
+
+function renderSeatSummary(){
+  var hd = $("hd-seat"), ov = $("ov-seat");
+  ov.textContent = "";
+  if(chosen){
+    var s = seatBy(chosen);
+    hd.textContent = fmt("Kawasan: N.{no} {name}",{no:pad(s[0]),name:s[1]});
+    ov.appendChild(el("div",{class:"k",text:"Kawasan saya"}));
+    ov.appendChild(el("h3",{style:"margin-top:4px;font-size:24px;font-weight:900;letter-spacing:-.02em"},[el("span",{class:"num",text:"N."+pad(s[0])+" "}), s[1], s[2] ? el("span",{class:"muted",style:"font-family:var(--body);font-weight:500;font-size:15px;margin-left:8px",text:s[2]}) : null]));
+    ov.appendChild(el("p",{class:"small muted",style:"margin-top:4px",text:fmt("ADUN sebelum pembubaran: {who} · {party}",{who:s[4],party:PARTY_LABEL[s[5]]})}));
+    ov.appendChild(el("div",{class:"btnrow"},[el("a",{class:"btn",href:"#seat",text:"Lihat kawasan ini"})]));
+  } else {
+    hd.textContent = "Pilih kawasan";
+    ov.appendChild(el("div",{class:"k",text:"Kawasan saya"}));
+    ov.appendChild(el("p",{style:"margin-top:4px",text:"Belum dipilih. Selepas anda memilih, kawasan anda akan diingati di sini dan di bahagian atas halaman."}));
+    ov.appendChild(el("div",{class:"btnrow"},[el("a",{class:"btn",href:"#seat",text:"Pilih kawasan saya"})]));
+  }
+}
+
+(function(){
+  var list = $("seat-list"), card = $("seat-card"), q = $("seat-q");
+  var showing = chosen || 1;
+
+  function matches(s, term){
+    if(!term){ return true; }
+    var t = term.toLowerCase().replace(/^n\.?\s*0*/,"");
+    if(/^\d+$/.test(t)){ return String(s[0]).indexOf(t) === 0; }
+    return (s[1] + " " + s[2] + " " + s[3]).toLowerCase().indexOf(term.toLowerCase()) !== -1;
+  }
+  function renderList(){
+    var term = q.value.trim();
+    list.textContent = "";
+    var hits = SEATS.filter(function(s){ return matches(s, term); });
+    if(!hits.length){ list.appendChild(el("div",{class:"empty",text:"Tiada kawasan yang sepadan. Cuba masukkan nombor sahaja, atau nama kawasan."})); return; }
+    hits.forEach(function(s){
+      var b = el("button",{type:"button",role:"option","aria-selected":String(s[0]===showing),id:"seat-opt-"+s[0]},[
+        el("span",{class:"n",text:"N."+pad(s[0])}),
+        el("span",null,[s[1]+" ", el("span",{class:"muted",text:(s[2] ? s[2]+" · " : "")+s[3]})])
+      ]);
+      b.addEventListener("click", function(){ showing = chosen = s[0]; store("swk-seat", chosen); renderList(); renderCard(); renderSeatSummary(); });
+      list.appendChild(b);
+    });
+  }
+  function row(dt, dd){ return el("div",null,[el("dt",{text:dt}), dd]); }
+  function renderCard(){
+    var s = seatBy(showing);
+    card.textContent = "";
+    card.appendChild(el("header",null,[
+      el("div",null,[
+        chosen ? null : el("span",{class:"pill plain",text:"Contoh: belum dipilih, maka kawasan pertama dipaparkan"}),
+        el("h3",{text:s[1]}),
+        s[2] ? el("div",{class:"zh",text:s[2]}) : null
+      ]),
+      el("div",{class:"code",text:"N."+pad(s[0])})
+    ]));
+    var dl = el("dl");
+    dl.appendChild(row("Kawasan Parlimen", el("dd",{text:s[3]})));
+    dl.appendChild(row("ADUN sebelum pembubaran", el("dd",null,[s[4], el("br"), el("span",{class:"muted small",text:PARTY_LABEL[s[5]]})])));
+    dl.appendChild(row("Majoriti 2021", el("dd",null,[el("span",{class:"num",text:s[6].toLocaleString("en-US")}), " undi"])));
+    if(SEAT_NOTE[s[0]]){ dl.appendChild(row("Catatan", withSrc(el("dd",{class:"small",text:SEAT_NOTE[s[0]].x}), SEAT_NOTE[s[0]].s))); }
+    var ul = el("ul");
+    ul.appendChild(withSrc(el("li",null,["GPS: bertanding di kesemua 82 kerusi; calon dijangka diumumkan pada 25 November."]), ["od_gps82","tv8"]));
+    (DECLARED[s[0]]||[]).forEach(function(d){ ul.appendChild(withSrc(el("li",null,[d.x]), d.s)); });
+    dl.appendChild(row("Yang telah menyatakan pendirian", el("dd",null,[ul, el("div",{class:"small muted",text:"Sebarang kenyataan sebelum hari penamaan calon masih boleh berubah. Parti yang tidak disenaraikan belum mengumumkan perancangan bagi kerusi ini."})])));
+    card.appendChild(dl);
+    card.appendChild(el("div",{class:"foot small"},[
+      el("b",{text:"Calon rasmi: "}), "akan dikemas kini selepas hari penamaan calon pada 28 November. Ketika itu, senarainya juga boleh dilihat di ",
+      el("a",{href:"https://mysprsemak.spr.gov.my/semakan/calon",target:"_blank",rel:"noopener",text:"semakan calon"}), " SPR."
+    ]));
+  }
+  q.addEventListener("input", renderList);
+  renderList(); renderCard(); renderSeatSummary();
+})();
+
+/* ---------- party badge ---------- */
+function badge(p, size){
+  var b = el("span",{class:"badge"+(size?" "+size:"")});
+  if(LOGOS[p.id]){ b.appendChild(el("img",{src:LOGOS[p.id],alt:fmt("Logo {name}",{name:p.name})})); } else { b.textContent = p.abbr; b.setAttribute("aria-hidden","true"); }
+  return b;
+}
+
+/* ---------- parties ---------- */
+var pickParty = function(){};
+(function(){
+  var rows = $("party-rows"), panel = $("party-panel");
+  var cur = load("swk-party");
+  if(!PARTIES.some(function(p){ return p.id === cur; })){ cur = PARTIES[0].id; }
+
+  function blk(title, items, cls){
+    var ul = el("ul"); items.forEach(function(c){ ul.appendChild(claimLi(c)); });
+    return el("div",{class:"blk"+(cls?" "+cls:"")},[el("h4",{text:title}), ul]);
+  }
+  function render(){
+    rows.textContent = ""; panel.textContent = "";
+    PARTIES.forEach(function(p){
+      var tr = el("tr",{tabindex:"0","aria-selected":String(p.id===cur)},[
+        el("th",{scope:"row"},[el("span",{class:"pname"},[badge(p,"sm"), el("span",null,[shortName(p), el("small",{text:LATIN ? p.name : p.abbr})])])]),
+        el("td",{text:p.role}),
+        el("td",{class:"num",text:PLAN[p.id].seats}),
+        el("td",{text:PLAN[p.id].plan})
+      ]);
+      function pick(){ cur = p.id; store("swk-party", cur); render(); }
+      tr.addEventListener("click", pick);
+      tr.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); pick(); } });
+      rows.appendChild(tr);
+    });
+    var p = PARTIES.filter(function(x){ return x.id === cur; })[0];
+    panel.appendChild(el("article",{class:"party"},[
+      el("header",null,[
+        el("div",{class:"phead"},[badge(p,"lg"), el("div",null,[
+          el("h3",null,[p.aka && !LATIN ? fmt("{name} ({aka})",{name:p.name,aka:p.aka}) : p.name, el("span",{class:"abbr",text:p.abbr})]),
+          el("div",{class:"meta"},[el("span",{class:"pill plain",text:p.role})])
+        ])]),
+        el("div",{class:"small muted",style:"margin-top:10px"}, p.meta.map(function(m){ return el("div",{text:m}); }))
+      ]),
+      el("div",{class:"cols"},[
+        blk("Perkembangan terkini", p.now),
+        blk("Pendirian mereka", p.say),
+        blk("Rekod dan kritikan pihak luar", p.crit, "crit")
+      ])
+    ]));
+  }
+  pickParty = function(id){ if(PARTIES.some(function(p){ return p.id === id; })){ cur = id; store("swk-party", cur); render(); } };
+  render();
+})();
+
+/* ---------- issue comparison: one issue, one column per party ---------- */
+(function(){
+  var roleHost = $("role-chips"), issueHost = $("issue-chips"), partyHost = $("party-chips");
+  var head = $("cmp-head"), cmp = $("cmp"), ctx = $("cmp-ctx");
+  function roleBy(id){ return ROLES.filter(function(r){ return r.id === id; })[0]; }
+  function isIssue(id){ return ISSUES.some(function(i){ return i.id === id; }); }
+
+  var savedIssue = load("swk-issue");
+  var role = load("swk-role");
+  if(!roleBy(role)){ role = isIssue(savedIssue) ? null : "abroad"; }
+  var issue = isIssue(savedIssue) ? savedIssue : (role ? roleBy(role).issues[0] : ISSUES[0].id);
+  var shown = load("swk-cmp");
+  shown = Array.isArray(shown) ? shown.filter(function(id){ return PARTIES.some(function(p){ return p.id === id; }); }) : PARTIES.map(function(p){ return p.id; });
+
+  function save(){ store("swk-role", role); store("swk-issue", issue); store("swk-cmp", shown); }
+  function sec(title, items, emptyText){
+    var body;
+    if(items.length){ body = el("ul"); items.forEach(function(c){ body.appendChild(claimLi(c)); }); }
+    else { body = el("div",{class:"none",text:emptyText}); }
+    return el("div",{class:"sec"},[el("h4",{text:title}), body]);
+  }
+  function recordSec(did, pl){
+    if(!did.length && !pl.length){ return sec("Janji dan rekod lalu", [], "Belum disusun."); }
+    var ul = el("ul");
+    did.forEach(function(c){ ul.appendChild(claimLi(c)); });
+    pl.forEach(function(x){
+      var a = el("a",{href:"#pledges",text:fmt("Janji 2021 no. {n}: {t}",{n:x.n,t:x.zh})});
+      a.addEventListener("click", function(){ pendingPledge = x.n; });
+      ul.appendChild(el("li",null,[a, document.createTextNode(" "), el("span",{class:"pill st s-" + x.st,text:PSTATUS[x.st].label})]));
+    });
+    return el("div",{class:"sec"},[el("h4",{text:"Janji dan rekod lalu"}), ul]);
+  }
+  function render(){
+    roleHost.textContent = ""; issueHost.textContent = ""; partyHost.textContent = ""; head.textContent = ""; cmp.textContent = ""; ctx.textContent = "";
+    var mine = role ? roleBy(role).issues : [];
+    ROLES.forEach(function(r){
+      var b = el("button",{type:"button",class:"chip role","aria-pressed":String(role === r.id),text:r.name});
+      b.addEventListener("click", function(){
+        if(role === r.id){ role = null; } else { role = r.id; issue = r.issues[0]; }
+        save(); render();
+      });
+      roleHost.appendChild(b);
+    });
+    ISSUES.forEach(function(i){
+      var b = el("button",{type:"button",class:"chip pick","aria-pressed":String(issue === i.id)},[
+        mine.indexOf(i.id) !== -1 ? el("span",{class:"dot",title:"Mungkin penting bagi kumpulan yang anda pilih"}) : null, i.name
+      ]);
+      b.addEventListener("click", function(){ issue = i.id; save(); render(); });
+      issueHost.appendChild(b);
+    });
+    PARTIES.forEach(function(p){
+      var on = shown.indexOf(p.id) !== -1;
+      var b = el("button",{type:"button",class:"chip","aria-pressed":String(on)},[el("span",{class:"box","aria-hidden":"true"}), shortName(p)]);
+      b.addEventListener("click", function(){
+        if(on){ shown = shown.filter(function(x){ return x !== p.id; }); } else { shown.push(p.id); }
+        save(); render();
+      });
+      partyHost.appendChild(b);
+    });
+
+    var cur = ISSUES.filter(function(i){ return i.id === issue; })[0], st = STANCE[issue] || {};
+    head.appendChild(el("h2",{class:"cmp-title",text:cur.name}));
+    head.appendChild(el("p",{class:"muted",text:cur.desc}));
+    var cols = PARTIES.filter(function(p){ return shown.indexOf(p.id) !== -1; });
+    if(!cols.length){ cmp.appendChild(el("div",{class:"nosel",style:"grid-row:1 / -1",text:"Belum ada parti dipilih. Tandakan X di atas dan ia akan dipaparkan di sini."})); return; }
+    cols.forEach(function(p){
+      var items = st[p.id] || [];
+      var say = items.filter(function(c){ return c.k !== "did"; }), did = items.filter(function(c){ return c.k === "did"; });
+      var pl = p.id === "GPS" ? PLEDGES.filter(function(x){ return x.issue === issue; }) : [];
+      var total = items.length + pl.length;
+      var link = el("a",{href:"#parties",text:"Lihat parti ini →"});
+      link.addEventListener("click", function(){ pickParty(p.id); });
+      cmp.appendChild(el("article",{class:"col"},[
+        el("header",null,[
+          el("div",{class:"phead"},[badge(p), el("div",null,[el("strong",{text:shortName(p)}), el("small",{text:LATIN ? p.role : fmt("{a} · {b}",{a:p.abbr,b:p.role})})])]),
+          total ? el("span",{class:"pill warn",text:fmt("Rekod: {n}",{n:total})}) : el("span",{class:"pill plain",text:"Tiada rekod lagi"})
+        ]),
+        sec("Pendirian kali ini", say, "Belum ditemui; akan ditambah selepas manifesto diterbitkan."),
+        recordSec(did, pl),
+        el("footer",null,[link])
+      ]));
+    });
+    if(st._ctx){ ctx.appendChild(withSrc(el("div",{class:"ctxcard"},[el("b",{text:"Pandangan masyarakat sivil: "}), st._ctx.x]), st._ctx.s)); }
+  }
+  render();
+})();
+
+/* ---------- pledge check ---------- */
+(function(){
+  var tiles = $("pl-tiles"), bar = $("pl-bar"), list = $("pl-list"), rubric = $("pl-rubric");
+  var cur = "all";
+  var count = {}; PORDER.forEach(function(k){ count[k] = PLEDGES.filter(function(p){ return p.st === k; }).length; });
+  bar.setAttribute("aria-label", PORDER.map(function(k){ return fmt("{label}: {n}",{label:PSTATUS[k].label,n:count[k]}); }).join(", "));
+  PORDER.forEach(function(k){ if(count[k]){ bar.appendChild(el("span",{class:"sw-" + k,style:"flex:" + count[k],title:PSTATUS[k].label + " " + count[k]})); } });
+
+  function blk(title, items, cls){
+    var ul = el("ul"); items.forEach(function(c){ ul.appendChild(claimLi(c)); });
+    return el("div",{class:"blk" + (cls ? " " + cls : "")},[el("h4",{text:title}), ul]);
+  }
+  function render(){
+    tiles.textContent = ""; list.textContent = "";
+    [["all","Semua",PLEDGES.length]].concat(PORDER.map(function(k){ return [k, PSTATUS[k].label, count[k]]; })).forEach(function(t){
+      var b = el("button",{type:"button",class:"tile","aria-pressed":String(cur === t[0])},[
+        el("b",{text:String(t[2])}), el("span",null,[el("i",{class:"sw-" + t[0]}), t[1]])
+      ]);
+      b.addEventListener("click", function(){ cur = t[0]; render(); });
+      tiles.appendChild(b);
+    });
+    rubric.textContent = cur === "all" ? fmt("Cara penilaian: {list}",{list:PORDER.map(function(k){ return fmt("“{label}”: {desc}",PSTATUS[k]); }).join(" ")}) : fmt("Maksud “{label}”: {desc}",PSTATUS[cur]);
+    PLEDGES.filter(function(p){ return cur === "all" || p.st === cur; }).forEach(function(p){
+      var tags = el("div",{class:"tags"},[el("span",{class:"pill st s-" + p.st,text:PSTATUS[p.st].label})]);
+      if(p.fed){ tags.appendChild(el("span",{class:"pill line",text:"Kebanyakannya bidang kuasa Persekutuan"})); }
+      if(p.rose){ tags.appendChild(el("span",{class:"pill line",text:fmt("Tinjauan ROSE: {v}",{v:p.rose === "vd" ? "sangat tidak memuaskan" : "tidak memuaskan"})})); }
+      var cols = el("div",{class:"cols" + (p.con ? " split" : "")},[blk("Rekod yang ditemui", p.ev)]);
+      if(p.con){ cols.appendChild(blk("Pertikaian dan kekurangan", p.con, "crit")); }
+      list.appendChild(el("article",{class:"pl",id:"pl-" + p.n},[
+        el("header",null,[el("span",{class:"pl-n",text:String(p.n)}), el("div",null,[el("h3",{text:p.zh}), p.ms !== p.zh ? el("div",{class:"ms",lang:"ms",text:p.ms}) : null, tags])]),
+        cols
+      ]));
+    });
+  }
+  resetPledgeFilter = function(){ if(cur !== "all"){ cur = "all"; render(); } };
+  render();
+})();
+
+/* ---------- source list ---------- */
+(function(){
+  var ul = $("src-list");
+  Object.keys(SRC).forEach(function(k){ ul.appendChild(el("li",null,[el("a",{href:SRC[k].u,target:"_blank",rel:"noopener",text:SRC[k].t})])); });
+})();
+
+route(false);
+})();
+</script>
+</body>
+</html>

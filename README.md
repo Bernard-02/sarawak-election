@@ -24,6 +24,18 @@
 | 海外投票 | 郵寄投票的申請方式與期限 |
 | 關於 | 整理原則、全部來源 |
 
+## 語言
+
+| 版本 | 網址 | 怎麼來的 |
+| --- | --- | --- |
+| 繁體中文 | `/` | 原稿 |
+| 简体中文 | `/zh-hans/` | 由繁體版用 OpenCC 自動轉換 |
+| English | `/en/` | 由繁體版翻譯，AI 協助 |
+| Bahasa Melayu | `/ms/` | 由繁體版翻譯，AI 協助 |
+
+各版本內容有出入時，以繁體中文版為準。英文和馬來文的譯文放在 `src/i18n.json`，以中文原句為索引，
+發現譯得不好的地方可以直接改那個檔案，或開 issue。
+
 ## 回報錯誤
 
 開一個 [issue](https://github.com/Bernard-02/sarawak-election/issues)，附上你看到的來源連結。
@@ -31,13 +43,18 @@
 
 ## 檔案
 
-- `index.html`：網頁本體，由 `src/` 產生，不要直接修改。
+- `index.html`、`zh-hans/`、`en/`、`ms/`：四個語言的網頁，都由 `src/` 產生，不要直接修改。
 - `src/template.html`：版面與頁面邏輯
 - `src/style.css`：樣式
 - `src/data.js`：選區、政黨、議題、來源
 - `src/pledges.js`：承諾查核與新手指南的來源
-- `src/build.py`：把上面四個檔案合成 `index.html`
+- `src/i18n.json`：英文與馬來文譯文
+- `src/i18n.py`：找出頁面上要翻譯的文字並替換
+- `src/build.py`：把上面的檔案合成四個網頁
 
 ```
+pip install opencc-python-reimplemented   # 只有簡體版需要
 cd src && python3 build.py
 ```
+
+改了中文內容之後，`build.py` 會列出還沒有譯文的句子，補進 `src/i18n.json` 再跑一次。
