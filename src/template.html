@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>砂拉越州選選民參考</title>
+<meta name="description" content="給砂拉越選民的中文投票參考：新手指南、選區查詢、各政黨的說法與受到的批評、議題對照、承諾查核、海外投票。個人整理，非官方，每則附來源。">
+<meta property="og:title" content="砂拉越州選選民參考">
+<meta property="og:description" content="給砂拉越選民的中文投票參考：新手指南、選區查詢、各政黨的說法與受到的批評、議題對照、承諾查核、海外投票。個人整理，非官方，每則附來源。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bernard-02.github.io/sarawak-election/">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: a tabbed dashboard in the Sarawak flag's black, yellow and red. Black carries the type
+   and the one loud element (the polling-day card with the flag's diagonal bands); yellow marks what
+   the reader has chosen; red is kept for deadlines. Parties are never given a colour. */
+:root{
+  --paper:#F4F3EF; --surface:#FFFFFF; --ink:#111113; --muted:#66645F; --line:#E3E1DA; --chip:#ECEAE3;
+  --accent:#FFD21F; --accent-soft:#FFF3BF; --on-accent:#111113;
+  --red:#C8102E; --red-soft:#FCE9EB; --on-red:#FFFFFF;
+  --hero-bg:#111113; --hero-ink:#FFFFFF; --hero-muted:#B9B7B0; --hero-tile:rgba(255,255,255,.09);
+  --flag-red:#C8102E; --flag-yellow:#FFD21F;
+  --shadow:0 1px 2px rgba(17,17,19,.04),0 10px 28px rgba(17,17,19,.06);
+  --display:"Inter","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --body:"Inter","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --mono:"Inter","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --r:18px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E0E0F; --surface:#19191B; --ink:#F5F4EF; --muted:#A5A39C; --line:#2D2D30; --chip:#262628;
+    --accent:#FFD21F; --accent-soft:#3B3310; --on-accent:#111113;
+    --red:#FF6170; --red-soft:#3A161B; --on-red:#111113;
+    --hero-bg:#202023; --hero-ink:#FFFFFF; --hero-muted:#B9B7B0; --hero-tile:rgba(255,255,255,.08);
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E0E0F; --surface:#19191B; --ink:#F5F4EF; --muted:#A5A39C; --line:#2D2D30; --chip:#262628;
+  --accent:#FFD21F; --accent-soft:#3B3310; --on-accent:#111113;
+  --red:#FF6170; --red-soft:#3A161B; --on-red:#111113;
+  --hero-bg:#202023; --hero-ink:#FFFFFF; --hero-muted:#B9B7B0; --hero-tile:rgba(255,255,255,.08);
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{color:var(--red)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.25;letter-spacing:-.01em}
+p{margin:0}
+.num,.count,.dates .d,.seatlist .n,.seatcard .code,.hero .big,.hero-stats .v{font-variant-numeric:tabular-nums}
+.num{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.small{font-size:13.5px;line-height:1.6}
+
+/* header */
+.top{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+@supports (backdrop-filter:blur(8px)) or (-webkit-backdrop-filter:blur(8px)){
+  .top{background:color-mix(in srgb,var(--paper) 82%,transparent);-webkit-backdrop-filter:saturate(1.5) blur(14px);backdrop-filter:saturate(1.5) blur(14px)}
+}
+.top .row1{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding-top:12px}
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:17px;letter-spacing:-.01em;text-decoration:none;color:var(--ink);margin-right:auto}
+.brand:hover{color:var(--ink)}
+.brand .mark{width:30px;height:30px;border-radius:9px;background:var(--hero-bg);display:grid;place-items:center;flex:none}
+.brand .mark svg{width:20px;height:20px;fill:var(--flag-yellow)}
+.status{display:flex;flex-wrap:wrap;gap:6px}
+.tabs{display:flex;gap:4px;overflow-x:auto;padding:10px 0 12px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{flex:none;font-size:14.5px;font-weight:600;text-decoration:none;color:var(--muted);padding:7px 14px;border-radius:999px;transition:background .15s,color .15s}
+.tabs a:hover{color:var(--ink);background:var(--chip)}
+.tabs a[aria-current="page"]{color:var(--paper);background:var(--ink)}
+
+/* pills */
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:3px 11px;border-radius:999px;white-space:nowrap;text-decoration:none}
+.pill.crit{background:var(--red);color:var(--on-red)}
+.pill.warn{background:var(--accent);color:var(--on-accent)}
+.pill.ok,.pill.plain{background:var(--chip);color:var(--ink)}
+.pill.line{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+a.pill.line:hover{color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+
+/* views */
+.view{display:none;padding:28px 0 56px}
+.view.on{display:block;animation:rise .28s ease-out}
+@keyframes rise{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+.view > .wrap > h1{font-size:clamp(30px,7.5vw,44px);font-weight:900;letter-spacing:-.03em}
+.view > .wrap > h1 .hl{background:var(--accent);color:var(--on-accent);border-radius:10px;padding:0 .18em;margin:0 .06em}
+.view > .wrap > .sub{margin-top:10px;color:var(--muted);max-width:40em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin-top:20px;align-items:start}
+.two{display:grid;gap:18px;margin-top:20px;align-items:start}
+@media (min-width:820px){.two{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}.two.narrow-left{grid-template-columns:minmax(0,4fr) minmax(0,7fr)}.sticky{position:sticky;top:118px}}
+.stack{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.card h3{font-size:18px;font-weight:800}
+.k{font-size:12.5px;font-weight:600;letter-spacing:.06em;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;font-size:15px;text-decoration:none;padding:10px 18px;border-radius:999px;background:var(--ink);color:var(--paper);border:0;cursor:pointer;transition:transform .15s}
+.btn:hover{color:var(--paper);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{color:var(--ink);background:var(--chip)}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+
+/* polling-day card: the one loud element */
+.hero{position:relative;overflow:hidden;border-radius:24px;padding:22px;color:var(--hero-ink);min-height:320px;display:flex;flex-direction:column;justify-content:space-between;gap:22px;
+  background:linear-gradient(45deg,transparent 0 80%,var(--flag-red) 80% 88%,var(--flag-yellow) 88% 100%),var(--hero-bg)}
+.hero .k{color:var(--hero-muted)}
+.hero .big{font-size:clamp(68px,20vw,104px);font-weight:900;letter-spacing:-.05em;line-height:.95;color:var(--flag-yellow);margin-top:6px}
+.hero-sub{color:var(--hero-muted);font-size:15px;margin-top:8px}
+.hero .count{display:inline-block;margin-top:14px;background:var(--flag-yellow);color:#111113;font-weight:800;font-size:15px;padding:4px 14px;border-radius:999px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hero-stats > div{background:var(--hero-tile);border-radius:14px;padding:12px 14px}
+.hero-stats .v{font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.2}
+.hero-stats .s{font-size:12.5px;color:var(--hero-muted);line-height:1.5}
+
+/* step links */
+.go-list{display:flex;flex-direction:column;gap:10px}
+.go{display:grid;grid-template-columns:44px 1fr 24px;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+.go:hover{color:var(--ink);transform:translateY(-2px);border-color:var(--ink)}
+.go .n{width:44px;height:44px;border-radius:14px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:900;font-size:19px}
+.go .t{font-weight:800;font-size:18px;line-height:1.3}
+.go .t small{display:block;font-size:12.5px;font-weight:600;color:var(--muted);letter-spacing:.04em}
+.go .arr{font-size:20px;font-weight:600}
+
+/* deadline notice */
+.notice{background:var(--red-soft);border-radius:var(--r);padding:18px}
+.notice.done{background:var(--chip)}
+.notice h3{font-size:18px;font-weight:800;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+ol.steps{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:12px}
+ol.steps li::before{content:counter(s);font-weight:800;width:30px;height:30px;border-radius:999px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:14px}
+
+/* dates */
+.dates{margin:10px 0 0;padding:0;list-style:none}
+.dates li{display:grid;grid-template-columns:60px 1fr;gap:12px;padding:10px 0;border-top:1px solid var(--line);align-items:baseline}
+.dates li:first-child{border-top:0}
+.dates .d{font-weight:800;font-size:15px}
+.dates li.past{color:var(--muted)}
+.dates li.past .d{text-decoration:line-through;font-weight:600}
+
+/* seat composition bar */
+.bar{display:flex;gap:3px;height:16px;margin-top:14px}
+.bar span{display:block;min-width:10px;border-radius:999px}
+.sw-a{background:var(--ink)}
+.sw-b{background:repeating-linear-gradient(45deg,var(--ink) 0 2px,transparent 2px 5px);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.sw-c{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px;font-size:14px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
+
+/* constituency finder */
+.field{display:block}
+.field span{display:block;font-size:14px;font-weight:700;margin-bottom:8px}
+input[type="search"]{width:100%;font:inherit;padding:12px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);transition:border-color .15s}
+input[type="search"]:focus{outline:0;border-color:var(--ink);box-shadow:0 0 0 3px var(--accent)}
+.seatlist{margin-top:10px;max-height:300px;overflow-y:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:6px}
+@media (min-width:820px){.seatlist{max-height:520px}}
+.seatlist button{display:grid;grid-template-columns:50px 1fr;gap:8px;width:100%;text-align:left;font:inherit;color:var(--ink);background:transparent;border:0;border-radius:12px;padding:9px 12px;cursor:pointer;align-items:baseline}
+.seatlist button:hover{background:var(--chip)}
+.seatlist button[aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
+.seatlist button[aria-selected="true"] .muted{color:inherit;opacity:.75}
+.seatlist .n{font-weight:800;font-size:14px}
+.seatlist .empty{padding:14px;color:var(--muted)}
+.seatcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.seatcard header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:20px 18px 14px}
+.seatcard header .code{flex:none;background:var(--accent);color:var(--on-accent);font-weight:800;font-size:15px;border-radius:999px;padding:4px 14px}
+.seatcard h3{font-size:30px;font-weight:900;letter-spacing:-.03em;margin-top:2px}
+.seatcard .zh{color:var(--muted);font-size:15px}
+.seatcard dl{margin:0;padding:0 18px 8px}
+.seatcard dl > div{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.seatcard dt{font-size:13.5px;color:var(--muted);font-weight:600}
+.seatcard dd{margin:0}
+.seatcard ul{margin:0;padding-left:1.1em}
+.seatcard .foot{padding:14px 18px;background:var(--chip)}
+
+/* parties */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);box-shadow:var(--shadow);margin-top:20px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px}
+th,td{text-align:left;padding:12px 16px;border-top:1px solid var(--line);vertical-align:top}
+thead th{border-top:0;font-size:12.5px;letter-spacing:.06em;color:var(--muted);font-weight:600;white-space:nowrap}
+tbody th{font-weight:800;white-space:nowrap}
+tbody th small{display:block;font-weight:600;font-size:12px;color:var(--muted)}
+tbody tr{cursor:pointer;transition:background .15s}
+tbody tr:hover{background:var(--chip)}
+tbody tr[aria-selected="true"]{background:var(--accent-soft);box-shadow:inset 5px 0 0 var(--accent)}
+.party{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.party > header{padding:20px 18px;border-bottom:1px solid var(--line)}
+.party > header h3{font-size:24px;font-weight:900;letter-spacing:-.02em}
+.party > header .abbr{display:inline-block;font-size:13px;font-weight:700;letter-spacing:0;background:var(--chip);border-radius:999px;padding:2px 10px;margin-left:8px;vertical-align:3px}
+.party .cols{display:grid;gap:0}
+.party .blk{padding:18px}
+.party .blk + .blk{border-top:1px solid var(--line)}
+@media (min-width:820px){.party .cols{grid-template-columns:repeat(3,1fr)}.party .blk + .blk{border-top:0;border-left:1px solid var(--line)}}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.blk h4{margin:0 0 10px;font-family:var(--body);font-size:12.5px;font-weight:600;letter-spacing:.06em;color:var(--muted)}
+.blk ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.blk li{padding-left:16px;position:relative}
+.blk li::before{content:"";position:absolute;left:0;top:.68em;width:7px;height:7px;background:var(--ink);border-radius:999px}
+.blk.crit li::before{background:transparent;box-shadow:inset 0 0 0 1.5px var(--muted)}
+.src{display:inline-block;font-size:12px;line-height:1.5;color:var(--muted);text-decoration:underline;text-decoration-color:var(--line);text-decoration-thickness:1px;margin-left:4px;white-space:nowrap}
+.src:hover{color:var(--red)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:15px;font-weight:600;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:6px 14px 6px 7px;cursor:pointer;transition:background .15s,border-color .15s}
+.chip:hover{border-color:var(--ink)}
+.chip .box{position:relative;width:22px;height:22px;border:1.5px solid var(--ink);border-radius:7px;flex:none}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+.chip[aria-pressed="true"] .box{border-color:var(--on-accent)}
+.chip[aria-pressed="true"] .box::before,.chip[aria-pressed="true"] .box::after{content:"";position:absolute;left:50%;top:50%;width:15px;height:3px;margin:-1.5px 0 0 -7.5px;background:var(--on-accent);border-radius:2px;transform:rotate(45deg)}
+.chip[aria-pressed="true"] .box::after{transform:rotate(-45deg)}
+.chip.role{padding:6px 14px}
+.chip.role[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.label{font-size:14px;font-weight:700}
+
+/* issues */
+.issue{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.issue > header{padding:16px 18px;border-bottom:1px solid var(--line)}
+.issue > header h3{font-size:20px;font-weight:900;letter-spacing:-.02em}
+.issue .row{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:14px 18px;border-top:1px solid var(--line)}
+.issue .row:first-of-type{border-top:0}
+.issue .row .who{font-weight:800;font-size:14.5px;line-height:1.4}
+.issue .row .who small{display:block;font-weight:600;font-size:12px;color:var(--muted)}
+.issue .row ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.issue .row .none{color:var(--muted);font-size:14px}
+.issue .ctx{padding:14px 18px;background:var(--chip);font-size:14px}
+.nosel{padding:22px;border:1.5px dashed var(--line);border-radius:var(--r);color:var(--muted);text-align:center}
+
+/* misc */
+.todo{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.todo li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+.todo li::before{content:"";width:20px;height:20px;border:1.5px solid var(--ink);border-radius:7px;margin-top:4px}
+.plain-list{margin:12px 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:8px}
+footer{padding:18px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+@media (max-width:420px){
+  .seatcard dl > div{grid-template-columns:1fr;gap:2px}
+  .issue .row{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="row1">
+      <a class="brand" href="#overview"><span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12.00,1.50 13.68,7.40 18.75,3.96 16.24,9.55 22.34,10.18 16.83,12.85 21.09,17.25 15.15,15.75 15.59,21.87 12.00,16.90 8.41,21.87 8.85,15.75 2.91,17.25 7.17,12.85 1.66,10.18 7.76,9.55 5.25,3.96 10.32,7.40"/></svg></span>砂州選參考</a>
+      <div class="status">
+        <span class="pill plain" id="hd-count"></span>
+        <a class="pill line" id="hd-seat" href="#seat"></a>
+      </div>
+    </div>
+    <nav class="tabs" aria-label="主要分頁">
+      <a href="#overview" data-view="overview">總覽</a>
+      <a href="#guide" data-view="guide">新手指南</a>
+      <a href="#seat" data-view="seat">我的選區</a>
+      <a href="#parties" data-view="parties">政黨</a>
+      <a href="#issues" data-view="issues">議題對照</a>
+      <a href="#pledges" data-view="pledges">承諾查核</a>
+      <a href="#overseas" data-view="overseas">海外投票</a>
+      <a href="#about" data-view="about">關於</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ 總覽 ============ -->
+<section class="view" id="v-overview">
+  <div class="wrap">
+    <h1>畫<span class="hl">X</span>之前，先看清楚。</h1>
+    <p class="sub">第 13 屆砂拉越州選舉的非官方選民參考。確認你的選區、看有誰參選，再比較各黨在你在意的事情上說過什麼、做過什麼。這裡不建議你投給誰。</p>
+
+    <nav class="go-list" style="margin-top:20px" aria-label="新手入口">
+      <a class="go" href="#guide"><span class="n">?</span><span class="t"><small>第一次投票，或對砂拉越選舉不熟</small>先看新手指南</span><span class="arr" aria-hidden="true">→</span></a>
+    </nav>
+
+    <div class="grid">
+      <div class="hero" aria-label="選舉日程摘要">
+        <div>
+          <div class="k">投票日</div>
+          <div class="big">12.12</div>
+          <div class="hero-sub">2026 年・星期六</div>
+          <div class="count" id="count-poll"></div>
+        </div>
+        <div class="hero-stats">
+          <div><div class="k">提名日</div><div class="v">11.28</div><div class="s">星期六・候選人名單確定</div></div>
+          <div><div class="k">州議席</div><div class="v">82</div><div class="s">過半需 42 席</div></div>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="notice" id="ov-postal">
+          <h3>海外郵寄投票申請 <span class="pill crit" data-postal-pill>11/20 截止</span></h3>
+          <p style="margin-top:6px">住在海外的選民要在 <b>11 月 20 日（星期五）</b>前到選委會 MySPR 申請。</p>
+          <div class="btnrow"><a class="btn" href="#overseas">看申請步驟</a></div>
+        </div>
+        <div class="card" id="ov-seat"></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <nav class="go-list" aria-label="從這裡開始">
+        <a class="go" href="#seat"><span class="n">1</span><span class="t"><small>第一步</small>確認我的選區</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="go" href="#parties"><span class="n">2</span><span class="t"><small>第二步</small>認識參選的政黨</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="go" href="#issues"><span class="n">3</span><span class="t"><small>第三步</small>用我在意的議題比較</span><span class="arr" aria-hidden="true">→</span></a>
+      </nav>
+
+      <div class="stack">
+        <div class="card">
+          <div class="k">解散前的州議會</div>
+          <div class="bar" role="img" aria-label="解散前議席：砂盟 79 席，行動黨 2 席，獨立人士 1 席">
+            <span class="sw-a" style="flex:79"></span><span class="sw-b" style="flex:2"></span><span class="sw-c" style="flex:1"></span>
+          </div>
+          <div class="legend">
+            <span><i class="sw-a"></i>砂盟 <b class="num">79</b></span>
+            <span><i class="sw-b"></i>行動黨 <b class="num">2</b></span>
+            <span><i class="sw-c"></i>獨立 <b class="num">1</b></span>
+          </div>
+          <p class="small muted" style="margin-top:10px">2021 年州選，砂盟贏得 76 席、砂團黨 4 席、行動黨 2 席。<a class="src" data-s="nst_dom"></a> 砂團黨其後解散，黨員加入砂盟的民進黨。<a class="src" data-s="tv8_psb"></a> 多位分析人士預期砂盟會繼續執政，認為看點是它贏多少。<a class="src" data-s="star"></a></p>
+        </div>
+        <div class="card">
+          <div class="k">重要日期</div>
+          <ul class="dates" id="date-list"></ul>
+          <p class="small muted" style="margin-top:8px">日期以選委會（SPR）公布為準。州議會 2025 年通過增加 17 席，但選委會主席表示趕不上本屆，所以這次仍是 82 席。<a class="src" data-s="mk_99"></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 新手指南 ============ -->
+<section class="view guide" id="v-guide">
+  <div class="wrap">
+    <h1>第一次投票</h1>
+    <p class="sub">給首投族，和對砂拉越選舉不太熟的人。先看懂這場選舉在選什麼，再看你要做哪幾件事。</p>
+
+    <h2>這場選舉在選什麼</h2>
+    <div class="grid qa">
+      <div class="card">
+        <h3>這是州選，不是全國大選</h3>
+        <p>這次選的是砂拉越州立法議會（DUN）的 82 位州議員，結果決定誰來組成州政府。選國會議員、決定首相的全國大選是另一場選舉，不在這一次。</p>
+      </div>
+      <div class="card">
+        <h3>你只投自己那一區</h3>
+        <p>全州分成 82 個州選區，每一區選出一位州議員。你拿到一張選票，選一位候選人，那一區得票最多的人當選。</p>
+      </div>
+      <div class="card">
+        <h3>誰來執政</h3>
+        <p>贏得過半議席（至少 42 席）的政黨或聯盟組成州政府，由它的領袖出任州總理。<a class="src" data-s="wiki26"></a></p>
+      </div>
+      <div class="card">
+        <h3>這一屆有什麼不一樣</h3>
+        <p>18 歲投票和選民自動登記在 2021 年 12 月 15 日生效<a class="src" data-s="g_undi18"></a>，但沒趕上三天後的上一屆州選<a class="src" data-s="g_2021"></a>。所以這是 18 到 20 歲的人第一次能在砂拉越州選投票。選民人數從上一屆的約 125 萬增加到 205.9 萬。<a class="src" data-s="g_2021"></a><a class="src" data-s="g_voters"></a></p>
+      </div>
+    </div>
+
+    <h2>我要先登記嗎</h2>
+    <div class="card qa">
+      <p style="margin-top:0">不用自己申請。年滿 18 歲的公民會自動登記為選民。<a class="src" data-s="g_undi18"></a> 但你要確認兩件事：名字有沒有在這次選舉的選民冊上，以及登記在哪一個選區。這兩件事都以選委會 MySPR Semak 的查詢結果為準。</p>
+      <div class="btnrow">
+        <a class="btn" href="https://mysprsemak.spr.gov.my/semakan/daftarPemilih" target="_blank" rel="noopener">到 MySPR Semak 查詢</a>
+        <a class="btn ghost" href="#seat">在這裡看我的選區</a>
+      </div>
+    </div>
+
+    <h2>投票日之前</h2>
+    <div class="card">
+      <ol class="flow">
+        <li><div><b>查選區和投票站</b>選區看的是選民冊上的登記，不一定是你現在住的地方。MySPR Semak 也會顯示你的投票站和建議的投票時段。<a class="src" data-s="g_ic"></a></div></li>
+        <li><div><b>看你那一區有誰參選</b>候選人要到 11 月 28 日提名日才確定。<a class="src" data-s="spr"></a> 確定之後，可以在「我的選區」分頁看到。</div></li>
+        <li><div><b>人不在砂拉越，先決定怎麼投</b>郵寄投票要事先申請，而且有期限；沒有申請的話，就要在投票日回到登記的投票站。細節在「海外投票」分頁。</div></li>
+        <li><div><b>想一想你在意什麼</b>用「議題對照」把各黨的說法並排比較，也可以在「承諾查核」看執政的砂盟上一屆做到了多少。</div></li>
+      </ol>
+      <div class="btnrow">
+        <a class="btn ghost" href="#overseas">海外投票</a>
+        <a class="btn ghost" href="#issues">議題對照</a>
+        <a class="btn ghost" href="#pledges">承諾查核</a>
+      </div>
+    </div>
+
+    <h2>投票日當天的流程</h2>
+    <div class="two">
+      <div class="card">
+        <ol class="flow">
+          <li><div><b>帶身分證到投票站</b>到你登記的投票站，找到自己的投票通道。<a class="src" data-s="g_ic"></a></div></li>
+          <li><div><b>核對身分</b>把身分證交給第一位職員，並讓職員檢查雙手。職員會唸出你的名字和身分證號碼，聽清楚是不是你。<a class="src" data-s="g_steps"></a></div></li>
+          <li><div><b>沾選舉墨水</b>職員會請你把手指沾上不易洗掉的選舉墨水，表示你已經領票。<a class="src" data-s="g_steps"></a></div></li>
+          <li><div><b>領選票</b>從職員手上拿到一張選票。<a class="src" data-s="g_steps"></a></div></li>
+          <li><div><b>畫一個 X</b>到圈票處，用筆在你要選的候選人名字和標誌旁邊的空格畫「X」。只能選一位。<a class="src" data-s="g_steps"></a></div></li>
+          <li><div><b>投入票箱</b>把選票摺好，投進票箱，就完成了。</div></li>
+        </ol>
+      </div>
+      <div class="stack">
+        <div class="card qa">
+          <h3>投票站幾點開</h3>
+          <p>每個投票中心的開放時間不一定相同，這裡不列時間。出門前請在選委會的 <a href="https://mysprsemak.spr.gov.my/semakan/daftarPemilih" target="_blank" rel="noopener">MySPR Semak</a> 查你那一站的時間。</p>
+        </div>
+        <div class="card qa">
+          <h3>當天要注意</h3>
+          <ul class="plain-list">
+            <li>一定要帶身分證。<a class="src" data-s="g_ic"></a></li>
+            <li>投票通道裡不能用手機，帶了要放在指定的位置。<a class="src" data-s="g_phone"></a></li>
+            <li>不要穿戴有政黨或候選人名字、標誌的衣服、帽子或口罩，否則可能被拒絕進入投票中心。<a class="src" data-s="g_dress"></a></li>
+          </ul>
+          <p class="small muted" style="margin-top:10px">後兩項是選委會在近期其他選舉發出的提醒。這一場的規定以選委會屆時公布的為準。</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>常見名詞</h2>
+    <div class="card">
+      <dl class="gloss">
+        <div><dt>DUN</dt><dd>州立法議會。這次要選的就是它的 82 位議員，也叫州議員（ADUN）。</dd></div>
+        <div><dt>N.09、P.195</dt><dd>N 開頭是州選區的編號，P 開頭是國會選區的編號。這次只用得到 N 開頭的。</dd></div>
+        <div><dt>砂盟、希盟</dt><dd>政黨聯盟，各由幾個政黨組成。砂盟（GPS）目前執政，希盟（PH）在砂拉越是在野。</dd></div>
+        <div><dt>州總理</dt><dd>砂拉越州政府的首長，英文是 Premier。不是全國的首相。</dd></div>
+        <div><dt>提名日</dt><dd>候選人正式報名的日子。當天才確定每一區有誰參選。</dd></div>
+        <div><dt>多數票</dt><dd>當選人比第二名多出的票數。數字越小，代表上一次選得越接近。</dd></div>
+        <div><dt>MA63</dt><dd>1963 年馬來西亞協議。砂拉越爭取自治權和資源權益時，常以它為依據。</dd></div>
+        <div><dt>NCR</dt><dd>原住民習俗地，指原住民社群依習俗擁有的土地。</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 我的選區 ============ -->
+<section class="view" id="v-seat">
+  <div class="wrap">
+    <h1>我的選區</h1>
+    <p class="sub">你的選區看的是選民冊上的登記，不一定是你現在住的地方。先用選委會的官方查詢確認，再回來這裡選。</p>
+    <div class="two">
+      <div class="stack">
+        <div class="card">
+          <h3>第一步：到官方系統查詢</h3>
+          <p style="margin-top:6px">MySPR Semak 是選委會的查詢系統，輸入身分證號碼就能看到你登記的州選區（DUN）和投票站。</p>
+          <div class="btnrow"><a class="btn" href="https://mysprsemak.spr.gov.my/semakan/daftarPemilih" target="_blank" rel="noopener">開啟 MySPR Semak</a></div>
+          <p class="small muted" style="margin-top:10px">身分證號碼只在選委會官網輸入。這個頁面不會要求、也不會儲存任何個人資料。</p>
+        </div>
+        <div>
+          <label class="field" for="seat-q"><span>第二步：在 82 個州選區中找到你的</span>
+            <input id="seat-q" type="search" inputmode="search" autocomplete="off" placeholder="編號或名稱，例如 54、Pelawan、柏拉旺">
+          </label>
+          <div class="seatlist" id="seat-list" role="listbox" aria-label="州選區列表"></div>
+        </div>
+      </div>
+      <div class="sticky">
+        <article class="seatcard" id="seat-card" aria-live="polite"></article>
+        <p class="small muted" style="margin-top:10px">選區中文譯名各家報章不完全一樣，請以編號和馬來文名稱為準。議員與 2021 年票數整理自維基百科<a class="src" data-s="wiki26"></a><a class="src" data-s="wiki21"></a>，如有出入以選委會為準。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 政黨 ============ -->
+<section class="view" id="v-parties">
+  <div class="wrap">
+    <h1>政黨</h1>
+    <p class="sub">排序依解散前的議席數，沒有議席的依英文簡稱字母。點一列看詳細內容。每個政黨都用同樣三欄：目前動向、他們的主張、紀錄與外界批評。</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th scope="col">政黨或聯盟</th><th scope="col">定位</th><th scope="col">解散前議席</th><th scope="col">本屆參選（截至 11/19）</th></tr></thead>
+        <tbody id="party-rows"></tbody>
+      </table>
+    </div>
+    <div style="margin-top:14px" id="party-panel" aria-live="polite"></div>
+    <div class="card" style="margin-top:14px">
+      <h3>其他</h3>
+      <p style="margin-top:6px">國陣（BN）已確認不參選。<a class="src" data-s="mk_bn"></a> 人民宏願黨（Aspirasi）等小黨也透露了參選計劃。<a class="src" data-s="od_82"></a> 所有政黨最後是否參選、在哪裡參選，要到 11 月 28 日提名日才確定。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 議題對照 ============ -->
+<section class="view" id="v-issues">
+  <div class="wrap">
+    <h1>議題對照</h1>
+    <p class="sub">選一個議題，把各黨的說法並排比較，就像比較不同的方案。這裡不會算出「你該投誰」。</p>
+
+    <div class="card controls">
+      <div>
+        <p class="label" id="role-label">我是⋯⋯</p>
+        <div class="chips" id="role-chips" role="group" aria-labelledby="role-label"></div>
+        <p class="small muted" style="margin-top:8px">選一個身分，會用黃點標出你可能在意的議題。</p>
+      </div>
+      <div>
+        <p class="label" id="issue-label">比較哪個議題</p>
+        <div class="chips" id="issue-chips" role="group" aria-labelledby="issue-label"></div>
+      </div>
+      <div>
+        <p class="label" id="pc-label">比較哪些政黨</p>
+        <div class="chips" id="party-chips" role="group" aria-labelledby="pc-label"></div>
+      </div>
+    </div>
+
+    <div id="cmp-head" aria-live="polite"></div>
+    <p class="small muted swipe-hint">左右滑動可以看到全部政黨。想仔細比較其中兩三個，就把其他的 X 取消。</p>
+    <div class="cmp" id="cmp"></div>
+    <div id="cmp-ctx"></div>
+    <p class="small muted" style="margin-top:14px;max-width:46em">執政黨有施政紀錄可查，在野黨沒有，所以欄位不會一樣滿，這不代表偏好。多數政黨的 2026 年宣言還沒公布，空白的欄位會在宣言公布後補上。</p>
+  </div>
+</section>
+
+<!-- ============ 承諾查核 ============ -->
+<section class="view" id="v-pledges">
+  <div class="wrap">
+    <h1>承諾查核</h1>
+    <p class="sub">砂盟 2021 年州選宣言有 34 項承諾<a class="src" data-s="p_list"></a>，州總理當時說會在五年內落實<a class="src" data-s="p_5yrs"></a>。這裡逐項對照公開紀錄，看每一項走到哪裡。</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="k">先看限制</div>
+        <ul class="plain-list">
+          <li>34 項都是標題式的大方向。這份整理只取得標題，沒有取得宣言手冊裡的細項，所以對照的是找得到的公開數據和報導。</li>
+          <li>每一項的判定是整理者的判斷，不是官方評分。來源都附在旁邊，請自己查證。</li>
+          <li>只查核執政的砂盟，因為只有執政黨有權力落實宣言。在野黨的宣言沒有機會執行，不能用同一把尺衡量。</li>
+          <li>醫療、國防、公民權多屬聯邦權限，州政府能做的有限，相關項目有標示。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="k">民間調查怎麼看</div>
+        <p style="margin-top:10px">民間組織 Rise of Social Efforts（ROSE）2024 年 12 月公布的公眾調查顯示，34 項中有 9 項被評為不滿意，其中 3 項是非常不滿意：第 4 項（習俗地）、第 14 項（電訊）、第 15 項（鄉區經濟）。ROSE 強調，調查結果不應被視為最終定論。<a class="src" data-s="p_rose"></a></p>
+        <p class="small muted" style="margin-top:8px">原報導沒能完整讀到，下面只標出報導摘要中確認的 4 項。</p>
+      </div>
+    </div>
+
+    <p class="label" style="margin-top:26px">點一格可以篩選</p>
+    <div class="tiles" id="pl-tiles" role="group" aria-label="依狀態篩選"></div>
+    <div class="bar5" id="pl-bar" role="img"></div>
+    <p class="small muted" style="margin-top:10px;max-width:46em">這裡刻意不算成一個百分比。34 項的份量差很多，「有進展」也不等於「做完了」。</p>
+
+    <p class="small muted" id="pl-rubric" style="margin-top:18px;max-width:46em"></p>
+    <div class="stack" id="pl-list" style="margin-top:14px" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ 海外投票 ============ -->
+<section class="view" id="v-overseas">
+  <div class="wrap">
+    <h1>海外投票</h1>
+    <p class="sub">人在海外有兩條路：申請郵寄投票，或在投票日回到所屬投票站親自投票。</p>
+    <div class="two">
+      <div class="notice" id="postal-box">
+        <h3>海外郵寄投票（1B 類）<span class="pill crit" data-postal-pill>11/20 截止</span></h3>
+        <p style="margin-top:8px">申請期是 10 月 26 日到 <b>11 月 20 日（星期五）</b>。選委會的頁面沒有寫當天幾點截止，建議不要拖到最後一刻。</p>
+        <ol class="steps">
+          <li><div>到選委會的 MySPR 註冊帳號。</div></li>
+          <li><div>登入後申請郵寄投票，選擇 1B 類（海外）。</div></li>
+          <li><div>選票怎麼寄來、怎麼寄回，選委會的申請頁面沒有說明，請留意選委會通知，或直接詢問郵寄投票組：upup@spr.gov.my／+603 8892 7080。</div></li>
+        </ol>
+        <div class="btnrow">
+          <a class="btn" href="https://myspr.spr.gov.my/login" target="_blank" rel="noopener">前往 MySPR 申請</a>
+          <a class="btn ghost" href="https://spr.gov.my/permohonan-undi-pos-bagi-prudun-sarawak-ke13/" target="_blank" rel="noopener">選委會官方說明</a>
+        </div>
+        <p class="small muted" style="margin-top:12px">申請資格與細節以選委會公布為準。</p>
+      </div>
+      <div class="stack">
+        <div class="card">
+          <h3>沒有申請郵寄投票</h3>
+          <p style="margin-top:6px">要在 12 月 12 日親自到所屬的投票站投票。投票站地點可以在選委會的 MySPR Semak 查到。</p>
+          <div class="btnrow"><a class="btn ghost" href="https://mysprsemak.spr.gov.my/semakan/daftarPemilih" target="_blank" rel="noopener">查我的投票站</a></div>
+        </div>
+        <div class="card">
+          <h3>回家投票前</h3>
+          <p style="margin-top:6px">先確認你的選區，再看那一區有誰參選。</p>
+          <div class="btnrow"><a class="btn ghost" href="#seat">確認我的選區</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 關於 ============ -->
+<section class="view" id="v-about">
+  <div class="wrap">
+    <h1>關於這份資料</h1>
+    <div class="grid">
+      <div class="card">
+        <div class="k">原則</div>
+        <ul class="plain-list">
+          <li>個人整理的非官方資料，不隸屬任何政黨，也不建議你投給誰。</li>
+          <li>每一項說法都附上來源連結。屬於批評的內容，都註明是誰說的。</li>
+          <li>資料由 Claude（AI）協助蒐集與整理，可能有疏漏。日期、選區、候選人與投票方式，一律以選委會公布為準。</li>
+          <li>發現錯誤，請告訴分享這個頁面給你的人，或到 <a href="https://github.com/Bernard-02/sarawak-election/issues" target="_blank" rel="noopener">GitHub 回報</a>。</li>
+          <li>原始檔和每一次修改的紀錄，都公開在 <a href="https://github.com/Bernard-02/sarawak-election" target="_blank" rel="noopener">GitHub</a>。</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="k">接下來會補上</div>
+        <ul class="todo">
+          <li><div><b>砂盟候選人名單</b><br><span class="muted">砂盟預計 11 月 25 日公布 82 席人選。</span><a class="src" data-s="tv8"></a></div></li>
+          <li><div><b>各選區正式候選人</b><br><span class="muted">11 月 28 日提名日之後，逐區更新。</span></div></li>
+          <li><div><b>各黨 2026 年競選宣言</b><br><span class="muted">公布後整理成同一個格式，補進議題對照。</span></div></li>
+        </ul>
+      </div>
+    </div>
+    <details class="card" style="margin-top:14px">
+      <summary style="cursor:pointer;font-weight:700">全部來源</summary>
+      <ul id="src-list" class="small plain-list"></ul>
+    </details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><p>砂拉越州選選民參考・非官方・最後更新 <span class="num">2026-11-19</span></p></div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+/*__DATA__*/
+
+/* how many seats each has announced so far, for the overview table */
+var PLAN = {
+  GPS:{seats:"79",plan:"82 席全數參選，人選預計 11/25 公布"},
+  PH:{seats:"2",plan:"行動黨已公布 8 席，其餘陸續公布；公正黨確認參選、議席未定"},
+  PBDS:{seats:"0",plan:"確認 1 席；9 月曾表示最多 37 席"},
+  PBK:{seats:"0",plan:"預料參選，席數未定"},
+  PN:{seats:"0",plan:"是否參選未定；伊斯蘭黨鎖定 3 席待批准"}
+};
+
+/* ---------- helpers ---------- */
+function $(id){ return document.getElementById(id); }
+function el(tag, attrs, kids){
+  var n = document.createElement(tag), k;
+  if(attrs){ for(k in attrs){ if(k==="text"){ n.textContent = attrs[k]; } else if(k==="class"){ n.className = attrs[k]; } else { n.setAttribute(k, attrs[k]); } } }
+  (kids||[]).forEach(function(c){ if(c){ n.appendChild(typeof c==="string" ? document.createTextNode(c) : c); } });
+  return n;
+}
+function srcLink(id){ var s = SRC[id]; return s ? el("a",{class:"src",href:s.u,target:"_blank",rel:"noopener",text:s.t}) : null; }
+function withSrc(node, ids){ (ids||[]).forEach(function(id){ var a = srcLink(id); if(a){ node.appendChild(a); } }); return node; }
+function claimLi(c){ return withSrc(el("li",null,[c.x]), c.s); }
+function pad(n){ return (n<10?"0":"")+n; }
+function store(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+function load(k){ try{ var v = localStorage.getItem(k); return v ? JSON.parse(v) : null; }catch(e){ return null; } }
+function mytDay(){ var d = new Date(Date.now() + 8*3600*1000); return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()); }
+function daysTo(y,m,d){ return Math.round((Date.UTC(y,m-1,d) - mytDay())/86400000); }
+function seatBy(n){ return SEATS.filter(function(s){ return s[0]===n; })[0]; }
+
+Array.prototype.forEach.call(document.querySelectorAll("a.src[data-s]"), function(a){
+  var s = SRC[a.getAttribute("data-s")]; if(!s){ a.remove(); return; }
+  a.href = s.u; a.target = "_blank"; a.rel = "noopener"; a.textContent = s.t;
+});
+
+/* ---------- router: one view per plain #name ---------- */
+var VIEWS = ["overview","guide","seat","parties","issues","pledges","overseas","about"];
+var pendingPledge = null;
+var resetPledgeFilter = function(){};
+function route(scroll){
+  var h = (location.hash || "").replace("#","");
+  if(VIEWS.indexOf(h) === -1){ h = "overview"; }
+  VIEWS.forEach(function(v){ $("v-"+v).classList.toggle("on", v === h); });
+  Array.prototype.forEach.call(document.querySelectorAll(".tabs a"), function(a){
+    if(a.getAttribute("data-view") === h){ a.setAttribute("aria-current","page"); if(a.scrollIntoView){ a.scrollIntoView({block:"nearest",inline:"nearest"}); } }
+    else { a.removeAttribute("aria-current"); }
+  });
+  if(scroll){
+    if(h === "pledges" && pendingPledge){
+      resetPledgeFilter();
+      var target = $("pl-" + pendingPledge); pendingPledge = null;
+      if(target){ target.scrollIntoView({block:"start"}); return; }
+    }
+    window.scrollTo(0,0);
+  }
+}
+window.addEventListener("hashchange", function(){ route(true); });
+
+/* ---------- countdown + dates ---------- */
+(function(){
+  var dp = daysTo(2026,12,12);
+  var txt = dp > 1 ? "還有 " + dp + " 天" : dp === 1 ? "就是明天" : dp === 0 ? "就是今天" : "投票已結束";
+  $("count-poll").textContent = txt;
+  $("hd-count").textContent = "投票日 12.12・" + txt;
+
+  var dn = daysTo(2026,11,20);
+  var ptxt = dn > 1 ? "11/20 截止・還有 " + dn + " 天" : dn === 1 ? "明天截止" : dn === 0 ? "今天截止" : "已於 11/20 截止";
+  Array.prototype.forEach.call(document.querySelectorAll("[data-postal-pill]"), function(p){
+    p.textContent = ptxt; if(dn < 0){ p.className = "pill plain"; }
+  });
+  if(dn < 0){ $("postal-box").className = "notice done"; $("ov-postal").className = "notice done"; }
+
+  var DATES = [
+    [2026,10,26,"10.26","州議會解散",["ukas_diss"]],
+    [2026,11,20,"11.20","海外郵寄投票（1B 類）申請截止",["spr_post"]],
+    [2026,11,25,"11.25","國內郵寄投票（1A 類：選務人員、軍警、採訪媒體）申請截止",["spr_post"]],
+    [2026,11,28,"11.28","提名日，候選人名單確定",["spr"]],
+    [2026,12,12,"12.12","投票日",["spr"]]
+  ];
+  var ul = $("date-list"), marked = false;
+  DATES.forEach(function(d){
+    var left = daysTo(d[0],d[1],d[2]);
+    var body = el("div",null,[d[4]]);
+    if(left >= 0 && !marked){ body.appendChild(document.createTextNode(" ")); body.appendChild(el("span",{class:"pill warn",text: left === 0 ? "今天" : left === 1 ? "明天" : "下一個"})); marked = true; }
+    withSrc(body, d[5]);
+    ul.appendChild(el("li",{class: left < 0 ? "past" : ""},[el("span",{class:"d",text:d[3]}), body]));
+  });
+})();
+
+/* ---------- my constituency (shared by header, overview, seat tab) ---------- */
+var chosen = load("swk-seat");
+if(!seatBy(chosen)){ chosen = null; }
+
+function renderSeatSummary(){
+  var hd = $("hd-seat"), ov = $("ov-seat");
+  ov.textContent = "";
+  if(chosen){
+    var s = seatBy(chosen);
+    hd.textContent = "我的選區 N." + pad(s[0]) + " " + s[1];
+    ov.appendChild(el("div",{class:"k",text:"我的選區"}));
+    ov.appendChild(el("h3",{style:"margin-top:4px;font-size:24px;font-weight:900;letter-spacing:-.02em"},[el("span",{class:"num",text:"N."+pad(s[0])+" "}), s[1], el("span",{class:"muted",style:"font-family:var(--body);font-weight:500;font-size:15px;margin-left:8px",text:s[2]})]));
+    ov.appendChild(el("p",{class:"small muted",style:"margin-top:4px",text:"解散前的議員：" + s[4] + "・" + PARTY_LABEL[s[5]]}));
+    ov.appendChild(el("div",{class:"btnrow"},[el("a",{class:"btn",href:"#seat",text:"看這一區"})]));
+  } else {
+    hd.textContent = "還沒選擇選區";
+    ov.appendChild(el("div",{class:"k",text:"我的選區"}));
+    ov.appendChild(el("p",{style:"margin-top:4px",text:"還沒選。選好之後，這裡和頁面上方都會記住你的選區。"}));
+    ov.appendChild(el("div",{class:"btnrow"},[el("a",{class:"btn",href:"#seat",text:"選擇我的選區"})]));
+  }
+}
+
+(function(){
+  var list = $("seat-list"), card = $("seat-card"), q = $("seat-q");
+  var showing = chosen || 1;
+
+  function matches(s, term){
+    if(!term){ return true; }
+    var t = term.toLowerCase().replace(/^n\.?\s*0*/,"");
+    if(/^\d+$/.test(t)){ return String(s[0]).indexOf(t) === 0; }
+    return (s[1] + " " + s[2] + " " + s[3]).toLowerCase().indexOf(term.toLowerCase()) !== -1;
+  }
+  function renderList(){
+    var term = q.value.trim();
+    list.textContent = "";
+    var hits = SEATS.filter(function(s){ return matches(s, term); });
+    if(!hits.length){ list.appendChild(el("div",{class:"empty",text:"找不到符合的選區。試試只輸入編號，或用馬來文名稱。"})); return; }
+    hits.forEach(function(s){
+      var b = el("button",{type:"button",role:"option","aria-selected":String(s[0]===showing),id:"seat-opt-"+s[0]},[
+        el("span",{class:"n",text:"N."+pad(s[0])}),
+        el("span",null,[s[1]+"　", el("span",{class:"muted",text:s[2]+"・"+s[3]})])
+      ]);
+      b.addEventListener("click", function(){ showing = chosen = s[0]; store("swk-seat", chosen); renderList(); renderCard(); renderSeatSummary(); });
+      list.appendChild(b);
+    });
+  }
+  function row(dt, dd){ return el("div",null,[el("dt",{text:dt}), dd]); }
+  function renderCard(){
+    var s = seatBy(showing);
+    card.textContent = "";
+    card.appendChild(el("header",null,[
+      el("div",null,[
+        chosen ? null : el("span",{class:"pill plain",text:"範例：還沒選擇，先顯示第一個選區"}),
+        el("h3",{text:s[1]}),
+        el("div",{class:"zh",text:s[2]})
+      ]),
+      el("div",{class:"code",text:"N."+pad(s[0])})
+    ]));
+    var dl = el("dl");
+    dl.appendChild(row("所屬國會選區", el("dd",{text:s[3]})));
+    dl.appendChild(row("解散前的議員", el("dd",null,[s[4], el("br"), el("span",{class:"muted small",text:PARTY_LABEL[s[5]]})])));
+    dl.appendChild(row("2021 年多數票", el("dd",null,[el("span",{class:"num",text:s[6].toLocaleString("en-US")}), " 票"])));
+    if(SEAT_NOTE[s[0]]){ dl.appendChild(row("備註", withSrc(el("dd",{class:"small",text:SEAT_NOTE[s[0]].x}), SEAT_NOTE[s[0]].s))); }
+    var ul = el("ul");
+    ul.appendChild(withSrc(el("li",null,["砂盟：82 席全數參選，人選預計 11 月 25 日公布。"]), ["od_gps82","tv8"]));
+    (DECLARED[s[0]]||[]).forEach(function(d){ ul.appendChild(withSrc(el("li",null,[d.x]), d.s)); });
+    dl.appendChild(row("目前已表態", el("dd",null,[ul, el("div",{class:"small muted",text:"提名日前的表態都可能變動。沒有列出的政黨，是還沒公布這一區的安排。"})])));
+    card.appendChild(dl);
+    card.appendChild(el("div",{class:"foot small"},[
+      el("b",{text:"正式候選人："}), "11 月 28 日提名日後更新。屆時也可以在選委會的 ",
+      el("a",{href:"https://mysprsemak.spr.gov.my/semakan/calon",target:"_blank",rel:"noopener",text:"候選人查詢"}), " 看到。"
+    ]));
+  }
+  q.addEventListener("input", renderList);
+  renderList(); renderCard(); renderSeatSummary();
+})();
+
+/* ---------- party badge ---------- */
+function badge(p, size){
+  var b = el("span",{class:"badge"+(size?" "+size:"")});
+  if(LOGOS[p.id]){ b.appendChild(el("img",{src:LOGOS[p.id],alt:p.name+" 標誌"})); } else { b.textContent = p.abbr; b.setAttribute("aria-hidden","true"); }
+  return b;
+}
+
+/* ---------- parties ---------- */
+var pickParty = function(){};
+(function(){
+  var rows = $("party-rows"), panel = $("party-panel");
+  var cur = load("swk-party");
+  if(!PARTIES.some(function(p){ return p.id === cur; })){ cur = PARTIES[0].id; }
+
+  function blk(title, items, cls){
+    var ul = el("ul"); items.forEach(function(c){ ul.appendChild(claimLi(c)); });
+    return el("div",{class:"blk"+(cls?" "+cls:"")},[el("h4",{text:title}), ul]);
+  }
+  function render(){
+    rows.textContent = ""; panel.textContent = "";
+    PARTIES.forEach(function(p){
+      var tr = el("tr",{tabindex:"0","aria-selected":String(p.id===cur)},[
+        el("th",{scope:"row"},[el("span",{class:"pname"},[badge(p,"sm"), el("span",null,[(p.aka || p.name), el("small",{text:p.abbr})])])]),
+        el("td",{text:p.role}),
+        el("td",{class:"num",text:PLAN[p.id].seats}),
+        el("td",{text:PLAN[p.id].plan})
+      ]);
+      function pick(){ cur = p.id; store("swk-party", cur); render(); }
+      tr.addEventListener("click", pick);
+      tr.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); pick(); } });
+      rows.appendChild(tr);
+    });
+    var p = PARTIES.filter(function(x){ return x.id === cur; })[0];
+    panel.appendChild(el("article",{class:"party"},[
+      el("header",null,[
+        el("div",{class:"phead"},[badge(p,"lg"), el("div",null,[
+          el("h3",null,[p.name + (p.aka ? "（" + p.aka + "）" : ""), el("span",{class:"abbr",text:p.abbr})]),
+          el("div",{class:"meta"},[el("span",{class:"pill plain",text:p.role})])
+        ])]),
+        el("div",{class:"small muted",style:"margin-top:10px"}, p.meta.map(function(m){ return el("div",{text:m}); }))
+      ]),
+      el("div",{class:"cols"},[
+        blk("目前動向", p.now),
+        blk("他們的主張", p.say),
+        blk("紀錄與外界批評", p.crit, "crit")
+      ])
+    ]));
+  }
+  pickParty = function(id){ if(PARTIES.some(function(p){ return p.id === id; })){ cur = id; store("swk-party", cur); render(); } };
+  render();
+})();
+
+/* ---------- issue comparison: one issue, one column per party ---------- */
+(function(){
+  var roleHost = $("role-chips"), issueHost = $("issue-chips"), partyHost = $("party-chips");
+  var head = $("cmp-head"), cmp = $("cmp"), ctx = $("cmp-ctx");
+  function roleBy(id){ return ROLES.filter(function(r){ return r.id === id; })[0]; }
+  function isIssue(id){ return ISSUES.some(function(i){ return i.id === id; }); }
+
+  var savedIssue = load("swk-issue");
+  var role = load("swk-role");
+  if(!roleBy(role)){ role = isIssue(savedIssue) ? null : "abroad"; }
+  var issue = isIssue(savedIssue) ? savedIssue : (role ? roleBy(role).issues[0] : ISSUES[0].id);
+  var shown = load("swk-cmp");
+  shown = Array.isArray(shown) ? shown.filter(function(id){ return PARTIES.some(function(p){ return p.id === id; }); }) : PARTIES.map(function(p){ return p.id; });
+
+  function save(){ store("swk-role", role); store("swk-issue", issue); store("swk-cmp", shown); }
+  function sec(title, items, emptyText){
+    var body;
+    if(items.length){ body = el("ul"); items.forEach(function(c){ body.appendChild(claimLi(c)); }); }
+    else { body = el("div",{class:"none",text:emptyText}); }
+    return el("div",{class:"sec"},[el("h4",{text:title}), body]);
+  }
+  function recordSec(did, pl){
+    if(!did.length && !pl.length){ return sec("過去的承諾與紀錄", [], "還沒有整理到。"); }
+    var ul = el("ul");
+    did.forEach(function(c){ ul.appendChild(claimLi(c)); });
+    pl.forEach(function(x){
+      var a = el("a",{href:"#pledges",text:"2021 承諾第 " + x.n + " 項：" + x.zh});
+      a.addEventListener("click", function(){ pendingPledge = x.n; });
+      ul.appendChild(el("li",null,[a, document.createTextNode(" "), el("span",{class:"pill st s-" + x.st,text:PSTATUS[x.st].label})]));
+    });
+    return el("div",{class:"sec"},[el("h4",{text:"過去的承諾與紀錄"}), ul]);
+  }
+  function render(){
+    roleHost.textContent = ""; issueHost.textContent = ""; partyHost.textContent = ""; head.textContent = ""; cmp.textContent = ""; ctx.textContent = "";
+    var mine = role ? roleBy(role).issues : [];
+    ROLES.forEach(function(r){
+      var b = el("button",{type:"button",class:"chip role","aria-pressed":String(role === r.id),text:r.name});
+      b.addEventListener("click", function(){
+        if(role === r.id){ role = null; } else { role = r.id; issue = r.issues[0]; }
+        save(); render();
+      });
+      roleHost.appendChild(b);
+    });
+    ISSUES.forEach(function(i){
+      var b = el("button",{type:"button",class:"chip pick","aria-pressed":String(issue === i.id)},[
+        mine.indexOf(i.id) !== -1 ? el("span",{class:"dot",title:"你選的身分可能在意"}) : null, i.name
+      ]);
+      b.addEventListener("click", function(){ issue = i.id; save(); render(); });
+      issueHost.appendChild(b);
+    });
+    PARTIES.forEach(function(p){
+      var on = shown.indexOf(p.id) !== -1;
+      var b = el("button",{type:"button",class:"chip","aria-pressed":String(on)},[el("span",{class:"box","aria-hidden":"true"}), p.aka || p.name]);
+      b.addEventListener("click", function(){
+        if(on){ shown = shown.filter(function(x){ return x !== p.id; }); } else { shown.push(p.id); }
+        save(); render();
+      });
+      partyHost.appendChild(b);
+    });
+
+    var cur = ISSUES.filter(function(i){ return i.id === issue; })[0], st = STANCE[issue] || {};
+    head.appendChild(el("h2",{class:"cmp-title",text:cur.name}));
+    head.appendChild(el("p",{class:"muted",text:cur.desc}));
+    var cols = PARTIES.filter(function(p){ return shown.indexOf(p.id) !== -1; });
+    if(!cols.length){ cmp.appendChild(el("div",{class:"nosel",style:"grid-row:1 / -1",text:"還沒有選擇政黨。在上面畫一個 X，就會出現在這裡。"})); return; }
+    cols.forEach(function(p){
+      var items = st[p.id] || [];
+      var say = items.filter(function(c){ return c.k !== "did"; }), did = items.filter(function(c){ return c.k === "did"; });
+      var pl = p.id === "GPS" ? PLEDGES.filter(function(x){ return x.issue === issue; }) : [];
+      var total = items.length + pl.length;
+      var link = el("a",{href:"#parties",text:"看這個政黨 →"});
+      link.addEventListener("click", function(){ pickParty(p.id); });
+      cmp.appendChild(el("article",{class:"col"},[
+        el("header",null,[
+          el("div",{class:"phead"},[badge(p), el("div",null,[el("strong",{text:p.aka || p.name}), el("small",{text:p.abbr + "・" + p.role})])]),
+          total ? el("span",{class:"pill warn",text:"有資料 " + total + " 則"}) : el("span",{class:"pill plain",text:"尚無資料"})
+        ]),
+        sec("本屆說法", say, "還沒有找到，宣言公布後補上。"),
+        recordSec(did, pl),
+        el("footer",null,[link])
+      ]));
+    });
+    if(st._ctx){ ctx.appendChild(withSrc(el("div",{class:"ctxcard"},[el("b",{text:"民間的說法："}), st._ctx.x]), st._ctx.s)); }
+  }
+  render();
+})();
+
+/* ---------- pledge check ---------- */
+(function(){
+  var tiles = $("pl-tiles"), bar = $("pl-bar"), list = $("pl-list"), rubric = $("pl-rubric");
+  var cur = "all";
+  var count = {}; PORDER.forEach(function(k){ count[k] = PLEDGES.filter(function(p){ return p.st === k; }).length; });
+  bar.setAttribute("aria-label", PORDER.map(function(k){ return PSTATUS[k].label + " " + count[k] + " 項"; }).join("，"));
+  PORDER.forEach(function(k){ if(count[k]){ bar.appendChild(el("span",{class:"sw-" + k,style:"flex:" + count[k],title:PSTATUS[k].label + " " + count[k]})); } });
+
+  function blk(title, items, cls){
+    var ul = el("ul"); items.forEach(function(c){ ul.appendChild(claimLi(c)); });
+    return el("div",{class:"blk" + (cls ? " " + cls : "")},[el("h4",{text:title}), ul]);
+  }
+  function render(){
+    tiles.textContent = ""; list.textContent = "";
+    [["all","全部",PLEDGES.length]].concat(PORDER.map(function(k){ return [k, PSTATUS[k].label, count[k]]; })).forEach(function(t){
+      var b = el("button",{type:"button",class:"tile","aria-pressed":String(cur === t[0])},[
+        el("b",{text:String(t[2])}), el("span",null,[el("i",{class:"sw-" + t[0]}), t[1]])
+      ]);
+      b.addEventListener("click", function(){ cur = t[0]; render(); });
+      tiles.appendChild(b);
+    });
+    rubric.textContent = cur === "all" ? "判定方式：" + PORDER.map(function(k){ return "「" + PSTATUS[k].label + "」" + PSTATUS[k].desc; }).join(" ") : "「" + PSTATUS[cur].label + "」的意思：" + PSTATUS[cur].desc;
+    PLEDGES.filter(function(p){ return cur === "all" || p.st === cur; }).forEach(function(p){
+      var tags = el("div",{class:"tags"},[el("span",{class:"pill st s-" + p.st,text:PSTATUS[p.st].label})]);
+      if(p.fed){ tags.appendChild(el("span",{class:"pill line",text:"多屬聯邦權限"})); }
+      if(p.rose){ tags.appendChild(el("span",{class:"pill line",text:"ROSE 民調：" + (p.rose === "vd" ? "非常不滿意" : "不滿意")})); }
+      var cols = el("div",{class:"cols" + (p.con ? " split" : "")},[blk("查到的紀錄", p.ev)]);
+      if(p.con){ cols.appendChild(blk("爭議與落差", p.con, "crit")); }
+      list.appendChild(el("article",{class:"pl",id:"pl-" + p.n},[
+        el("header",null,[el("span",{class:"pl-n",text:String(p.n)}), el("div",null,[el("h3",{text:p.zh}), el("div",{class:"ms",lang:"ms",text:p.ms}), tags])]),
+        cols
+      ]));
+    });
+  }
+  resetPledgeFilter = function(){ if(cur !== "all"){ cur = "all"; render(); } };
+  render();
+})();
+
+/* ---------- source list ---------- */
+(function(){
+  var ul = $("src-list");
+  Object.keys(SRC).forEach(function(k){ ul.appendChild(el("li",null,[el("a",{href:SRC[k].u,target:"_blank",rel:"noopener",text:SRC[k].t})])); });
+})();
+
+route(false);
+})();
+</script>
+</body>
+</html>
